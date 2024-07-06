@@ -3,6 +3,7 @@ import "@panda/styles.css";
 import Header from "./components/Header";
 import Gnb from "./components/Gnb";
 import Footer from "./components/Footer";
+import { SimpleReveal } from "simple-reveal";
 import { css } from "@panda/css";
 
 function App() {
@@ -14,8 +15,10 @@ function App() {
         minHeight: "100vh",
       })}
     >
-      <Header />
-      <Gnb />
+      <div className={css({ width: "100%", position: "fixed", zIndex: 999 })}>
+        <Header />
+        <Gnb />
+      </div>
       <section
         className={css({
           display: "flex",
@@ -23,24 +26,74 @@ function App() {
           flex: 1,
         })}
       >
-        <div
+        <section
           className={css({
             width: "100%",
-            maxWidth: "1200px",
-            padding: "48px 16px",
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+
+            position: "relative",
           })}
         >
-          <h1
+          <img
             className={css({
+              height: "100%",
+              position: "absolute",
+              filter: "brightness(90%)",
+              objectFit: "cover",
+            })}
+            src="/main.jpg"
+          />
+          <div
+            className={css({
+              width: "100%",
+              maxWidth: "1200px",
+              padding: "48px 16px",
+              position: "relative",
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+
               fontSize: 48,
               fontWeight: 800,
-              lineHeight: 1,
+
+              color: "white",
             })}
           >
-            <p>Pioneering</p>
-            <p>the Next Intelligence</p>
-          </h1>
-        </div>
+            <SimpleReveal
+              duration={1000}
+              initialTransform="translateY(3rem)"
+              render={({ ref, cn, style }) => (
+                <div ref={ref} className={cn()} style={style}>
+                  <div>
+                    <p>고려대학교 정보대학 40주년</p>
+                  </div>
+                </div>
+              )}
+            />
+            <SimpleReveal
+              delay={500}
+              duration={1000}
+              initialTransform="translateY(3rem)"
+              render={({ ref, cn, style }) => (
+                <div ref={ref} className={cn()} style={style}>
+                  <div
+                    className={css({
+                      fontSize: 48,
+                      fontWeight: 800,
+                      lineHeight: 1.1,
+                    })}
+                  >
+                    <p>Pioneering</p>
+                    <p>the Next Intelligence</p>
+                  </div>
+                </div>
+              )}
+            />
+          </div>
+        </section>
       </section>
       <Footer />
     </div>

@@ -7,6 +7,7 @@ function Header() {
       className={css({
         display: "flex",
         justifyContent: "center",
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
         borderBottom: "1px solid #e9ecef",
         backdropFilter: "blur(20px)",
       })}
@@ -32,7 +33,7 @@ function Header() {
             })}
           >
             <p>정보대학 40주년</p>
-            <p>Pioneering the Next Intelligence </p>
+            <p>Pioneering the Next Intelligence</p>
           </div>
         </div>
       </div>
