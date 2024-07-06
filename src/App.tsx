@@ -5,6 +5,7 @@ import Gnb from "./components/Gnb";
 import Footer from "./components/Footer";
 import { SimpleReveal } from "simple-reveal";
 import { css } from "@panda/css";
+import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -230,7 +231,10 @@ function Section2() {
                     })}
                   >
                     <p>40주년 행사 기념을 위해</p>
-                    <p>40명의 교우님들께서 가입했어요</p>
+                    <p>
+                      <Counter value={40} />
+                      명의 교우님들께서 가입했어요
+                    </p>
                   </div>
                 </div>
               )}
@@ -291,7 +295,8 @@ function Section3() {
                 ref={ref}
                 className={cn(
                   css({
-                    width: "100%",
+                    minWidth: "300px",
+                    flex: 1,
                   }),
                 )}
                 style={style}
@@ -340,7 +345,8 @@ function Section3() {
                 ref={ref}
                 className={cn(
                   css({
-                    width: "100%",
+                    minWidth: "300px",
+                    flex: 1,
                   }),
                 )}
                 style={style}
