@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "@panda/styles.css";
+
+import Header from "./components/Header";
+import Gnb from "./components/Gnb";
+import Footer from "./components/Footer";
+import { css } from "@panda/css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div
+      className={css({
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      })}
+    >
+      <Header />
+      <Gnb />
+      <section
+        className={css({
+          display: "flex",
+          justifyContent: "center",
+          flex: 1,
+        })}
+      >
+        <div
+          className={css({
+            width: "100%",
+            maxWidth: "1200px",
+            padding: "48px 16px",
+          })}
+        >
+          <h1
+            className={css({
+              fontSize: 48,
+              fontWeight: 800,
+              lineHeight: 1,
+            })}
+          >
+            <p>Pioneering</p>
+            <p>the Next Intelligence</p>
+          </h1>
+        </div>
+      </section>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
