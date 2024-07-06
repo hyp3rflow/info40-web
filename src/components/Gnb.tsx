@@ -40,8 +40,12 @@ function Gnb() {
           color: "white",
           padding: "16px",
 
-          display: "flex",
+          display: "none",
           justifyContent: "space-between",
+
+          lg: {
+            display: "flex",
+          },
         })}
       >
         <div

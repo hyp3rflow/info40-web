@@ -8,21 +8,32 @@ import { css } from "@panda/css";
 
 function App() {
   return (
-    <div
-      className={css({
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      })}
-    >
-      <div className={css({ width: "100%", position: "fixed", zIndex: 999 })}>
+    <div>
+      <div
+        className={css({
+          width: "100%",
+          position: "sticky",
+          top: 0,
+          left: 0,
+          zIndex: 999,
+        })}
+      >
         <Header />
         <Gnb />
       </div>
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Footer />
+      <main
+        className={css({
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+          position: "relative",
+        })}
+      >
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Footer />
+      </main>
     </div>
   );
 }
@@ -60,13 +71,17 @@ function Section1() {
           className={css({
             width: "100%",
             maxWidth: "1200px",
-            padding: "48px 16px",
+            padding: "48px 24px",
             position: "relative",
             display: "flex",
             flexDirection: "column",
             gap: 8,
 
-            fontSize: 48,
+            fontSize: {
+              base: 36,
+              lgDown: 32,
+              mdDown: 24,
+            },
             fontWeight: 800,
 
             color: "white",
@@ -91,7 +106,11 @@ function Section1() {
               <div ref={ref} className={cn()} style={style}>
                 <div
                   className={css({
-                    fontSize: 48,
+                    fontSize: {
+                      base: 48,
+                      lgDown: 42,
+                      mdDown: 32,
+                    },
                     fontWeight: 800,
                     lineHeight: 1.1,
                   })}
@@ -140,6 +159,12 @@ function Section2() {
             fontWeight: 800,
 
             borderRadius: "24px",
+            margin: "0 16px",
+            mdDown: {
+              borderRadius: 0,
+              margin: 0,
+            },
+
             overflow: "hidden",
           })}
         >
@@ -173,7 +198,11 @@ function Section2() {
                 <div ref={ref} className={cn()} style={style}>
                   <div
                     className={css({
-                      fontSize: 32,
+                      fontSize: {
+                        base: 32,
+                        lgDown: 28,
+                        mdDown: 22,
+                      },
                       fontWeight: 700,
                       lineHeight: 1.1,
                     })}
@@ -191,13 +220,17 @@ function Section2() {
                 <div ref={ref} className={cn()} style={style}>
                   <div
                     className={css({
-                      fontSize: 36,
+                      fontSize: {
+                        base: 36,
+                        lgDown: 28,
+                        mdDown: 24,
+                      },
                       fontWeight: 700,
                       textAlign: "center",
                     })}
                   >
                     <p>40주년 행사 기념을 위해</p>
-                    <p>가입해주신 40명의 교우님들께서 가입했어요</p>
+                    <p>40명의 교우님들께서 가입했어요</p>
                   </div>
                 </div>
               )}
@@ -242,10 +275,11 @@ function Section3() {
           className={css({
             width: "100%",
             maxWidth: "1200px",
-            padding: "48px 16px",
+            padding: "48px 24px",
             position: "relative",
             display: "flex",
             flexDirection: "row",
+            flexWrap: "wrap",
             gap: 8,
           })}
         >

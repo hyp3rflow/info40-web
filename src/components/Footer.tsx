@@ -31,7 +31,7 @@ function Footer() {
         </div>
         <div
           className={css({
-            whiteSpace: "pre",
+            whiteSpace: "pre-line",
             color: "#777777",
           })}
         >

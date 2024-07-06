@@ -1,5 +1,6 @@
 import { css } from "@panda/css";
 import kuLogo from "/ku-logo.svg";
+import kuSimpleLogo from "/ku.svg";
 
 function Header() {
   return (
@@ -26,7 +27,24 @@ function Header() {
             gap: "8px",
           })}
         >
-          <img src={kuLogo} />
+          <img
+            className={css({
+              display: "inherit",
+              lg: {
+                display: "none",
+              },
+            })}
+            src={kuSimpleLogo}
+          />
+          <img
+            className={css({
+              display: "none",
+              lg: {
+                display: "inherit",
+              },
+            })}
+            src={kuLogo}
+          />
           <div
             className={css({
               fontWeight: "700",
