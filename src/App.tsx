@@ -19,47 +19,151 @@ function App() {
         <Header />
         <Gnb />
       </div>
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Footer />
+    </div>
+  );
+}
+
+function Section1() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
       <section
         className={css({
+          width: "100%",
+          minHeight: "100vh",
           display: "flex",
+          alignItems: "center",
           justifyContent: "center",
-          flex: 1,
+
+          position: "relative",
         })}
       >
-        <section
+        <img
+          className={css({
+            height: "100%",
+            position: "absolute",
+            filter: "brightness(90%)",
+            objectFit: "cover",
+          })}
+          src="/main.jpg"
+        />
+        <div
           className={css({
             width: "100%",
-            minHeight: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-
+            maxWidth: "1200px",
+            padding: "48px 16px",
             position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+
+            fontSize: 48,
+            fontWeight: 800,
+
+            color: "white",
+          })}
+        >
+          <SimpleReveal
+            duration={1000}
+            initialTransform="translateY(3rem)"
+            render={({ ref, cn, style }) => (
+              <div ref={ref} className={cn()} style={style}>
+                <div>
+                  <p>고려대학교 정보대학 40주년</p>
+                </div>
+              </div>
+            )}
+          />
+          <SimpleReveal
+            delay={500}
+            duration={1000}
+            initialTransform="translateY(3rem)"
+            render={({ ref, cn, style }) => (
+              <div ref={ref} className={cn()} style={style}>
+                <div
+                  className={css({
+                    fontSize: 48,
+                    fontWeight: 800,
+                    lineHeight: 1.1,
+                  })}
+                >
+                  <p>Pioneering</p>
+                  <p>the Next Intelligence</p>
+                </div>
+              </div>
+            )}
+          />
+        </div>
+      </section>
+    </section>
+  );
+}
+
+function Section2() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <section
+        className={css({
+          width: "100%",
+          display: "flex",
+          padding: "6rem 0",
+          alignItems: "center",
+          justifyContent: "center",
+        })}
+      >
+        <div
+          className={css({
+            width: "100%",
+            maxWidth: "1200px",
+            height: "30rem",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+
+            fontSize: 24,
+            fontWeight: 800,
+
+            borderRadius: "24px",
+            overflow: "hidden",
           })}
         >
           <img
             className={css({
+              width: "100%",
               height: "100%",
               position: "absolute",
-              filter: "brightness(90%)",
+              filter: "brightness(70%)",
               objectFit: "cover",
             })}
             src="/main.jpg"
           />
           <div
             className={css({
-              width: "100%",
-              maxWidth: "1200px",
-              padding: "48px 16px",
-              position: "relative",
+              color: "white",
+              padding: "32px",
+              height: "100%",
+
               display: "flex",
               flexDirection: "column",
-              gap: 8,
-
-              fontSize: 48,
-              fontWeight: 800,
-
-              color: "white",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
             })}
           >
             <SimpleReveal
@@ -67,8 +171,14 @@ function App() {
               initialTransform="translateY(3rem)"
               render={({ ref, cn, style }) => (
                 <div ref={ref} className={cn()} style={style}>
-                  <div>
-                    <p>고려대학교 정보대학 40주년</p>
+                  <div
+                    className={css({
+                      fontSize: 32,
+                      fontWeight: 700,
+                      lineHeight: 1.1,
+                    })}
+                  >
+                    <p>행사에 참석하여 자리를 빛내주세요</p>
                   </div>
                 </div>
               )}
@@ -81,22 +191,165 @@ function App() {
                 <div ref={ref} className={cn()} style={style}>
                   <div
                     className={css({
-                      fontSize: 48,
-                      fontWeight: 800,
-                      lineHeight: 1.1,
+                      fontSize: 36,
+                      fontWeight: 700,
+                      textAlign: "center",
                     })}
                   >
-                    <p>Pioneering</p>
-                    <p>the Next Intelligence</p>
+                    <p>40주년 행사 기념을 위해</p>
+                    <p>가입해주신 40명의 교우님들께서 가입했어요</p>
                   </div>
                 </div>
               )}
             />
           </div>
-        </section>
+        </div>
       </section>
-      <Footer />
-    </div>
+    </section>
+  );
+}
+
+function Section3() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <section
+        className={css({
+          width: "100%",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+
+          position: "relative",
+        })}
+      >
+        <img
+          className={css({
+            height: "100%",
+            position: "absolute",
+            filter: "brightness(90%)",
+            objectFit: "cover",
+          })}
+          src="/main2.jpg"
+        />
+        <div
+          className={css({
+            width: "100%",
+            maxWidth: "1200px",
+            padding: "48px 16px",
+            position: "relative",
+            display: "flex",
+            flexDirection: "row",
+            gap: 8,
+          })}
+        >
+          <SimpleReveal
+            duration={1000}
+            initialTransform="translateY(3rem)"
+            render={({ ref, cn, style }) => (
+              <div
+                ref={ref}
+                className={cn(
+                  css({
+                    width: "100%",
+                  }),
+                )}
+                style={style}
+              >
+                <div
+                  className={css({
+                    backgroundColor: "rgba(247, 247, 247, 0.9)",
+                    border: "1px solid rgba(0, 0, 0, 0.05)",
+                    padding: "32px",
+
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "24px",
+                  })}
+                >
+                  <p
+                    className={css({
+                      fontWeight: 700,
+                      fontSize: 24,
+                    })}
+                  >
+                    공지사항
+                  </p>
+                  <div
+                    className={css({
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                      color: "#666666",
+                    })}
+                  >
+                    <p>정보대학 40주년 행사 안내</p>
+                    <p>정보대학 40주년 행사 안내</p>
+                    <p>정보대학 40주년 행사 안내</p>
+                    <p>정보대학 40주년 행사 안내</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          />
+          <SimpleReveal
+            duration={1000}
+            initialTransform="translateY(3rem)"
+            render={({ ref, cn, style }) => (
+              <div
+                ref={ref}
+                className={cn(
+                  css({
+                    width: "100%",
+                  }),
+                )}
+                style={style}
+              >
+                <div
+                  className={css({
+                    backgroundColor: "rgba(247, 247, 247, 0.9)",
+                    border: "1px solid rgba(0, 0, 0, 0.05)",
+                    padding: "32px",
+
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "24px",
+                  })}
+                >
+                  <p
+                    className={css({
+                      fontWeight: 700,
+                      fontSize: 24,
+                    })}
+                  >
+                    교우 게시판
+                  </p>
+                  <div
+                    className={css({
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                      color: "#666666",
+                    })}
+                  >
+                    <p>정보대학 40주년 행사 안내</p>
+                    <p>정보대학 40주년 행사 안내</p>
+                    <p>정보대학 40주년 행사 안내</p>
+                    <p>정보대학 40주년 행사 안내</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          />
+        </div>
+      </section>
+    </section>
   );
 }
 
