@@ -16,7 +16,7 @@ const menus = [
     href: "/board",
   },
   {
-    content: "교우회 기부",
+    content: "정보대학 기부",
     href: "https://give.korea.ac.kr/front/give/actKupGive.do",
   },
   {
@@ -86,10 +86,7 @@ function Gnb() {
           })}
         >
           <button>
-            <p>로그인</p>
-          </button>
-          <button>
-            <p>회원가입</p>
+            <p>신청하기</p>
           </button>
         </div>
       </div>
