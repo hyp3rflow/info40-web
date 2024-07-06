@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { SimpleReveal } from "simple-reveal";
 import { css } from "@panda/css";
 import Counter from "./components/Counter";
+import { ArrowUpRight } from "lucide-react";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       >
         <Section1 />
         <Section2 />
+        <Section22 />
         <Section3 />
         <Footer />
       </main>
@@ -239,6 +241,119 @@ function Section2() {
                 </div>
               )}
             />
+          </div>
+        </div>
+      </section>
+    </section>
+  );
+}
+
+function Section22() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <section
+        className={css({
+          width: "100%",
+          display: "flex",
+          padding: "6rem 0",
+          alignItems: "center",
+          justifyContent: "center",
+        })}
+      >
+        <div
+          className={css({
+            width: "100%",
+            maxWidth: "1200px",
+            height: "30rem",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+
+            borderRadius: "24px",
+            margin: "0 16px",
+            mdDown: {
+              borderRadius: 0,
+              margin: 0,
+            },
+
+            backgroundColor: "#f2f2f2",
+          })}
+        >
+          <div
+            className={css({
+              padding: "32px",
+              height: "100%",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
+            })}
+          >
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                gap: "2rem",
+              })}
+            >
+              <p
+                className={css({
+                  fontSize: 32,
+                  fontWeight: 800,
+                })}
+              >
+                정보대학 교우회 소식을 확인하세요
+              </p>
+              <div
+                className={css({
+                  fontSize: 28,
+                  fontWeight: 600,
+                })}
+              >
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                  })}
+                >
+                  <img width="30px" src="/fb.png" />
+                  <div
+                    className={css({ display: "flex", alignItems: "center" })}
+                  >
+                    <p>페이스북 바로가기</p>
+                    <ArrowUpRight
+                      className={css({ alignSelf: "flex-start" })}
+                    />
+                  </div>
+                </div>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                  })}
+                >
+                  <img width="30px" src="/insta-black.png" />
+                  <div
+                    className={css({ display: "flex", alignItems: "center" })}
+                  >
+                    <p>인스타그램 바로가기</p>
+                    <ArrowUpRight
+                      className={css({ alignSelf: "flex-start" })}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

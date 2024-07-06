@@ -1,26 +1,27 @@
 import { css } from "@panda/css";
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 const menus = [
   {
     content: "행사 소개",
-    href: "",
+    href: "/event",
   },
   {
     content: "공지사항",
-    href: "",
+    href: "/notice",
   },
   {
     content: "교우 게시판",
-    href: "",
+    href: "/board",
   },
   {
     content: "교우회 기부",
-    href: "",
+    href: "https://give.korea.ac.kr/front/give/actKupGive.do",
   },
   {
     content: "고대교우회",
-    href: "",
+    href: "https://www.kuaa.or.kr/index.do",
   },
 ];
 
@@ -60,7 +61,18 @@ function Gnb() {
           {menus.map(({ content, href }) => {
             return (
               <Link to={href}>
-                <p>{content}</p>
+                <div
+                  className={css({ display: "flex", alignItems: "flex-start" })}
+                >
+                  <p>{content}</p>
+                  {!href.startsWith("/") && (
+                    <ArrowUpRight
+                      width="16px"
+                      height="16px"
+                      className={css({ alignSelf: "flex-start" })}
+                    />
+                  )}
+                </div>
               </Link>
             );
           })}

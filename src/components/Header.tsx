@@ -50,7 +50,7 @@ function Header() {
               fontWeight: "700",
             })}
           >
-            <p>정보대학 40주년</p>
+            <p>고려대학교 정보대학 40주년</p>
             <p>Pioneering the Next Intelligence</p>
           </div>
         </div>
