@@ -1,4 +1,5 @@
 import { css } from "@panda/css";
+import { Link } from "react-router-dom";
 
 const menus = [
   {
@@ -54,9 +55,9 @@ function Gnb() {
         >
           {menus.map(({ content, href }) => {
             return (
-              <button>
+              <Link to={href}>
                 <p>{content}</p>
-              </button>
+              </Link>
             );
           })}
         </div>
