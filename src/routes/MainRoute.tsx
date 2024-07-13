@@ -22,7 +22,7 @@ function App() {
 
 function Section1() {
   return (
-    <section
+    <div
       className={css({
         display: "flex",
         justifyContent: "center",
@@ -42,6 +42,7 @@ function Section1() {
       >
         <img
           className={css({
+            width: "100%",
             height: "100%",
             position: "absolute",
             filter: "brightness(90%)",
@@ -81,7 +82,7 @@ function Section1() {
           />
         </div>
       </section>
-    </section>
+    </div>
   );
 }
 
