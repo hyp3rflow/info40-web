@@ -12,7 +12,18 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        scroll: {
+          'from': {
+            transform: "translateX(0)",
+          },
+          'to': {
+            transform: "translateX(-100%)",
+          }
+        }
+      }
+    },
   },
 
   // The output directory for your css system

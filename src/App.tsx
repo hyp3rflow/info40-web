@@ -1,12 +1,14 @@
 import "@panda/styles.css";
 
+import { css } from "@panda/css";
+import { ArrowUpRight } from "lucide-react";
+import { SimpleReveal } from "simple-reveal";
+
 import Header from "./components/Header";
 import Gnb from "./components/Gnb";
 import Footer from "./components/Footer";
-import { SimpleReveal } from "simple-reveal";
-import { css } from "@panda/css";
 import Counter from "./components/Counter";
-import { ArrowUpRight } from "lucide-react";
+import CommentSection from "./components/CommentSection";
 
 function App() {
   return (
@@ -32,9 +34,11 @@ function App() {
         })}
       >
         <Section1 />
+        <Divider />
         <Section2 />
+        <Section4 />
+        {/* <Section3 /> */}
         <Section22 />
-        <Section3 />
         <Footer />
       </main>
     </div>
@@ -78,10 +82,11 @@ function Section1() {
             position: "relative",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             gap: 8,
 
             fontSize: {
-              base: 36,
+              base: 42,
               lgDown: 32,
               mdDown: 24,
             },
@@ -95,38 +100,58 @@ function Section1() {
             initialTransform="translateY(3rem)"
             render={({ ref, cn, style }) => (
               <div ref={ref} className={cn()} style={style}>
-                <div>
-                  <p>고려대학교 정보대학 40주년</p>
-                </div>
-              </div>
-            )}
-          />
-          <SimpleReveal
-            delay={500}
-            duration={1000}
-            initialTransform="translateY(3rem)"
-            render={({ ref, cn, style }) => (
-              <div ref={ref} className={cn()} style={style}>
-                <div
-                  className={css({
-                    fontSize: {
-                      base: 48,
-                      lgDown: 42,
-                      mdDown: 32,
-                    },
-                    fontWeight: 800,
-                    lineHeight: 1.1,
-                  })}
-                >
-                  <p>Pioneering</p>
-                  <p>the Next Intelligence</p>
-                </div>
+                <img src="/main.png" />
               </div>
             )}
           />
         </div>
       </section>
     </section>
+  );
+}
+
+function Divider() {
+  return (
+    <div
+      className={css({
+        borderBlock: "6px solid #8B0029",
+        paddingBlock: 4,
+        fontSize: {
+          base: 36,
+        },
+        fontWeight: 800,
+        color: "#8B0029",
+        overflow: "hidden",
+      })}
+    >
+      <div
+        className={css({
+          animation: "scroll 10s linear infinite",
+          transform: "translate3d(0, 0, 0)",
+        })}
+      >
+        <p
+          className={css({
+            display: "flex",
+            width: "max-content",
+            gap: 8,
+          })}
+        >
+          <span>고려대학교 정보대학 40주년</span>
+          <span>Pioneering the Next Intelligence</span>
+          <span>고려대학교 정보대학 40주년</span>
+          <span>Pioneering the Next Intelligence</span>
+          <span>고려대학교 정보대학 40주년</span>
+          <span>Pioneering the Next Intelligence</span>
+          <span>고려대학교 정보대학 40주년</span>
+          <span>Pioneering the Next Intelligence</span>
+          <span>고려대학교 정보대학 40주년</span>
+          <span>Pioneering the Next Intelligence</span>
+          <span>고려대학교 정보대학 40주년</span>
+          <span>Pioneering the Next Intelligence</span>
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -260,6 +285,7 @@ function Section22() {
       <section
         className={css({
           width: "100%",
+          maxWidth: "1200px",
           display: "flex",
           padding: "6rem 0",
           alignItems: "center",
@@ -269,7 +295,55 @@ function Section22() {
         <div
           className={css({
             width: "100%",
-            maxWidth: "1200px",
+
+            height: "30rem",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+
+            borderRadius: "24px",
+            margin: "0 16px",
+            mdDown: {
+              borderRadius: 0,
+              margin: 0,
+            },
+
+            // backgroundColor: "#f2f2f2",
+          })}
+        >
+          <div
+            className={css({
+              padding: "32px",
+              paddingBlock: 0,
+              height: "100%",
+
+              display: "flex",
+              gap: "2rem",
+            })}
+          >
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                gap: "2rem",
+              })}
+            >
+              <div
+                className={css({
+                  fontSize: 32,
+                  fontWeight: 800,
+                })}
+              >
+                <p>정보대학 교우회</p> <p>소식을 확인하세요</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className={css({
+            width: "100%",
+
             height: "30rem",
             position: "relative",
             display: "flex",
@@ -290,11 +364,6 @@ function Section22() {
             className={css({
               padding: "32px",
               height: "100%",
-
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
             })}
           >
             <div
@@ -304,14 +373,65 @@ function Section22() {
                 gap: "2rem",
               })}
             >
-              <p
+              <div
                 className={css({
-                  fontSize: 32,
-                  fontWeight: 800,
+                  fontSize: 28,
+                  fontWeight: 600,
                 })}
               >
-                정보대학 교우회 소식을 확인하세요
-              </p>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                  })}
+                >
+                  <img width="30px" src="/insta-gradient.png" />
+                  <div
+                    className={css({ display: "flex", alignItems: "center" })}
+                  >
+                    <p>인스타그램</p>
+                    <ArrowUpRight
+                      className={css({ alignSelf: "flex-start" })}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className={css({
+            width: "100%",
+            height: "30rem",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+
+            borderRadius: "24px",
+            margin: "0 16px",
+            mdDown: {
+              borderRadius: 0,
+              margin: 0,
+            },
+
+            backgroundColor: "#f2f2f2",
+          })}
+        >
+          <div
+            className={css({
+              padding: "32px",
+              height: "100%",
+            })}
+          >
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                gap: "2rem",
+              })}
+            >
               <div
                 className={css({
                   fontSize: 28,
@@ -329,24 +449,7 @@ function Section22() {
                   <div
                     className={css({ display: "flex", alignItems: "center" })}
                   >
-                    <p>페이스북 바로가기</p>
-                    <ArrowUpRight
-                      className={css({ alignSelf: "flex-start" })}
-                    />
-                  </div>
-                </div>
-                <div
-                  className={css({
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                  })}
-                >
-                  <img width="30px" src="/insta-black.png" />
-                  <div
-                    className={css({ display: "flex", alignItems: "center" })}
-                  >
-                    <p>인스타그램 바로가기</p>
+                    <p>페이스북</p>
                     <ArrowUpRight
                       className={css({ alignSelf: "flex-start" })}
                     />
@@ -361,7 +464,7 @@ function Section22() {
   );
 }
 
-function Section3() {
+function Section4() {
   return (
     <section
       className={css({
@@ -373,19 +476,20 @@ function Section3() {
       <section
         className={css({
           width: "100%",
-          minHeight: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          padding: "6rem 0",
 
           position: "relative",
         })}
       >
         <img
           className={css({
+            width: "100%",
             height: "100%",
             position: "absolute",
-            filter: "brightness(90%)",
+            filter: "brightness(70%)",
             objectFit: "cover",
           })}
           src="/main2.jpg"
@@ -396,112 +500,36 @@ function Section3() {
             maxWidth: "1200px",
             padding: "48px 24px",
             position: "relative",
+            gap: 24,
+
             display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            gap: 8,
+            flexDirection: "column",
+            alignItems: "center",
           })}
         >
           <SimpleReveal
-            duration={1000}
-            initialTransform="translateY(3rem)"
-            render={({ ref, cn, style }) => (
-              <div
-                ref={ref}
-                className={cn(
-                  css({
-                    minWidth: "300px",
-                    flex: 1,
-                  }),
-                )}
-                style={style}
-              >
-                <div
-                  className={css({
-                    backgroundColor: "rgba(247, 247, 247, 0.9)",
-                    border: "1px solid rgba(0, 0, 0, 0.05)",
-                    padding: "32px",
-
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "24px",
-                  })}
-                >
+            render={({ ref, style }) => (
+              <div ref={ref} style={style}>
+                <div>
                   <p
                     className={css({
+                      fontSize: {
+                        base: 48,
+                        lgDown: 36,
+                        mdDown: 24,
+                      },
                       fontWeight: 700,
-                      fontSize: 24,
+                      lineHeight: 1.1,
+                      color: "white",
                     })}
                   >
-                    공지사항
+                    방명록을 남겨주세요
                   </p>
-                  <div
-                    className={css({
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "8px",
-                      color: "#666666",
-                    })}
-                  >
-                    <p>정보대학 40주년 행사 안내</p>
-                    <p>정보대학 40주년 행사 안내</p>
-                    <p>정보대학 40주년 행사 안내</p>
-                    <p>정보대학 40주년 행사 안내</p>
-                  </div>
                 </div>
               </div>
             )}
           />
-          <SimpleReveal
-            duration={1000}
-            initialTransform="translateY(3rem)"
-            render={({ ref, cn, style }) => (
-              <div
-                ref={ref}
-                className={cn(
-                  css({
-                    minWidth: "300px",
-                    flex: 1,
-                  }),
-                )}
-                style={style}
-              >
-                <div
-                  className={css({
-                    backgroundColor: "rgba(247, 247, 247, 0.9)",
-                    border: "1px solid rgba(0, 0, 0, 0.05)",
-                    padding: "32px",
-
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "24px",
-                  })}
-                >
-                  <p
-                    className={css({
-                      fontWeight: 700,
-                      fontSize: 24,
-                    })}
-                  >
-                    교우 게시판
-                  </p>
-                  <div
-                    className={css({
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "8px",
-                      color: "#666666",
-                    })}
-                  >
-                    <p>정보대학 40주년 행사 안내</p>
-                    <p>정보대학 40주년 행사 안내</p>
-                    <p>정보대학 40주년 행사 안내</p>
-                    <p>정보대학 40주년 행사 안내</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          />
+          <CommentSection />
         </div>
       </section>
     </section>
