@@ -13,7 +13,7 @@ const menus = [
   },
   {
     content: "교우 게시판",
-    href: "/board",
+    href: "/comment",
   },
   {
     content: "정보대학 기부",
@@ -85,9 +85,9 @@ function Gnb() {
             fontWeight: "600",
           })}
         >
-          <button>
+          <Link to="/form">
             <p>신청하기</p>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

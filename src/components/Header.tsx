@@ -1,4 +1,6 @@
 import { css } from "@panda/css";
+import { Link } from "react-router-dom";
+
 import kuLogo from "/ku-logo.svg";
 import kuSimpleLogo from "/ku.svg";
 
@@ -20,40 +22,42 @@ function Header() {
           padding: "16px",
         })}
       >
-        <div
-          className={css({
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-          })}
-        >
-          <img
-            className={css({
-              display: "inherit",
-              lg: {
-                display: "none",
-              },
-            })}
-            src={kuSimpleLogo}
-          />
-          <img
-            className={css({
-              display: "none",
-              lg: {
-                display: "inherit",
-              },
-            })}
-            src={kuLogo}
-          />
+        <Link to="/">
           <div
             className={css({
-              fontWeight: "700",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
             })}
           >
-            <p>고려대학교 정보대학 40주년</p>
-            <p>Pioneering the Next Intelligence</p>
+            <img
+              className={css({
+                display: "inherit",
+                lg: {
+                  display: "none",
+                },
+              })}
+              src={kuSimpleLogo}
+            />
+            <img
+              className={css({
+                display: "none",
+                lg: {
+                  display: "inherit",
+                },
+              })}
+              src={kuLogo}
+            />
+            <div
+              className={css({
+                fontWeight: "700",
+              })}
+            >
+              <p>고려대학교 정보대학 40주년</p>
+              <p>Pioneering the Next Intelligence</p>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </header>
   );

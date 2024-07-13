@@ -18,6 +18,10 @@ function Footer() {
 
           display: "flex",
           gap: "24px",
+
+          mdDown: {
+            flexDirection: "column",
+          },
         })}
       >
         <div>
@@ -35,12 +39,21 @@ function Footer() {
             color: "#777777",
           })}
         >
-          {`홈페이지 이용약관 | 개인정보 처리방침
-[02841] 서울특별시 성북구 안암로 145 고려대학교 서울캠퍼스(자연계) 우정정보관 102호
-학부: 02-3290-4132, 4133
-대학원: 02-3290-4137, 4138
-email: cscoi@korea.ac.kr (대표계정/학부)
-email: infograd@korea.ac.kr (대학원)`}
+          <p>홈페이지 이용약관 | 개인정보 처리방침</p>
+          <p>
+            [02841] 서울특별시 성북구 안암로 145 고려대학교 서울캠퍼스(자연계)
+            우정정보관 102호
+          </p>
+          <p>학부: 02-3290-4132, 4133</p>
+          <p>대학원: 02-3290-4137, 4138</p>
+          <p>
+            <a href="mailto:cscoi@korea.ac.kr">cscoi@korea.ac.kr</a>{" "}
+            (대표계정/학부)
+          </p>
+          <p>
+            <a href="mailto:infograd@korea.ac.kr">infograd@korea.ac.kr</a>{" "}
+            (대학원)
+          </p>
         </div>
       </div>
     </footer>

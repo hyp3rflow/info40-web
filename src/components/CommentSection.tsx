@@ -8,7 +8,11 @@ function CommentSection() {
       className={css({
         width: "100%",
         display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr",
+        gridTemplateColumns: {
+          base: "1fr 1fr 1fr",
+          lgDown: "1fr 1fr",
+          mdDown: "1fr",
+        },
         gap: 8,
       })}
     >
