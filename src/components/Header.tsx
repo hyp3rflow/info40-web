@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
 import { Menu } from "lucide-react";
 
-import kuLogo from "/ku-logo.svg";
-import kuSimpleLogo from "/ku.svg";
 import AnniLogo from "/40logo.png";
 import { menuAtom } from "~/atoms/gnb";
 

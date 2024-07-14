@@ -2,7 +2,6 @@ import { css } from "@panda/css";
 import { ArrowUpRight } from "lucide-react";
 import { SimpleReveal } from "simple-reveal";
 
-import Counter from "~/components/Counter";
 import CommentSection from "~/components/CommentSection";
 
 function App() {
@@ -30,7 +29,7 @@ function Section1() {
       <section
         className={css({
           width: "100%",
-          minHeight: "100vh",
+          minHeight: "calc(100vh - 120px)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -243,10 +242,7 @@ function Section2() {
                     })}
                   >
                     <p>40주년 행사 기념을 위해</p>
-                    <p>
-                      <Counter value={40} />
-                      명의 교우님들께서 가입했어요
-                    </p>
+                    <p>40명의 교우님들께서 가입했어요</p>
                   </div>
                 </div>
               )}

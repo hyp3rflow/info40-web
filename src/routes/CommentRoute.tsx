@@ -27,7 +27,7 @@ function CommentRoute() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <p ref={ref} className={cn(css({ fontSize: 32, fontWeight: 800 }))}>
-              정보대학 선후배분들이나 동기분들께 하시고 싶은 말씀을 남겨주세요
+              정보대학 동문분들의 소중한 추억을 남겨주세요
             </p>
           )}
         />
