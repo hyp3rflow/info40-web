@@ -2,6 +2,7 @@ import { css } from "@panda/css";
 import RouteHeader from "~/components/RouteHeader";
 import CommentSection from "~/components/CommentSection";
 import { SimpleReveal } from "simple-reveal";
+import { Link } from "react-router-dom";
 
 function CommentRoute() {
   return (
@@ -32,13 +33,14 @@ function CommentRoute() {
                 css({ fontSize: 32, fontWeight: 800, padding: "24px" }),
               )}
             >
-              정보대학 동문분들의 소중한 추억을 남겨주세요
+              정보대학 동문 여러분의 소중한 추억을 남겨주세요
             </p>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <button
+            <Link
+              to="/write"
               ref={ref}
               className={cn(
                 css({
@@ -53,7 +55,7 @@ function CommentRoute() {
               )}
             >
               방명록 작성하기
-            </button>
+            </Link>
           )}
         />
       </div>

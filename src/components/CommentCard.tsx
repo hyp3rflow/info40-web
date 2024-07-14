@@ -24,6 +24,9 @@ const CommentCard = forwardRef(function ({
           display: "flex",
           flexDirection: "column",
           gap: 4,
+          smDown: {
+            borderRadius: 0,
+          },
         }),
         className,
       )}

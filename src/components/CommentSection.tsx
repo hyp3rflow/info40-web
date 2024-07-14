@@ -14,6 +14,12 @@ function CommentSection() {
           mdDown: "1fr",
         },
         gap: 8,
+        lgDown: {
+          padding: "0 24px",
+        },
+        mdDown: {
+          padding: 0,
+        },
       })}
     >
       <CommentColumn delay={0} />

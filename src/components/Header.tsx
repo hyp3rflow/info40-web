@@ -4,7 +4,7 @@ import { useAtom } from "jotai";
 import { Menu } from "lucide-react";
 
 import AnniLogo from "/40logo.png";
-import { menuAtom } from "~/atoms/gnb";
+import { menuAtom } from "~/atoms";
 
 function Header() {
   const [, setMenu] = useAtom(menuAtom);
@@ -31,7 +31,7 @@ function Header() {
           justifyContent: "space-between",
         })}
       >
-        <Link to="/">
+        <Link to="/" onClick={() => setMenu(false)}>
           <div
             className={css({
               display: "flex",

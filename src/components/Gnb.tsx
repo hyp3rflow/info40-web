@@ -2,7 +2,7 @@ import { css } from "@panda/css";
 import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
 import { ArrowUpRight } from "lucide-react";
-import { menuAtom } from "~/atoms/gnb";
+import { menuAtom } from "~/atoms";
 
 const menus = [
   {
@@ -10,9 +10,13 @@ const menus = [
     href: "/event",
   },
   {
-    content: "공지사항",
-    href: "/notice",
+    content: "정보대학 소개",
+    href: "/history",
   },
+  // {
+  //   content: "공지사항",
+  //   href: "/notice",
+  // },
   {
     content: "교우 게시판",
     href: "/comment",
@@ -24,6 +28,10 @@ const menus = [
   {
     content: "고대교우회",
     href: "https://www.kuaa.or.kr/index.do",
+  },
+  {
+    content: "정보대학",
+    href: "https://info.korea.ac.kr/",
   },
 ];
 
@@ -66,7 +74,7 @@ function Gnb() {
           className={css({
             display: "flex",
             alignItems: "center",
-            gap: "42px",
+            gap: "36px",
             fontWeight: "700",
 
             lgDown: {
