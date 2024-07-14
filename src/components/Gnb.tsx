@@ -49,7 +49,7 @@ function Gnb() {
           width: "100%",
           maxWidth: "1200px",
           color: "white",
-          padding: "16px",
+          padding: "16px 24px",
 
           display: "flex",
           justifyContent: "space-between",

@@ -217,6 +217,7 @@ function Section2() {
                       },
                       fontWeight: 700,
                       lineHeight: 1.1,
+                      textAlign: "center",
                     })}
                   >
                     <p>행사에 참석하여 자리를 빛내주세요</p>
@@ -298,13 +299,11 @@ function Section22() {
               height: "auto",
               paddingBottom: "2rem",
             },
-
-            // backgroundColor: "#f2f2f2",
           })}
         >
           <div
             className={css({
-              padding: "32px",
+              padding: "24px",
               paddingBlock: 0,
               height: "100%",
 
@@ -321,7 +320,11 @@ function Section22() {
             >
               <div
                 className={css({
-                  fontSize: 32,
+                  fontSize: {
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
+                  },
                   fontWeight: 800,
                 })}
               >

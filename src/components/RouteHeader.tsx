@@ -36,13 +36,13 @@ function RouteHeader({ title }: RouteHeaderProps) {
                 position: "relative",
                 width: "100%",
                 maxWidth: "1200px",
-                padding: "48px 16px",
+                padding: "24px",
                 display: "flex",
 
                 fontSize: {
                   base: 42,
-                  lgDown: 32,
-                  mdDown: 24,
+                  lgDown: 38,
+                  mdDown: 32,
                 },
                 fontWeight: 800,
 

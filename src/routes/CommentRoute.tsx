@@ -38,7 +38,7 @@ function CommentRoute() {
               className={cn(
                 css({
                   width: "fit-content",
-                  padding: "16px 24px",
+                  padding: "24px 24px",
                   borderRadius: 16,
                   fontSize: 18,
                   fontWeight: 600,

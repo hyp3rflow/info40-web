@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 
 import kuLogo from "/ku-logo.svg";
 import kuSimpleLogo from "/ku.svg";
+import AnniLogo from "/40logo.png";
 import { menuAtom } from "~/atoms/gnb";
 
 function Header() {
@@ -13,6 +14,9 @@ function Header() {
     <header
       className={css({
         display: "flex",
+        height: "70px",
+
+        alignItems: "center",
         justifyContent: "center",
         backgroundColor: "rgba(255, 255, 255, 0.8)",
         borderBottom: "1px solid #e9ecef",
@@ -23,7 +27,7 @@ function Header() {
         className={css({
           width: "100%",
           maxWidth: "1200px",
-          padding: "16px",
+          padding: "16px 24px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -39,26 +43,15 @@ function Header() {
           >
             <img
               className={css({
-                display: "inherit",
-                lg: {
-                  display: "none",
-                },
+                height: "40px",
               })}
-              src={kuSimpleLogo}
-            />
-            <img
-              className={css({
-                display: "none",
-                lg: {
-                  display: "inherit",
-                },
-              })}
-              src={kuLogo}
+              src={AnniLogo}
             />
             <div
               className={css({
-                fontWeight: "700",
+                fontWeight: "500",
                 fontSize: {
+                  base: 18,
                   mdDown: 14,
                 },
               })}
