@@ -1,4 +1,5 @@
 import { css } from "@panda/css";
+import { SimpleReveal } from "simple-reveal";
 
 interface RouteHeaderProps {
   title: string;
@@ -26,26 +27,33 @@ function RouteHeader({ title }: RouteHeaderProps) {
           filter: "brightness(80%)",
         })}
       />
-      <p
-        className={css({
-          position: "relative",
-          width: "100%",
-          maxWidth: "1200px",
-          padding: "48px 16px",
-          display: "flex",
+      <SimpleReveal
+        render={({ ref, cn }) => (
+          <p
+            ref={ref}
+            className={cn(
+              css({
+                position: "relative",
+                width: "100%",
+                maxWidth: "1200px",
+                padding: "48px 16px",
+                display: "flex",
 
-          fontSize: {
-            base: 42,
-            lgDown: 32,
-            mdDown: 24,
-          },
-          fontWeight: 800,
+                fontSize: {
+                  base: 42,
+                  lgDown: 32,
+                  mdDown: 24,
+                },
+                fontWeight: 800,
 
-          color: "white",
-        })}
-      >
-        {title}
-      </p>
+                color: "white",
+              }),
+            )}
+          >
+            {title}
+          </p>
+        )}
+      />
     </div>
   );
 }

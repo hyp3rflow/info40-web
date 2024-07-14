@@ -16,14 +16,18 @@ function CommentSection() {
         gap: 8,
       })}
     >
-      <CommentColumn />
-      <CommentColumn />
-      <CommentColumn />
+      <CommentColumn delay={0} />
+      <CommentColumn delay={200} />
+      <CommentColumn delay={400} />
     </div>
   );
 }
 
-function CommentColumn() {
+interface CommentColumnProps {
+  delay: number;
+}
+
+function CommentColumn({ delay }: CommentColumnProps) {
   return (
     <div
       className={css({
@@ -36,7 +40,7 @@ function CommentColumn() {
       {[...Array(5)].map((_, idx) => (
         <SimpleReveal
           key={idx}
-          delay={idx * 500}
+          delay={delay + idx * 300}
           render={({ ref, cn, style }) => (
             <div ref={ref} className={cn()} style={style}>
               <CommentCard author="유승은">

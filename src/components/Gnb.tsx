@@ -1,6 +1,8 @@
 import { css } from "@panda/css";
 import { Link } from "react-router-dom";
+import { useAtom } from "jotai";
 import { ArrowUpRight } from "lucide-react";
+import { menuAtom } from "~/atoms/gnb";
 
 const menus = [
   {
@@ -26,12 +28,20 @@ const menus = [
 ];
 
 function Gnb() {
+  const [menu, setMenu] = useAtom(menuAtom);
   return (
     <div
+      data-state={menu}
       className={css({
         display: "flex",
+
         justifyContent: "center",
         backgroundColor: "#8B0029",
+
+        lgDown: {
+          display: "none",
+          "&[data-state=true]": { display: "flex" },
+        },
       })}
     >
       <div
@@ -41,11 +51,14 @@ function Gnb() {
           color: "white",
           padding: "16px",
 
-          display: "none",
+          display: "flex",
           justifyContent: "space-between",
 
-          lg: {
-            display: "flex",
+          lgDown: {
+            flexDirection: "column",
+            minHeight: "calc(100vh - 70px)",
+            justifyContent: "initial",
+            gap: "24px",
           },
         })}
       >
@@ -54,15 +67,32 @@ function Gnb() {
             display: "flex",
             alignItems: "center",
             gap: "42px",
-
             fontWeight: "700",
+
+            lgDown: {
+              gap: "24px",
+              fontSize: "24px",
+              alignItems: "flex-start",
+              flexDirection: "column",
+            },
           })}
         >
           {menus.map(({ content, href }) => {
             return (
-              <Link to={href}>
+              <Link
+                className={css({
+                  lgDown: {
+                    width: "100%",
+                  },
+                })}
+                to={href}
+                onClick={() => setMenu(false)}
+              >
                 <div
-                  className={css({ display: "flex", alignItems: "flex-start" })}
+                  className={css({
+                    display: "flex",
+                    alignItems: "flex-start",
+                  })}
                 >
                   <p>{content}</p>
                   {!href.startsWith("/") && (
@@ -83,6 +113,9 @@ function Gnb() {
             alignItems: "center",
             gap: "42px",
             fontWeight: "600",
+            lgDown: {
+              fontSize: "24px",
+            },
           })}
         >
           <Link to="/form">

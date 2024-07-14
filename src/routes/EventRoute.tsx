@@ -12,7 +12,7 @@ function EventRoute() {
         gap: 16,
       })}
     >
-      <RouteHeader title="교우 게시판" />
+      <RouteHeader title="행사 소개" />
     </section>
   );
 }
