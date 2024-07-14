@@ -118,8 +118,8 @@ function Gnb() {
             },
           })}
         >
-          <Link to="/form">
-            <p>신청하기</p>
+          <Link to="/form" onClick={() => setMenu(false)}>
+            <p>등록하기</p>
           </Link>
         </div>
       </div>

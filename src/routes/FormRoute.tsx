@@ -12,7 +12,7 @@ function FormRoute() {
         gap: 16,
       })}
     >
-      <RouteHeader title="교우 게시판" />
+      <RouteHeader title="등록하기" />
     </section>
   );
 }
