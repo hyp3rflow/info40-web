@@ -72,7 +72,7 @@ function Section1() {
             filter: "brightness(90%)",
             objectFit: "cover",
           })}
-          src="/main.jpg"
+          src="/main-compressed.jpg"
         />
         <div
           className={css({
@@ -204,7 +204,7 @@ function Section2() {
               filter: "brightness(70%)",
               objectFit: "cover",
             })}
-            src="/main.jpg"
+            src="/main-compressed.jpg"
           />
           <div
             className={css({
@@ -492,7 +492,7 @@ function Section4() {
             filter: "brightness(70%)",
             objectFit: "cover",
           })}
-          src="/main2.jpg"
+          src="/main2-compressed.jpg"
         />
         <div
           className={css({
