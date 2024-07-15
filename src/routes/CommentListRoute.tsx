@@ -33,7 +33,7 @@ function CommentRoute() {
                 css({ fontSize: 32, fontWeight: 800, padding: "24px" }),
               )}
             >
-              정보대학 동문 여러분의 소중한 추억을 남겨주세요
+              정보대학 교우 여러분의 소중한 추억을 남겨주세요
             </p>
           )}
         />

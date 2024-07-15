@@ -50,7 +50,7 @@ function CommentColumn({ delay }: CommentColumnProps) {
           render={({ ref, cn, style }) => (
             <div ref={ref} className={cn()} style={style}>
               <CommentCard author="유승은">
-                정보대학 40주년 행사 너무 기대됩니다. 많은 동문분들을 뵐 수
+                정보대학 40주년 행사 너무 기대됩니다. 많은 교우분들을 뵐 수
                 있었으면 좋겠어요!
               </CommentCard>
             </div>
