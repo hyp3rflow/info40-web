@@ -87,9 +87,9 @@ function Section1() {
                   fontWeight: "600",
                   lineHeight: 1.5,
                   fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
                   },
                 }),
               )}
@@ -153,9 +153,9 @@ function Section10() {
                 css({
                   fontWeight: "700",
                   fontSize: {
-                    base: 36,
-                    lgDown: 32,
-                    mdDown: 28,
+                    base: 42,
+                    lgDown: 38,
+                    mdDown: 32,
                   },
                 }),
               )}
@@ -175,9 +175,9 @@ function Section10() {
                   fontWeight: "600",
                   lineHeight: 1.5,
                   fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
                   },
                   display: "flex",
                   flexDirection: "column",
@@ -198,9 +198,9 @@ function Section10() {
                 css({
                   fontWeight: "700",
                   fontSize: {
-                    base: 36,
-                    lgDown: 32,
-                    mdDown: 28,
+                    base: 42,
+                    lgDown: 38,
+                    mdDown: 32,
                   },
                 }),
               )}
@@ -220,9 +220,9 @@ function Section10() {
                   fontWeight: "600",
                   lineHeight: 1.5,
                   fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
                   },
                   display: "flex",
                   flexDirection: "column",
@@ -287,9 +287,9 @@ function Section11() {
                 css({
                   fontWeight: "700",
                   fontSize: {
-                    base: 36,
-                    lgDown: 32,
-                    mdDown: 28,
+                    base: 42,
+                    lgDown: 38,
+                    mdDown: 32,
                   },
                 }),
               )}
@@ -310,9 +310,9 @@ function Section11() {
                   fontWeight: "600",
                   lineHeight: 1.5,
                   fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
                   },
                   display: "flex",
                   flexDirection: "column",
@@ -345,9 +345,9 @@ function Section11() {
                 css({
                   fontWeight: "700",
                   fontSize: {
-                    base: 36,
-                    lgDown: 32,
-                    mdDown: 28,
+                    base: 42,
+                    lgDown: 38,
+                    mdDown: 32,
                   },
                 }),
               )}
@@ -367,9 +367,9 @@ function Section11() {
                   fontWeight: "600",
                   lineHeight: 1.5,
                   fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
                   },
                   display: "flex",
                   flexDirection: "column",
@@ -391,9 +391,9 @@ function Section11() {
                 css({
                   fontWeight: "700",
                   fontSize: {
-                    base: 36,
-                    lgDown: 32,
-                    mdDown: 28,
+                    base: 42,
+                    lgDown: 38,
+                    mdDown: 32,
                   },
                 }),
               )}
@@ -413,9 +413,9 @@ function Section11() {
                   fontWeight: "600",
                   lineHeight: 1.5,
                   fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
                   },
                   display: "flex",
                   flexDirection: "column",
@@ -604,9 +604,9 @@ function Section13() {
                   fontWeight: "600",
                   lineHeight: 1.5,
                   fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
+                    base: 32,
+                    lgDown: 28,
+                    mdDown: 24,
                   },
                   display: "flex",
                   flexDirection: "column",
