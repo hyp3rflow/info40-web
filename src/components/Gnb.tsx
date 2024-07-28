@@ -13,21 +13,13 @@ const menus = [
     content: "정보대학 소개",
     href: "/history",
   },
-  // {
-  //   content: "공지사항",
-  //   href: "/notice",
-  // },
   {
     content: "교우 게시판",
     href: "/comment",
   },
   {
     content: "정보대학 기부",
-    href: "https://give.korea.ac.kr/front/give/actKupGive.do",
-  },
-  {
-    content: "고대교우회",
-    href: "https://www.kuaa.or.kr/index.do",
+    href: "/donate",
   },
   {
     content: "정보대학",
@@ -127,7 +119,7 @@ function Gnb() {
           })}
         >
           <Link to="/form" onClick={() => setMenu(false)}>
-            <p>등록하기</p>
+            <p>교우회 등록하기</p>
           </Link>
         </div>
       </div>

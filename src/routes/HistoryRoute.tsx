@@ -28,6 +28,8 @@ function HistoryRoute() {
     <div>
       <RouteHeader title="정보대학 소개" />
       <Section1 />
+      <Section10 />
+      <Section11 />
       <Section12 />
       <Section13 />
       {/* <Section2 />
@@ -101,6 +103,333 @@ function Section1() {
               분야의 특성화를 통하여 고려대학교 뿐만 아니라 우리나라 이공계를
               대표하는 대학으로 육성될 것입니다.
             </p>
+          )}
+        />
+      </div>
+    </section>
+  );
+}
+
+function Section10() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <div
+        className={css({
+          width: "100%",
+          maxWidth: "1200px",
+          display: "flex",
+          flexDirection: "column",
+          padding: "6rem 24px",
+          gap: 8,
+        })}
+      >
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <h1
+              ref={ref}
+              className={cn(
+                css({
+                  fontWeight: "700",
+                  fontSize: {
+                    base: 48,
+                    lgDown: 42,
+                    mdDown: 36,
+                  },
+                }),
+              )}
+            >
+              Vision: Global Top 50 program by 2030
+            </h1>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <h2
+              ref={ref}
+              className={cn(
+                css({
+                  fontWeight: "700",
+                  fontSize: {
+                    base: 36,
+                    lgDown: 32,
+                    mdDown: 28,
+                  },
+                }),
+              )}
+            >
+              Computing and AI
+            </h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  fontWeight: "600",
+                  lineHeight: 1.5,
+                  fontSize: {
+                    base: 26,
+                    lgDown: 24,
+                    mdDown: 22,
+                  },
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                }),
+              )}
+            >
+              <p>미래에 살아남기 위한 필수 기술을 넘어</p>
+              <p>모든 영역에서의 차별적 가치 창출의 원천</p>
+            </div>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <h2
+              ref={ref}
+              className={cn(
+                css({
+                  fontWeight: "700",
+                  fontSize: {
+                    base: 36,
+                    lgDown: 32,
+                    mdDown: 28,
+                  },
+                }),
+              )}
+            >
+              Empowerment
+            </h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  fontWeight: "600",
+                  lineHeight: 1.5,
+                  fontSize: {
+                    base: 26,
+                    lgDown: 24,
+                    mdDown: 22,
+                  },
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                }),
+              )}
+            >
+              <p>Logical, Analytic, Info-centric한 인재</p>
+              <p>한 없는 창의력과 융합을 통한 새 분야 개척</p>
+              <p>Global한 국가 경쟁력 제고</p>
+            </div>
+          )}
+        />
+      </div>
+    </section>
+  );
+}
+
+function Section11() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <div
+        className={css({
+          width: "100%",
+          maxWidth: "1200px",
+          display: "flex",
+          flexDirection: "column",
+          padding: "6rem 24px",
+          gap: 8,
+        })}
+      >
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <h1
+              ref={ref}
+              className={cn(
+                css({
+                  fontWeight: "700",
+                  fontSize: {
+                    base: 48,
+                    lgDown: 42,
+                    mdDown: 36,
+                  },
+                }),
+              )}
+            >
+              Mission: Empowerment for All
+            </h1>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <h2
+              ref={ref}
+              className={cn(
+                css({
+                  fontWeight: "700",
+                  fontSize: {
+                    base: 36,
+                    lgDown: 32,
+                    mdDown: 28,
+                  },
+                }),
+              )}
+            >
+              현장 중심 교육와 융합 프로그램 확대로 소프트웨어 전문 인재를
+              육성합니다
+            </h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  fontWeight: "600",
+                  lineHeight: 1.5,
+                  fontSize: {
+                    base: 26,
+                    lgDown: 24,
+                    mdDown: 22,
+                  },
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                }),
+              )}
+            >
+              <p>현장 중심 교육 및 산업체 협력 강화</p>
+              <p>융합 프로그램 확대 - 융합 전공, 마이크로 디그리</p>
+              <div>
+                <p>유연한 맞춤형 교육 프로그램</p>
+                <div
+                  className={css({
+                    marginLeft: 8,
+                  })}
+                >
+                  <p>필수 이수과목 최소화</p>
+                  <p>선 실습 - 후 이론</p>
+                </div>
+              </div>
+            </div>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <h2
+              ref={ref}
+              className={cn(
+                css({
+                  fontWeight: "700",
+                  fontSize: {
+                    base: 36,
+                    lgDown: 32,
+                    mdDown: 28,
+                  },
+                }),
+              )}
+            >
+              연구
+            </h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  fontWeight: "600",
+                  lineHeight: 1.5,
+                  fontSize: {
+                    base: 26,
+                    lgDown: 24,
+                    mdDown: 22,
+                  },
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                }),
+              )}
+            >
+              <p>도전적 / 개척적 연구</p>
+              <p>학제 / 융합적 연구</p>
+              <p>유연한 평가 및 인센티브 제도</p>
+            </div>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <h2
+              ref={ref}
+              className={cn(
+                css({
+                  fontWeight: "700",
+                  fontSize: {
+                    base: 36,
+                    lgDown: 32,
+                    mdDown: 28,
+                  },
+                }),
+              )}
+            >
+              학생
+            </h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  fontWeight: "600",
+                  lineHeight: 1.5,
+                  fontSize: {
+                    base: 26,
+                    lgDown: 24,
+                    mdDown: 22,
+                  },
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                }),
+              )}
+            >
+              <p>학생 생활 개선</p>
+              <p>고려대 정보대 교우회 활성화</p>
+              <p>특수대학원 - 평생 교육 / 재교육</p>
+              <p>국제화</p>
+            </div>
           )}
         />
       </div>

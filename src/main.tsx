@@ -14,6 +14,7 @@ import HistoryRoute from "./routes/HistoryRoute";
 import CommentRoute from "./routes/CommentRoute";
 import CommentListRoute from "./routes/CommentListRoute";
 import WriteRoute from "./routes/WriteRoute";
+import DonationRoute from "./routes/DonationRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/history",
         element: <HistoryRoute />,
+      },
+      {
+        path: "/donate",
+        element: <DonationRoute />,
       },
       // {
       //   path: "/notice",
