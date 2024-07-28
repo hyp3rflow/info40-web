@@ -32,9 +32,6 @@ function HistoryRoute() {
       <Section11 />
       <Section12 />
       <Section13 />
-      {/* <Section2 />
-      <Section4 /> */}
-      {/* <Section3 /> */}
       <Section22 />
     </div>
   );
@@ -327,14 +324,15 @@ function Section11() {
               <p>융합 프로그램 확대 - 융합 전공, 마이크로 디그리</p>
               <div>
                 <p>유연한 맞춤형 교육 프로그램</p>
-                <div
+                <ul
                   className={css({
-                    marginLeft: 8,
+                    listStyle: "disc inside",
+                    marginLeft: "4px",
                   })}
                 >
-                  <p>필수 이수과목 최소화</p>
-                  <p>선 실습 - 후 이론</p>
-                </div>
+                  <li>필수 이수과목 최소화</li>
+                  <li>선 실습 - 후 이론</li>
+                </ul>
               </div>
             </div>
           )}

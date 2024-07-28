@@ -6,8 +6,49 @@ function EventRoute() {
   return (
     <div>
       <RouteHeader title="정보대학 40주년 기념 행사 소개" />
+      <EventLogo />
       <Section1 />
     </div>
+  );
+}
+
+function EventLogo() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <div
+        className={css({
+          width: "100%",
+          maxWidth: "1200px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "6rem 24px",
+          gap: 8,
+          flexWrap: "wrap",
+        })}
+      >
+        <img src="/40logo.png" width="150px" />
+        <div
+          className={css({
+            fontWeight: 500,
+            fontSize: {
+              base: 42,
+              lgDown: 36,
+              mdDown: 22,
+            },
+          })}
+        >
+          <p>고려대학교 정보대학 설립 40주년</p>
+          <p>Pioneering the Next Intelligence</p>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -133,18 +174,33 @@ function Section1() {
                 }),
               )}
             >
-              <p>4:00: 기념 식수세미나 (우정정보관 앞 정원)</p>
-              <p>4:30 ~ 5:30: 기념 세미나 (하나스퀘어)</p>
-              <div>
-                <p>6:00 ~ 7:00: 기념 행사 (하나스퀘어)</p>
+              <div
+                className={css({
+                  display: "grid",
+                  gridTemplateColumns: "auto 1fr",
+                  gap: 4,
+                  "& > aside": {
+                    textAlign: "right",
+                  },
+                })}
+              >
+                <aside>4:00</aside>
+                <p>기념 식수세미나 (우정정보관 앞 정원)</p>
+                <aside>4:30 ~ 5:30</aside>
+                <p>기념 세미나 (하나스퀘어)</p>
+                <aside>6:00 ~ 7:00</aside>
                 <div>
-                  <p>총장 축사</p>
-                  <p>정보대 연혁 보고 및 발전 방향 발표</p>
-                  <p>감사패/공로패 시상</p>
-                  <p>여흥의 시간</p>
+                  <p>기념 행사 (하나스퀘어)</p>
+                  <div>
+                    <p>총장 축사</p>
+                    <p>정보대 연혁 보고 및 발전 방향 발표</p>
+                    <p>감사패/공로패 시상</p>
+                    <p>여흥의 시간</p>
+                  </div>
                 </div>
+                <aside>7:00 ~</aside>
+                <p>Standing buffet</p>
               </div>
-              <p>7:00: Standing buffet</p>
             </div>
           )}
         />

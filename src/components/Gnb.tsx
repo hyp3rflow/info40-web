@@ -21,10 +21,6 @@ const menus = [
     content: "정보대학 기부",
     href: "/donate",
   },
-  {
-    content: "정보대학",
-    href: "https://info.korea.ac.kr/",
-  },
 ];
 
 function Gnb() {
