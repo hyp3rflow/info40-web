@@ -10,16 +10,16 @@ const menus = [
     href: "/event",
   },
   {
-    content: "정보대학 소개",
+    content: "정보대학 현황 및 발전 방향",
     href: "/history",
-  },
-  {
-    content: "교우 게시판",
-    href: "/comment",
   },
   {
     content: "정보대학 기부",
     href: "/donate",
+  },
+  {
+    content: "교우 게시판",
+    href: "/comment",
   },
 ];
 

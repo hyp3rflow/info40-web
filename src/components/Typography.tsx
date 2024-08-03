@@ -88,5 +88,24 @@ const p = React.forwardRef<HTMLParagraphElement, TypographyProps>(
     );
   },
 );
+const figcaption = React.forwardRef<
+  HTMLElement,
+  React.ComponentPropsWithoutRef<"figcaption">
+>((props, ref) => {
+  return (
+    <figcaption
+      {...props}
+      ref={ref}
+      className={cx(
+        css({
+          fontWeight: "600",
+          lineHeight: 1.5,
+          fontSize: { base: 22, lgDown: 18, mdDown: 16 },
+        }),
+        props.className,
+      )}
+    />
+  );
+});
 
-export default { h1, h2, h3, p };
+export default { h1, h2, h3, p, figcaption };

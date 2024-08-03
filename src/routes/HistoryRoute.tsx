@@ -6,33 +6,85 @@ import Typography from "~/components/Typography";
 import RouteHeader from "~/components/RouteHeader";
 
 const histories = [
-  "1983년 9월 이과대학 전산과학과 신설",
-  "1991년 10월 공과대학 전파공학과 신설",
-  "1995년 10월 사범대학 컴퓨터교육학과 신설",
-  "1995년 10월 컴퓨터과학기술대학원 신설",
-  "2001년 8월 정보통신대학 신설",
-  "2006년 3월 컴퓨터과학기술대학원 → 컴퓨터정보통신대학원 대학원 명칭 변경",
-  "2009년 9월 대학원 뇌공학과 신설",
-  "2011년 11월 우정정보관 완공 및 입주",
-  "2014년 3월 정보대학 신설 및 정보대학 학사지원부 신설",
-  "2015년 9월 대학원 컴퓨터학과 신설",
-  "2019년 9월 대학원 인공지능학과 박사과정 신설",
-  "2021년 3월 대학원 인공지능학과 석사과정 신설",
-  "2021년 3월 학부 데이터과학과 신설",
-  "2024년 3월 컴퓨터정보통신대학원 → SW·AI융합대학원 명칭 변경",
-  "2025년 3월 학부 인공지능학과 신설",
-  "2025년 3월 정운오 IT 교양관 입주",
+  {
+    date: "1983년 9월",
+    description: "이과대학 전산과학과 신설",
+  },
+  {
+    date: "1991년 10월",
+    description: "공과대학 전파공학과 신설",
+  },
+  {
+    date: "1995년 10월",
+    description: "사범대학 컴퓨터교육학과 신설",
+  },
+  {
+    date: "1995년 10월",
+    description: "컴퓨터과학기술대학원 신설",
+  },
+  {
+    date: "2001년 8월",
+    description: "정보통신대학 신설",
+  },
+  {
+    date: "2006년 3월",
+    description: "컴퓨터과학기술대학원 → 컴퓨터정보통신대학원 대학원 명칭 변경",
+  },
+  {
+    date: "2009년 9월",
+    description: "대학원 뇌공학과 신설",
+  },
+  {
+    date: "2011년 11월",
+    description: "우정정보관 완공 및 입주",
+  },
+  {
+    date: "2014년 3월",
+    description: "정보대학 신설 및 정보대학 학사지원부 신설",
+    image: {
+      src: "infouniv.jpeg",
+      caption: "정보대학 출범 기념 식수 행사",
+    },
+  },
+  {
+    date: "2015년 9월",
+    description: "대학원 컴퓨터학과 신설",
+  },
+  {
+    date: "2019년 9월",
+    description: "대학원 인공지능학과 박사과정 신설",
+  },
+  {
+    date: "2021년 3월",
+    description: "대학원 인공지능학과 석사과정 신설",
+  },
+  {
+    date: "2021년 3월",
+    description: "학부 데이터과학과 신설",
+  },
+  {
+    date: "2024년 3월",
+    description: "컴퓨터정보통신대학원 → SW·AI융합대학원 명칭 변경",
+  },
+  {
+    date: "2025년 3월",
+    description: "학부 인공지능학과 신설",
+  },
+  {
+    date: "2025년 3월",
+    description: "정운오 IT 교양관 입주",
+  },
 ];
 
 function HistoryRoute() {
   return (
     <div>
-      <RouteHeader title="정보대학 소개" />
+      <RouteHeader title="정보대학 현황 및 발전 방향" />
       <Section1 />
+      <Section13 />
+      <Section12 />
       <Section10 />
       <Section11 />
-      <Section12 />
-      <Section13 />
       <Section22 />
     </div>
   );
@@ -337,7 +389,7 @@ function Section12() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              다양한 사업을 통해 교육과 연구를 지원합니다
+              TODO: 현재 정보대학 통계
             </Typography.h1>
           )}
         />
@@ -410,8 +462,7 @@ function Section13() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              SW 분야의 특성화를 통하여 우리나라 이공계를 대표하는 대학으로
-              육성될 것입니다
+              정보대학 연혁
             </Typography.h1>
           )}
         />
@@ -421,19 +472,67 @@ function Section13() {
             <div
               ref={ref}
               style={style}
-              className={cn(
-                css({
+              className={cn(css({ display: "flex" }))}
+            >
+              <div
+                className={css({
+                  width: "10px",
+                  height: "100%",
+                  backgroundColor: "#e6e6e6",
+                  marginLeft: 4,
+                  marginRight: 8,
+                  borderRadius: "999px",
+                  flexShrink: 0,
+                })}
+              />
+              <div
+                className={css({
                   display: "flex",
                   flexDirection: "column",
                   gap: 4,
-                }),
-              )}
-            >
-              {histories.map((history) => (
-                <div key={history}>
-                  <Typography.h3>{history}</Typography.h3>
-                </div>
-              ))}
+                })}
+              >
+                {histories.map(({ date, description, image }, idx) => (
+                  <div
+                    key={idx}
+                    className={css({
+                      position: "relative",
+                      _before: {
+                        width: "26px",
+                        height: "26px",
+                        content: "''",
+                        backgroundColor: "#d9d9d9",
+                        borderRadius: "999px",
+                        top: 2,
+                        left: "-50px",
+                        position: "absolute",
+                      },
+                    })}
+                  >
+                    <Typography.p>{date}</Typography.p>
+                    <Typography.h3>{description}</Typography.h3>
+                    {image && (
+                      <figure
+                        className={css({
+                          paddingY: 4,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 2,
+                        })}
+                      >
+                        <img
+                          src={image.src}
+                          alt={image.caption}
+                          className={css({ borderRadius: 12 })}
+                        />
+                        <Typography.figcaption>
+                          {image.caption}
+                        </Typography.figcaption>
+                      </figure>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         />

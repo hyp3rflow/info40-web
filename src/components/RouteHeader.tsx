@@ -17,14 +17,14 @@ function RouteHeader({ title }: RouteHeaderProps) {
       })}
     >
       <img
-        src="/main-compressed.jpg"
+        src="/informatics.jpeg"
         className={css({
           width: "100%",
           height: "20rem",
           objectFit: "cover",
 
           position: "absolute",
-          filter: "brightness(80%)",
+          filter: "brightness(70%)",
         })}
       />
       <SimpleReveal

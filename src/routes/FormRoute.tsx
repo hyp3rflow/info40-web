@@ -214,7 +214,7 @@ function DirectForm() {
       </div>
       <div>
         <p className={css({ fontSize: 18, fontWeight: 600 })}>
-          참가 신청은 관리자의 확인 후 완료됩니다.
+          고려대학교 교우회 등록은 행사 이후 일괄적으로 진행될 예정입니다.
         </p>
       </div>
       <button

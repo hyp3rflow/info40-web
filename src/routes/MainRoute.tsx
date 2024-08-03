@@ -1,5 +1,6 @@
 import { css } from "@panda/css";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 
 import CommentSection from "~/components/CommentSection";
@@ -42,10 +43,10 @@ function Section1() {
             width: "100%",
             height: "100%",
             position: "absolute",
-            filter: "brightness(90%)",
+            filter: "brightness(80%)",
             objectFit: "cover",
           })}
-          src="/main-compressed.jpg"
+          src="/informatics.jpeg"
         />
         <div
           className={css({
@@ -219,7 +220,7 @@ function Section2() {
                       textAlign: "center",
                     })}
                   >
-                    <p>행사에 참석하여 자리를 빛내주세요</p>
+                    <p>정보대학 교우회에 등록해주세요</p>
                   </div>
                 </div>
               )}
@@ -242,9 +243,33 @@ function Section2() {
                     })}
                   >
                     <p>40주년 행사 기념을 위해</p>
-                    <p>40명의 교우님들께서 가입했어요</p>
+                    <p>40명의 교우님들께서 등록했습니다</p>
                   </div>
                 </div>
+              )}
+            />
+            <SimpleReveal
+              delay={500}
+              duration={1000}
+              render={({ ref, cn, style }) => (
+                <Link
+                  ref={ref}
+                  to="/form"
+                  style={style}
+                  className={cn(
+                    css({
+                      width: "fit-content",
+                      padding: "24px 24px",
+                      borderRadius: 16,
+                      fontSize: 18,
+                      fontWeight: 600,
+                      backgroundColor: "#8B0029",
+                      color: "white",
+                    }),
+                  )}
+                >
+                  등록하기
+                </Link>
               )}
             />
           </div>
