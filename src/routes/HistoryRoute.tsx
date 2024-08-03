@@ -402,35 +402,152 @@ function Section12() {
               className={cn(
                 css({
                   display: "flex",
-                  flexDirection: "column",
+                  flexWrap: "wrap",
                   gap: 8,
                 }),
               )}
             >
-              <div>
-                <Typography.h3>SW중심대학 사업</Typography.h3>
-                <Typography.p>
-                  <p>2015. 10. 01. ~ 2021. 02. 28. (5년 5개월)</p>
-                  <p>2023. 05. 01. ~ 2028. 12. 31. (5년 8개월)</p>
-                </Typography.p>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>명예교수</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>400</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
               </div>
-              <div>
-                <Typography.h3>인공지능대학원지원사업</Typography.h3>
-                <Typography.p>
-                  2019.04.01.~ 2028.12.31. (9년 9개월)
-                </Typography.p>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>전임교수</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>400</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
               </div>
-              <div>
-                <Typography.h3>ICT명품인재</Typography.h3>{" "}
-                <Typography.p>2020.07.01.~2029.12.31. (9년 6개월)</Typography.p>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>컴퓨터학과</Typography.h2>
+                <Typography.h3>학부 재학생</Typography.h3>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>400</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
               </div>
-              <div>
-                <Typography.h3>4단계 BK21 컴퓨터학교육연구단</Typography.h3>
-                <Typography.p>2020.09.01.~2027.08.31. (7년)</Typography.p>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>컴퓨터학과</Typography.h2>
+                <Typography.h3>대학원 재학생</Typography.h3>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>400</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
               </div>
-              <div>
-                <Typography.h3>4단계 BK21 인공지능학교육연구단</Typography.h3>
-                <Typography.p>2020.09.01.~2027.08.31. (7년)</Typography.p>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>데이터과학과</Typography.h2>
+                <Typography.h3>학부 재학생</Typography.h3>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>400</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>인공지능학과</Typography.h2>
+                <Typography.h3>대학원 재학생</Typography.h3>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>400</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
               </div>
             </div>
           )}
