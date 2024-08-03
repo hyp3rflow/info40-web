@@ -14,11 +14,15 @@ const menus = [
     href: "/history",
   },
   {
-    content: "정보대학 기부",
+    content: "정보대학 기부 Challenge",
     href: "/donate",
   },
   {
     content: "교우 게시판",
+    href: "/comment",
+  },
+  {
+    content: "추억 갤러리",
     href: "/comment",
   },
 ];

@@ -115,7 +115,7 @@ function Section1() {
         })}
       >
         <SimpleReveal
-          delay={300}
+          delay={700}
           render={({ ref, cn, style }) => (
             <div
               ref={ref}
@@ -145,13 +145,16 @@ function Section1() {
                 </Typography.p>
               </div>
               <figure className={css({ flex: 3, minWidth: "200px" })}>
-                <img src="infodonate-1.jpeg" />
+                <img
+                  src="infodonate-1.jpeg"
+                  className={css({ borderRadius: 12 })}
+                />
               </figure>
             </div>
           )}
         />
         <SimpleReveal
-          delay={300}
+          delay={700}
           render={({ ref, cn, style }) => (
             <div
               ref={ref}
@@ -159,7 +162,10 @@ function Section1() {
               className={cn(css({ display: "flex", gap: 6, flexWrap: "wrap" }))}
             >
               <figure className={css({ flex: 3, minWidth: "200px" })}>
-                <img src="infodonate-2.jpeg" />
+                <img
+                  src="infodonate-2.jpeg"
+                  className={css({ borderRadius: 12 })}
+                />
               </figure>
               <div
                 className={css({
