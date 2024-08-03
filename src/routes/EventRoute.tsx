@@ -1,6 +1,7 @@
 import { css } from "@panda/css";
 import { SimpleReveal } from "simple-reveal";
 import RouteHeader from "~/components/RouteHeader";
+import Typography from "~/components/Typography";
 
 function EventRoute() {
   return (
@@ -8,6 +9,7 @@ function EventRoute() {
       <RouteHeader title="정보대학 40주년 기념 행사 소개" />
       <EventLogo />
       <Section1 />
+      <Section2 />
     </div>
   );
 }
@@ -73,40 +75,16 @@ function Section1() {
       >
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h1
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 48,
-                    lgDown: 42,
-                    mdDown: 36,
-                  },
-                }),
-              )}
-            >
+            <Typography.h1 ref={ref} className={cn()}>
               정보대학 40주년 기념 행사에 교우 여러분을 초청합니다
-            </h1>
+            </Typography.h1>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h2
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 36,
-                    lgDown: 32,
-                    mdDown: 28,
-                  },
-                }),
-              )}
-            >
+            <Typography.h3 ref={ref} className={cn()}>
               행사 일시: 2024년 11월 22일 (금요일)
-            </h2>
+            </Typography.h3>
           )}
         />
         <SimpleReveal
@@ -117,40 +95,21 @@ function Section1() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
                 }),
               )}
             >
-              <p>초청 및 Ticketing: 준비 중</p>
+              <Typography.h3>초청 및 Ticketing: 준비 중</Typography.h3>
             </div>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h2
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 36,
-                    lgDown: 32,
-                    mdDown: 28,
-                  },
-                }),
-              )}
-            >
+            <Typography.h2 ref={ref} className={cn()}>
               행사 식순
-            </h2>
+            </Typography.h2>
           )}
         />
         <SimpleReveal
@@ -202,6 +161,51 @@ function Section1() {
                 <p>Standing buffet</p>
               </div>
             </div>
+          )}
+        />
+      </div>
+    </section>
+  );
+}
+
+function Section2() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <div
+        className={css({
+          width: "100%",
+          maxWidth: "1200px",
+          display: "flex",
+          flexDirection: "column",
+          padding: "6rem 24px",
+          gap: 8,
+        })}
+      >
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <Typography.h1 ref={ref} className={cn()}>
+              다양한 40주년 기념 이벤트가 준비되어 있습니다
+            </Typography.h1>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <Typography.h3 ref={ref} className={cn()}>
+              40주년 고연전 주점 행사
+            </Typography.h3>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <Typography.h3 ref={ref} className={cn()}>
+              AI 해커톤 (2024년 10월 22-23일)
+            </Typography.h3>
           )}
         />
       </div>

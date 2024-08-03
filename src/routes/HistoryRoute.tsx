@@ -1,6 +1,7 @@
 import { css } from "@panda/css";
 import { ArrowUpRight } from "lucide-react";
 import { SimpleReveal } from "simple-reveal";
+import Typography from "~/components/Typography";
 
 import RouteHeader from "~/components/RouteHeader";
 
@@ -58,7 +59,7 @@ function Section1() {
       >
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h1
+            <Typography.h1
               ref={ref}
               className={cn(
                 css({
@@ -73,33 +74,19 @@ function Section1() {
             >
               정보대학의 최정예 교수진과 최고 수준의 학생들이 세계 SW 연구를
               선도합니다
-            </h1>
+            </Typography.h1>
           )}
         />
         <SimpleReveal
           delay={300}
           render={({ ref, cn, style }) => (
-            <p
-              ref={ref}
-              style={style}
-              className={cn(
-                css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
-                }),
-              )}
-            >
+            <Typography.h3 ref={ref} style={style} className={cn()}>
               고려대학교 정보대학은 “21세기의 신문화 창출과 디지털 혁명 시대를
               선도하는 SW 전문 인재의 육성”이라는 교육 목표 아래 국내 명문 대학
               중 유일하게 SW 특성화 단과대학으로 설립되었습니다. 정보대학은 SW
               분야의 특성화를 통하여 고려대학교 뿐만 아니라 우리나라 이공계를
               대표하는 대학으로 육성될 것입니다.
-            </p>
+            </Typography.h3>
           )}
         />
       </div>
@@ -128,40 +115,16 @@ function Section10() {
       >
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h1
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 48,
-                    lgDown: 42,
-                    mdDown: 36,
-                  },
-                }),
-              )}
-            >
+            <Typography.h1 ref={ref} className={cn()}>
               Vision: Global Top 50 program by 2030
-            </h1>
+            </Typography.h1>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h2
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 42,
-                    lgDown: 38,
-                    mdDown: 32,
-                  },
-                }),
-              )}
-            >
+            <Typography.h2 ref={ref} className={cn()}>
               Computing and AI
-            </h2>
+            </Typography.h2>
           )}
         />
         <SimpleReveal
@@ -172,41 +135,26 @@ function Section10() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
                 }),
               )}
             >
-              <p>미래에 살아남기 위한 필수 기술을 넘어</p>
-              <p>모든 영역에서의 차별적 가치 창출의 원천</p>
+              <Typography.h3>
+                미래에 살아남기 위한 필수 기술을 넘어
+              </Typography.h3>
+              <Typography.h3>
+                모든 영역에서의 차별적 가치 창출의 원천
+              </Typography.h3>
             </div>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h2
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 42,
-                    lgDown: 38,
-                    mdDown: 32,
-                  },
-                }),
-              )}
-            >
+            <Typography.h2 ref={ref} className={cn()}>
               Empowerment
-            </h2>
+            </Typography.h2>
           )}
         />
         <SimpleReveal
@@ -217,22 +165,19 @@ function Section10() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
                 }),
               )}
             >
-              <p>Logical, Analytic, Info-centric한 인재</p>
-              <p>한 없는 창의력과 융합을 통한 새 분야 개척</p>
-              <p>Global한 국가 경쟁력 제고</p>
+              <Typography.h3>
+                Logical, Analytic, Info-centric한 인재
+              </Typography.h3>
+              <Typography.h3>
+                한 없는 창의력과 융합을 통한 새 분야 개척
+              </Typography.h3>
+              <Typography.h3>Global한 국가 경쟁력 제고</Typography.h3>
             </div>
           )}
         />
@@ -262,41 +207,17 @@ function Section11() {
       >
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h1
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 48,
-                    lgDown: 42,
-                    mdDown: 36,
-                  },
-                }),
-              )}
-            >
+            <Typography.h1 ref={ref} className={cn()}>
               Mission: Empowerment for All
-            </h1>
+            </Typography.h1>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h2
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 42,
-                    lgDown: 38,
-                    mdDown: 32,
-                  },
-                }),
-              )}
-            >
+            <Typography.h2 ref={ref} className={cn()}>
               현장 중심 교육와 융합 프로그램 확대로 소프트웨어 전문 인재를
               육성합니다
-            </h2>
+            </Typography.h2>
           )}
         />
         <SimpleReveal
@@ -307,53 +228,38 @@ function Section11() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
                 }),
               )}
             >
-              <p>현장 중심 교육 및 산업체 협력 강화</p>
-              <p>융합 프로그램 확대 - 융합 전공, 마이크로 디그리</p>
+              <Typography.h3>현장 중심 교육 및 산업체 협력 강화</Typography.h3>
+              <Typography.h3>
+                융합 프로그램 확대 - 융합 전공, 마이크로 디그리
+              </Typography.h3>
               <div>
-                <p>유연한 맞춤형 교육 프로그램</p>
-                <ul
-                  className={css({
-                    listStyle: "disc inside",
-                    marginLeft: "4px",
-                  })}
-                >
-                  <li>필수 이수과목 최소화</li>
-                  <li>선 실습 - 후 이론</li>
-                </ul>
+                <Typography.h3>유연한 맞춤형 교육 프로그램</Typography.h3>
+                <Typography.h3>
+                  <ul
+                    className={css({
+                      listStyle: "disc inside",
+                      marginLeft: "4px",
+                    })}
+                  >
+                    <li>필수 이수과목 최소화</li>
+                    <li>선 실습 - 후 이론</li>
+                  </ul>
+                </Typography.h3>
               </div>
             </div>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h2
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 42,
-                    lgDown: 38,
-                    mdDown: 32,
-                  },
-                }),
-              )}
-            >
+            <Typography.h2 ref={ref} className={cn()}>
               연구
-            </h2>
+            </Typography.h2>
           )}
         />
         <SimpleReveal
@@ -364,42 +270,23 @@ function Section11() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
                 }),
               )}
             >
-              <p>도전적 / 개척적 연구</p>
-              <p>학제 / 융합적 연구</p>
-              <p>유연한 평가 및 인센티브 제도</p>
+              <Typography.h3>도전적 / 개척적 연구</Typography.h3>
+              <Typography.h3>학제 / 융합적 연구</Typography.h3>
+              <Typography.h3>유연한 평가 및 인센티브 제도</Typography.h3>
             </div>
           )}
         />
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h2
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 42,
-                    lgDown: 38,
-                    mdDown: 32,
-                  },
-                }),
-              )}
-            >
+            <Typography.h2 ref={ref} className={cn()}>
               학생
-            </h2>
+            </Typography.h2>
           )}
         />
         <SimpleReveal
@@ -410,23 +297,16 @@ function Section11() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
                 }),
               )}
             >
-              <p>학생 생활 개선</p>
-              <p>고려대 정보대 교우회 활성화</p>
-              <p>특수대학원 - 평생 교육 / 재교육</p>
-              <p>국제화</p>
+              <Typography.h3>학생 생활 개선</Typography.h3>
+              <Typography.h3>고려대 정보대 교우회 활성화</Typography.h3>
+              <Typography.h3>특수대학원 - 평생 교육 / 재교육</Typography.h3>
+              <Typography.h3>국제화</Typography.h3>
             </div>
           )}
         />
@@ -456,21 +336,9 @@ function Section12() {
       >
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h1
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 48,
-                    lgDown: 42,
-                    mdDown: 36,
-                  },
-                }),
-              )}
-            >
+            <Typography.h1 ref={ref} className={cn()}>
               다양한 사업을 통해 교육과 연구를 지원합니다
-            </h1>
+            </Typography.h1>
           )}
         />
         <SimpleReveal
@@ -481,13 +349,6 @@ function Section12() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 8,
@@ -495,56 +356,29 @@ function Section12() {
               )}
             >
               <div>
-                <p>SW중심대학 사업</p>
-                <span
-                  className={css({
-                    fontSize: { base: 26, lgDown: 22, mdDown: 18 },
-                    lineHeight: 1.3,
-                  })}
-                >
+                <Typography.h3>SW중심대학 사업</Typography.h3>
+                <Typography.p>
                   <p>2015. 10. 01. ~ 2021. 02. 28. (5년 5개월)</p>
                   <p>2023. 05. 01. ~ 2028. 12. 31. (5년 8개월)</p>
-                </span>
+                </Typography.p>
               </div>
               <div>
-                <p>인공지능대학원지원사업</p>
-                <p
-                  className={css({
-                    fontSize: { base: 26, lgDown: 22, mdDown: 18 },
-                  })}
-                >
+                <Typography.h3>인공지능대학원지원사업</Typography.h3>
+                <Typography.p>
                   2019.04.01.~ 2028.12.31. (9년 9개월)
-                </p>
+                </Typography.p>
               </div>
               <div>
-                <p>ICT명품인재</p>{" "}
-                <p
-                  className={css({
-                    fontSize: { base: 26, lgDown: 22, mdDown: 18 },
-                  })}
-                >
-                  2020.07.01.~2029.12.31. (9년 6개월)
-                </p>
+                <Typography.h3>ICT명품인재</Typography.h3>{" "}
+                <Typography.p>2020.07.01.~2029.12.31. (9년 6개월)</Typography.p>
               </div>
               <div>
-                <p>4단계 BK21 컴퓨터학교육연구단</p>
-                <p
-                  className={css({
-                    fontSize: { base: 26, lgDown: 22, mdDown: 18 },
-                  })}
-                >
-                  2020.09.01.~2027.08.31. (7년)
-                </p>
+                <Typography.h3>4단계 BK21 컴퓨터학교육연구단</Typography.h3>
+                <Typography.p>2020.09.01.~2027.08.31. (7년)</Typography.p>
               </div>
               <div>
-                <p>4단계 BK21 인공지능학교육연구단</p>
-                <p
-                  className={css({
-                    fontSize: { base: 26, lgDown: 22, mdDown: 18 },
-                  })}
-                >
-                  2020.09.01.~2027.08.31. (7년)
-                </p>
+                <Typography.h3>4단계 BK21 인공지능학교육연구단</Typography.h3>
+                <Typography.p>2020.09.01.~2027.08.31. (7년)</Typography.p>
               </div>
             </div>
           )}
@@ -575,22 +409,10 @@ function Section13() {
       >
         <SimpleReveal
           render={({ ref, cn }) => (
-            <h1
-              ref={ref}
-              className={cn(
-                css({
-                  fontWeight: "700",
-                  fontSize: {
-                    base: 48,
-                    lgDown: 42,
-                    mdDown: 36,
-                  },
-                }),
-              )}
-            >
+            <Typography.h1 ref={ref} className={cn()}>
               SW 분야의 특성화를 통하여 우리나라 이공계를 대표하는 대학으로
               육성될 것입니다
-            </h1>
+            </Typography.h1>
           )}
         />
         <SimpleReveal
@@ -601,13 +423,6 @@ function Section13() {
               style={style}
               className={cn(
                 css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
                   display: "flex",
                   flexDirection: "column",
                   gap: 4,
@@ -616,7 +431,7 @@ function Section13() {
             >
               {histories.map((history) => (
                 <div key={history}>
-                  <p>{history}</p>
+                  <Typography.h3>{history}</Typography.h3>
                 </div>
               ))}
             </div>
