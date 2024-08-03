@@ -9,7 +9,7 @@ import FormRoute from "./routes/FormRoute";
 import EventRoute from "./routes/EventRoute";
 import Layout from "./routes/Layout";
 import MainRoute from "./routes/MainRoute";
-// import NoticeRoute from "./routes/NoticeRoute";
+import GalleryRoute from "./routes/GalleryRoute";
 import HistoryRoute from "./routes/HistoryRoute";
 import CommentRoute from "./routes/CommentRoute";
 import CommentListRoute from "./routes/CommentListRoute";
@@ -41,10 +41,10 @@ const router = createBrowserRouter([
         path: "/donate",
         element: <DonationRoute />,
       },
-      // {
-      //   path: "/notice",
-      //   element: <NoticeRoute />,
-      // },
+      {
+        path: "/gallery",
+        element: <GalleryRoute />,
+      },
       {
         path: "/comment",
         element: <CommentListRoute />,

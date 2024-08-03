@@ -23,7 +23,7 @@ const menus = [
   },
   {
     content: "추억 갤러리",
-    href: "/comment",
+    href: "/gallery",
   },
 ];
 

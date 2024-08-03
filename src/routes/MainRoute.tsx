@@ -3,16 +3,20 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 
+import { event } from "~/data/event";
 import CommentSection from "~/components/CommentSection";
+import EventLogo from "~/components/EventLogo";
+import Typography from "~/components/Typography";
 
 function App() {
   return (
     <div>
       <Section1 />
       <Divider />
+      <Section3 />
       <Section2 />
+      <DonateSection />
       <Section4 />
-      {/* <Section3 /> */}
       <Section22 />
     </div>
   );
@@ -272,6 +276,269 @@ function Section2() {
                 </Link>
               )}
             />
+          </div>
+        </div>
+      </section>
+    </section>
+  );
+}
+
+function DonateSection() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <section
+        className={css({
+          width: "100%",
+          display: "flex",
+          padding: "6rem 0",
+          alignItems: "center",
+          justifyContent: "center",
+          mdDown: {
+            padding: 0,
+          },
+        })}
+      >
+        <div
+          className={css({
+            width: "100%",
+            maxWidth: "1200px",
+            height: "30rem",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+
+            fontSize: 24,
+            fontWeight: 800,
+
+            borderRadius: "24px",
+            margin: "0 16px",
+            mdDown: {
+              borderRadius: 0,
+              margin: 0,
+            },
+
+            overflow: "hidden",
+          })}
+        >
+          <img
+            className={css({
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              filter: "brightness(60%)",
+              objectFit: "cover",
+            })}
+            src="/informatics.jpeg"
+          />
+          <div
+            className={css({
+              color: "white",
+              padding: "32px",
+              height: "100%",
+
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
+            })}
+          >
+            <SimpleReveal
+              duration={1000}
+              initialTransform="translateY(3rem)"
+              render={({ ref, cn, style }) => (
+                <div ref={ref} className={cn()} style={style}>
+                  <div
+                    className={css({
+                      fontSize: {
+                        base: 32,
+                        lgDown: 28,
+                        mdDown: 22,
+                      },
+                      fontWeight: 700,
+                      lineHeight: 1.1,
+                      textAlign: "center",
+                    })}
+                  >
+                    <p>
+                      정보대학 발전 Seed 기금 마련 기부 챌린지에 동참해주세요
+                    </p>
+                  </div>
+                </div>
+              )}
+            />
+            <SimpleReveal
+              delay={500}
+              duration={1000}
+              initialTransform="translateY(3rem)"
+              render={({ ref, cn, style }) => (
+                <div ref={ref} className={cn()} style={style}>
+                  <div
+                    className={css({
+                      fontSize: {
+                        base: 36,
+                        lgDown: 28,
+                        mdDown: 24,
+                      },
+                      fontWeight: 700,
+                      textAlign: "center",
+                    })}
+                  >
+                    <p>정보대학 발전의 기틀을 마련할 기부 챌린지에</p>
+                    <p>10억 원의 기부금을 유치해주셨습니다</p>
+                  </div>
+                </div>
+              )}
+            />
+            <SimpleReveal
+              delay={500}
+              duration={1000}
+              render={({ ref, cn, style }) => (
+                <Link
+                  ref={ref}
+                  to="/donate"
+                  style={style}
+                  className={cn(
+                    css({
+                      width: "fit-content",
+                      padding: "24px 24px",
+                      borderRadius: 16,
+                      fontSize: 18,
+                      fontWeight: 600,
+                      backgroundColor: "#8B0029",
+                      color: "white",
+                    }),
+                  )}
+                >
+                  기부 챌린지 동참하기
+                </Link>
+              )}
+            />
+          </div>
+        </div>
+      </section>
+    </section>
+  );
+}
+
+function Section3() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <section
+        className={css({
+          width: "100%",
+          maxWidth: "1200px",
+          display: "flex",
+          padding: "6rem 0",
+          alignItems: "center",
+          flexDirection: "column",
+          gap: 16,
+        })}
+      >
+        <EventLogo />
+        <div className={css({ width: "100%" })}>
+          <Typography.h2>정보대학 40주년 기념 행사</Typography.h2>
+          <Typography.h3>2024년 11월 22일 (금)</Typography.h3>
+          <Typography.h3>우정정보관 및 하나스퀘어</Typography.h3>
+        </div>
+        <div
+          className={css({ display: "flex", width: "100%", flexWrap: "wrap" })}
+        >
+          <div
+            className={css({
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+            })}
+          >
+            <Typography.h2>행사 식순</Typography.h2>
+            <SimpleReveal
+              delay={300}
+              render={({ ref, cn, style }) => (
+                <div
+                  ref={ref}
+                  style={style}
+                  className={cn(css({ display: "flex" }))}
+                >
+                  <div
+                    className={css({
+                      width: "10px",
+                      height: "100%",
+                      backgroundColor: "#e6e6e6",
+                      marginLeft: 4,
+                      marginRight: 8,
+                      borderRadius: "999px",
+                      flexShrink: 0,
+                    })}
+                  />
+                  <div
+                    className={css({
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 4,
+                    })}
+                  >
+                    {event.map(({ time, title, place, detail }, idx) => (
+                      <div
+                        key={idx}
+                        className={css({
+                          position: "relative",
+                          _before: {
+                            width: "26px",
+                            height: "26px",
+                            content: "''",
+                            backgroundColor: "#d9d9d9",
+                            borderRadius: "999px",
+                            top: 2,
+                            left: "-50px",
+                            position: "absolute",
+                          },
+                        })}
+                      >
+                        <div className={css({ display: "flex", gap: 3 })}>
+                          <Typography.p>{time}</Typography.p>
+
+                          {place && (
+                            <>
+                              <div
+                                className={css({
+                                  width: "2px",
+                                  backgroundColor: "rgba(0,0,0,0.2)",
+                                })}
+                              />
+                              <Typography.p>{place}</Typography.p>
+                            </>
+                          )}
+                        </div>
+                        <Typography.h3>{title}</Typography.h3>
+                        {detail?.map((item) => (
+                          <Typography.p key={item}>{item}</Typography.p>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            />
+          </div>
+          <div className={css({ flex: 1 })}>
+            <Typography.h2>40주년 기념 이벤트</Typography.h2>
+            <Typography.h3>40주년 고연전 주점 행사</Typography.h3>
+            <Typography.h3>AI 해커톤</Typography.h3>
           </div>
         </div>
       </section>

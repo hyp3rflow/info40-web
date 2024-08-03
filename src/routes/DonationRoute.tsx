@@ -8,7 +8,7 @@ import Typography from "~/components/Typography";
 function DonationRoute() {
   return (
     <div>
-      <RouteHeader title="정보대학 기부" />
+      <RouteHeader title="정보대학 기부 Challenge" />
       <DonationLogo />
       <Section0 />
       <Section1 />
@@ -36,10 +36,14 @@ function DonationLogo() {
           gap: 8,
         })}
       >
-        <div>
-          <Typography.h2>정보대학 40주년 기념</Typography.h2>
-          <Typography.h2>발전 Seed 기금 마련 기부 Challenge</Typography.h2>
-        </div>
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <div ref={ref} className={cn()}>
+              <Typography.h2>정보대학 40주년 기념</Typography.h2>
+              <Typography.h2>발전 Seed 기금 마련 기부 Challenge</Typography.h2>
+            </div>
+          )}
+        />
       </div>
     </section>
   );
@@ -73,7 +77,7 @@ function Section0() {
           )}
         />
         <SimpleReveal
-          delay={300}
+          delay={500}
           render={({ ref, cn, style }) => (
             <Typography.h3 ref={ref} style={style} className={cn()}>
               목표액은 2024년 11월 40주년 행사 즈음까지 10억 원입니다. 천원도
@@ -83,7 +87,7 @@ function Section0() {
           )}
         />
         <SimpleReveal
-          delay={300}
+          delay={700}
           render={({ ref, cn, style }) => (
             <Typography.h3 ref={ref} style={style} className={cn()}>
               투명한 기부를 위해 고려대학교 대외협력처의 공식 기부 사이트를 통해
@@ -115,7 +119,7 @@ function Section1() {
         })}
       >
         <SimpleReveal
-          delay={700}
+          delay={1000}
           render={({ ref, cn, style }) => (
             <div
               ref={ref}
@@ -154,7 +158,7 @@ function Section1() {
           )}
         />
         <SimpleReveal
-          delay={700}
+          delay={1200}
           render={({ ref, cn, style }) => (
             <div
               ref={ref}

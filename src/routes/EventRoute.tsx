@@ -1,20 +1,22 @@
 import { css } from "@panda/css";
 import { SimpleReveal } from "simple-reveal";
+import EventLogo from "~/components/EventLogo";
 import RouteHeader from "~/components/RouteHeader";
 import Typography from "~/components/Typography";
+import { event } from "~/data/event";
 
 function EventRoute() {
   return (
     <div>
       <RouteHeader title="정보대학 40주년 기념 행사 소개" />
-      <EventLogo />
+      <EventLogoSection />
       <Section1 />
       <Section2 />
     </div>
   );
 }
 
-function EventLogo() {
+function EventLogoSection() {
   return (
     <section
       className={css({
@@ -30,25 +32,11 @@ function EventLogo() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "6rem 24px",
-          gap: 8,
+          padding: "6rem 24px 0px",
           flexWrap: "wrap",
         })}
       >
-        <img src="/40logo.png" width="150px" />
-        <div
-          className={css({
-            fontWeight: 500,
-            fontSize: {
-              base: 42,
-              lgDown: 36,
-              mdDown: 22,
-            },
-          })}
-        >
-          <p>고려대학교 정보대학 설립 40주년</p>
-          <p>Pioneering the Next Intelligence</p>
-        </div>
+        <EventLogo />
       </div>
     </section>
   );
@@ -81,8 +69,9 @@ function Section1() {
           )}
         />
         <SimpleReveal
-          render={({ ref, cn }) => (
-            <Typography.h3 ref={ref} className={cn()}>
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <Typography.h3 ref={ref} style={style} className={cn()}>
               행사 일시: 2024년 11월 22일 (금요일)
             </Typography.h3>
           )}
@@ -118,47 +107,64 @@ function Section1() {
             <div
               ref={ref}
               style={style}
-              className={cn(
-                css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
-                  },
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }),
-              )}
+              className={cn(css({ display: "flex" }))}
             >
               <div
                 className={css({
-                  display: "grid",
-                  gridTemplateColumns: "auto 1fr",
+                  width: "10px",
+                  height: "100%",
+                  backgroundColor: "#e6e6e6",
+                  marginLeft: 4,
+                  marginRight: 8,
+                  borderRadius: "999px",
+                  flexShrink: 0,
+                })}
+              />
+              <div
+                className={css({
+                  display: "flex",
+                  flexDirection: "column",
                   gap: 4,
-                  "& > aside": {
-                    textAlign: "right",
-                  },
                 })}
               >
-                <aside>4:00</aside>
-                <p>기념 식수세미나 (우정정보관 앞 정원)</p>
-                <aside>4:30 ~ 5:30</aside>
-                <p>기념 세미나 (하나스퀘어)</p>
-                <aside>6:00 ~ 7:00</aside>
-                <div>
-                  <p>기념 행사 (하나스퀘어)</p>
-                  <div>
-                    <p>총장 축사</p>
-                    <p>정보대 연혁 보고 및 발전 방향 발표</p>
-                    <p>감사패/공로패 시상</p>
-                    <p>여흥의 시간</p>
+                {event.map(({ time, title, place, detail }, idx) => (
+                  <div
+                    key={idx}
+                    className={css({
+                      position: "relative",
+                      _before: {
+                        width: "26px",
+                        height: "26px",
+                        content: "''",
+                        backgroundColor: "#d9d9d9",
+                        borderRadius: "999px",
+                        top: 2,
+                        left: "-50px",
+                        position: "absolute",
+                      },
+                    })}
+                  >
+                    <div className={css({ display: "flex", gap: 3 })}>
+                      <Typography.p>{time}</Typography.p>
+
+                      {place && (
+                        <>
+                          <div
+                            className={css({
+                              width: "2px",
+                              backgroundColor: "rgba(0,0,0,0.2)",
+                            })}
+                          />
+                          <Typography.p>{place}</Typography.p>
+                        </>
+                      )}
+                    </div>
+                    <Typography.h3>{title}</Typography.h3>
+                    {detail?.map((item) => (
+                      <Typography.p key={item}>{item}</Typography.p>
+                    ))}
                   </div>
-                </div>
-                <aside>7:00 ~</aside>
-                <p>Standing buffet</p>
+                ))}
               </div>
             </div>
           )}
