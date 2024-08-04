@@ -13,7 +13,6 @@ function Header() {
       className={css({
         display: "flex",
         height: "70px",
-
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "rgba(255, 255, 255, 0.8)",

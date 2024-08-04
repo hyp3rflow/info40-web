@@ -4,6 +4,7 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 import Header from "~/components/Header";
 import Gnb from "~/components/Gnb";
 import Footer from "~/components/Footer";
+import ConstructionHeader from "~/components/ConstructionHeader";
 
 function Layout() {
   return (
@@ -18,6 +19,7 @@ function Layout() {
         })}
       >
         <Header />
+        <ConstructionHeader />
         <Gnb />
       </div>
       <main
