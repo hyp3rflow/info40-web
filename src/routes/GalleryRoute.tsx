@@ -1,8 +1,8 @@
 import { css } from "@panda/css";
 import RouteHeader from "~/components/RouteHeader";
-import CommentSection from "~/components/CommentSection";
 import { SimpleReveal } from "simple-reveal";
 import Typography from "~/components/Typography";
+import Pagination from "~/components/Pagination";
 
 function GalleryRoute() {
   return (
@@ -70,11 +70,12 @@ function GalleryRoute() {
             maxWidth: "1200px",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             padding: "6rem 24px",
             gap: 8,
           })}
         >
-          <CommentSection />
+          <Pagination />
         </div>
       </section>
     </div>

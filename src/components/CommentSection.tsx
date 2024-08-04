@@ -2,6 +2,7 @@ import { css } from "@panda/css";
 import CommentCard from "./CommentCard";
 import { SimpleReveal } from "simple-reveal";
 import Pagination from "./Pagination";
+import { useNavigate } from "react-router-dom";
 
 function CommentSection() {
   return (
@@ -46,6 +47,7 @@ interface CommentColumnProps {
 }
 
 function CommentColumn({ delay }: CommentColumnProps) {
+  const navigate = useNavigate();
   return (
     <div
       className={css({
@@ -61,7 +63,10 @@ function CommentColumn({ delay }: CommentColumnProps) {
           delay={delay + idx * 300}
           render={({ ref, cn, style }) => (
             <div ref={ref} className={cn()} style={style}>
-              <CommentCard author="유승은">
+              <CommentCard
+                author="유승은"
+                onClick={() => navigate("/comment/1")}
+              >
                 정보대학 40주년 행사 너무 기대됩니다. 많은 교우분들을 뵐 수
                 있었으면 좋겠어요!
               </CommentCard>

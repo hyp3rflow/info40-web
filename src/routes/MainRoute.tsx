@@ -1,6 +1,6 @@
 import { css } from "@panda/css";
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 
 import { event } from "~/data/event";
@@ -810,6 +810,30 @@ function Section4() {
               </div>
             )}
           />
+          <SimpleReveal
+            delay={500}
+            duration={1000}
+            render={({ ref, cn, style }) => (
+              <Link
+                ref={ref}
+                to="/comment"
+                style={style}
+                className={cn(
+                  css({
+                    width: "fit-content",
+                    padding: "24px 24px",
+                    borderRadius: 16,
+                    fontSize: 18,
+                    fontWeight: 600,
+                    backgroundColor: "#8B0029",
+                    color: "white",
+                  }),
+                )}
+              >
+                교우 게시판 방문하기
+              </Link>
+            )}
+          />
           <div
             className={css({
               width: "100%",
@@ -843,6 +867,7 @@ interface CommentColumnProps {
 }
 
 function CommentColumn({ delay }: CommentColumnProps) {
+  const navigate = useNavigate();
   return (
     <div
       className={css({
@@ -858,7 +883,10 @@ function CommentColumn({ delay }: CommentColumnProps) {
           delay={delay + idx * 300}
           render={({ ref, cn, style }) => (
             <div ref={ref} className={cn()} style={style}>
-              <CommentCard author="유승은">
+              <CommentCard
+                author="유승은"
+                onClick={() => navigate("/comment/1")}
+              >
                 정보대학 40주년 행사 너무 기대됩니다. 많은 교우분들을 뵐 수
                 있었으면 좋겠어요!
               </CommentCard>
