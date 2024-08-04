@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 
 import { event } from "~/data/event";
-import CommentSection from "~/components/CommentSection";
 import EventLogo from "~/components/EventLogo";
 import Typography from "~/components/Typography";
+import CommentCard from "~/components/CommentCard";
 
 function App() {
   return (
@@ -538,7 +538,7 @@ function Section3() {
           <div className={css({ flex: 1 })}>
             <Typography.h2>40주년 기념 이벤트</Typography.h2>
             <Typography.h3>40주년 고연전 주점 행사</Typography.h3>
-            <Typography.h3>AI 해커톤</Typography.h3>
+            <Typography.h3>AI 해커톤 (2024년 10월 22-23일)</Typography.h3>
           </div>
         </div>
       </section>
@@ -810,10 +810,63 @@ function Section4() {
               </div>
             )}
           />
-          <CommentSection />
+          <div
+            className={css({
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: {
+                base: "1fr 1fr 1fr",
+                lgDown: "1fr 1fr",
+                mdDown: "1fr",
+              },
+              gap: 8,
+              lgDown: {
+                padding: "0 24px",
+              },
+              mdDown: {
+                padding: 0,
+              },
+            })}
+          >
+            <CommentColumn delay={0} />
+            <CommentColumn delay={200} />
+            <CommentColumn delay={400} />
+          </div>
         </div>
       </section>
     </section>
+  );
+}
+
+interface CommentColumnProps {
+  delay: number;
+}
+
+function CommentColumn({ delay }: CommentColumnProps) {
+  return (
+    <div
+      className={css({
+        display: "flex",
+        flexDirection: "column",
+        gap: 8,
+        width: "100%",
+      })}
+    >
+      {[...Array(2)].map((_, idx) => (
+        <SimpleReveal
+          key={idx}
+          delay={delay + idx * 300}
+          render={({ ref, cn, style }) => (
+            <div ref={ref} className={cn()} style={style}>
+              <CommentCard author="유승은">
+                정보대학 40주년 행사 너무 기대됩니다. 많은 교우분들을 뵐 수
+                있었으면 좋겠어요!
+              </CommentCard>
+            </div>
+          )}
+        />
+      ))}
+    </div>
   );
 }
 

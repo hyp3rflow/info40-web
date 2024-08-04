@@ -1,30 +1,42 @@
 import { css } from "@panda/css";
 import CommentCard from "./CommentCard";
 import { SimpleReveal } from "simple-reveal";
+import Pagination from "./Pagination";
 
 function CommentSection() {
   return (
     <div
       className={css({
         width: "100%",
-        display: "grid",
-        gridTemplateColumns: {
-          base: "1fr 1fr 1fr",
-          lgDown: "1fr 1fr",
-          mdDown: "1fr",
-        },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         gap: 8,
-        lgDown: {
-          padding: "0 24px",
-        },
-        mdDown: {
-          padding: 0,
-        },
       })}
     >
-      <CommentColumn delay={0} />
-      <CommentColumn delay={200} />
-      <CommentColumn delay={400} />
+      <div
+        className={css({
+          width: "100%",
+          display: "grid",
+          gridTemplateColumns: {
+            base: "1fr 1fr 1fr",
+            lgDown: "1fr 1fr",
+            mdDown: "1fr",
+          },
+          gap: 8,
+          lgDown: {
+            padding: "0 24px",
+          },
+          mdDown: {
+            padding: 0,
+          },
+        })}
+      >
+        <CommentColumn delay={0} />
+        <CommentColumn delay={200} />
+        <CommentColumn delay={400} />
+      </div>
+      <Pagination />
     </div>
   );
 }
