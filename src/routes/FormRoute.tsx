@@ -212,6 +212,15 @@ function DirectForm() {
           className={css({ width: "20rem" })}
         />
       </div>
+      <div
+        className={css({ display: "flex", flexDirection: "column", gap: 4 })}
+      >
+        <p className={css({ fontSize: 24, fontWeight: 600 })}>직장명</p>
+        <Input
+          placeholder="직장명을 입력하세요"
+          className={css({ width: "20rem" })}
+        />
+      </div>
       <div>
         <p className={css({ fontSize: 18, fontWeight: 600 })}>
           고려대학교 교우회 등록은 행사 이후 일괄적으로 진행될 예정입니다.

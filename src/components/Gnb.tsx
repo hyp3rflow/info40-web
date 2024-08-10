@@ -1,4 +1,4 @@
-import { css } from "@panda/css";
+import { css, cx } from "@panda/css";
 import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
 import { ArrowUpRight } from "lucide-react";
@@ -16,6 +16,7 @@ const menus = [
   {
     content: "정보대학 기부 Challenge",
     href: "/donate",
+    badge: true,
   },
   {
     content: "교우 게시판",
@@ -77,14 +78,17 @@ function Gnb() {
             },
           })}
         >
-          {menus.map(({ content, href }) => {
+          {menus.map(({ content, href, badge }) => {
             return (
               <Link
-                className={css({
-                  lgDown: {
-                    width: "100%",
-                  },
-                })}
+                className={cx(
+                  css({
+                    lgDown: {
+                      width: "100%",
+                    },
+                  }),
+                  badge && css({ textDecoration: "underline" }),
+                )}
                 to={href}
                 onClick={() => setMenu(false)}
               >
@@ -102,6 +106,16 @@ function Gnb() {
                       className={css({ alignSelf: "flex-start" })}
                     />
                   )}
+                  {badge && (
+                    <div
+                      className={css({
+                        width: "6px",
+                        height: "6px",
+                        backgroundColor: "red",
+                        borderRadius: "999px",
+                      })}
+                    />
+                  )}
                 </div>
               </Link>
             );
@@ -113,13 +127,24 @@ function Gnb() {
             alignItems: "center",
             gap: "42px",
             fontWeight: "600",
+            textDecoration: "underline",
             lgDown: {
               fontSize: "24px",
             },
           })}
         >
           <Link to="/form" onClick={() => setMenu(false)}>
-            <p>교우회 등록하기</p>
+            <div className={css({ display: "flex", gap: 1 })}>
+              <p>교우회 등록하기</p>
+              <div
+                className={css({
+                  width: "6px",
+                  height: "6px",
+                  backgroundColor: "red",
+                  borderRadius: "999px",
+                })}
+              />
+            </div>
           </Link>
         </div>
       </div>

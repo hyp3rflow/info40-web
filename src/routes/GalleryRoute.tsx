@@ -49,7 +49,7 @@ function GalleryRoute() {
                 )}
               >
                 <Typography.p>
-                  이메일로 추억이 담긴 사진을 보내주시면 갤러리에
+                  이메일로 추억이 담긴 사진을 보내주시면 갤러리에
                   추가해드립니다.
                 </Typography.p>
               </div>

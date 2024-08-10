@@ -3,10 +3,13 @@ import { ArrowUpRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 
-import { event } from "~/data/event";
+import { events, schedule } from "~/data/event";
 import EventLogo from "~/components/EventLogo";
 import Typography from "~/components/Typography";
 import CommentCard from "~/components/CommentCard";
+import { useAtomValue } from "jotai";
+import { mainCommentsAtom } from "~/atoms/commentList";
+import { Suspense } from "react";
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
       <Section3 />
       <Section2 />
       <DonateSection />
-      <Section4 />
+      <Suspense>
+        <Section4 />
+      </Suspense>
       <Section22 />
     </div>
   );
@@ -442,7 +447,7 @@ function Section3() {
           width: "100%",
           maxWidth: "1200px",
           display: "flex",
-          padding: "6rem 0",
+          padding: "6rem 24px",
           alignItems: "center",
           flexDirection: "column",
           gap: 16,
@@ -455,7 +460,12 @@ function Section3() {
           <Typography.h3>우정정보관 및 하나스퀘어</Typography.h3>
         </div>
         <div
-          className={css({ display: "flex", width: "100%", flexWrap: "wrap" })}
+          className={css({
+            display: "flex",
+            width: "100%",
+            flexWrap: "wrap",
+            gap: 6,
+          })}
         >
           <div
             className={css({
@@ -463,6 +473,10 @@ function Section3() {
               display: "flex",
               flexDirection: "column",
               gap: 8,
+              backgroundColor: "#f6f7f8",
+              padding: "24px 28px",
+              minWidth: "400px",
+              borderRadius: 24,
             })}
           >
             <Typography.h2>행사 식순</Typography.h2>
@@ -492,7 +506,7 @@ function Section3() {
                       gap: 4,
                     })}
                   >
-                    {event.map(({ time, title, place, detail }, idx) => (
+                    {schedule.map(({ time, title, place, detail }, idx) => (
                       <div
                         key={idx}
                         className={css({
@@ -535,10 +549,69 @@ function Section3() {
               )}
             />
           </div>
-          <div className={css({ flex: 1 })}>
+          <div
+            className={css({
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: 4,
+              backgroundColor: "#f6f7f8",
+              padding: "24px 28px",
+              minWidth: "400px",
+              borderRadius: 24,
+            })}
+          >
             <Typography.h2>40주년 기념 이벤트</Typography.h2>
-            <Typography.h3>40주년 고연전 주점 행사</Typography.h3>
-            <Typography.h3>AI 해커톤 (2024년 10월 22-23일)</Typography.h3>
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                gap: 4,
+              })}
+            >
+              {events.map((event) => (
+                <div
+                  key={event.title}
+                  className={css({
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 2,
+                  })}
+                >
+                  <div className={css({ display: "flex", gap: 2 })}>
+                    <Typography.h3 key={event.title}>
+                      {event.title}
+                    </Typography.h3>
+                    {event.time && <Typography.p>{event.time}</Typography.p>}
+                  </div>
+                  {event.lecturer && (
+                    <div className={css({ display: "flex", gap: 4 })}>
+                      <img
+                        src={event.lecturer.image}
+                        width="150"
+                        className={css({ borderRadius: 12 })}
+                      />
+                      <div>
+                        <Link to={event.lecturer.link}>
+                          <div className={css({ display: "flex" })}>
+                            <Typography.p
+                              className={css({ textDecoration: "underline" })}
+                            >
+                              {event.lecturer.ko}
+                            </Typography.p>
+                            <ArrowUpRight />
+                          </div>
+                        </Link>
+                        <Typography.p>{event.lecturer.en}</Typography.p>
+                        <Typography.p>
+                          {event.lecturer.description}
+                        </Typography.p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -746,6 +819,7 @@ function Section22() {
 }
 
 function Section4() {
+  useAtomValue(mainCommentsAtom);
   return (
     <section
       className={css({

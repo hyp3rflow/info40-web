@@ -1,17 +1,19 @@
 import { css } from "@panda/css";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 import EventLogo from "~/components/EventLogo";
 import RouteHeader from "~/components/RouteHeader";
 import Typography from "~/components/Typography";
-import { event } from "~/data/event";
+import { events, schedule } from "~/data/event";
 
 function EventRoute() {
   return (
     <div>
       <RouteHeader title="정보대학 40주년 기념 행사 소개" />
       <EventLogoSection />
-      <Section1 />
       <Section2 />
+      <Section1 />
     </div>
   );
 }
@@ -127,7 +129,7 @@ function Section1() {
                   gap: 4,
                 })}
               >
-                {event.map(({ time, title, place, detail }, idx) => (
+                {schedule.map(({ time, title, place, detail }, idx) => (
                   <div
                     key={idx}
                     className={css({
@@ -200,20 +202,51 @@ function Section2() {
             </Typography.h1>
           )}
         />
-        <SimpleReveal
-          render={({ ref, cn }) => (
-            <Typography.h3 ref={ref} className={cn()}>
-              40주년 고연전 주점 행사
-            </Typography.h3>
-          )}
-        />
-        <SimpleReveal
-          render={({ ref, cn }) => (
-            <Typography.h3 ref={ref} className={cn()}>
-              AI 해커톤 (2024년 10월 22-23일)
-            </Typography.h3>
-          )}
-        />
+        {events.map((event) => (
+          <SimpleReveal
+            render={({ ref, cn }) => (
+              <div
+                ref={ref}
+                key={event.title}
+                className={cn(
+                  css({
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 2,
+                  }),
+                )}
+              >
+                <div className={css({ display: "flex", gap: 2 })}>
+                  <Typography.h3 key={event.title}>{event.title}</Typography.h3>
+                  {event.time && <Typography.p>{event.time}</Typography.p>}
+                </div>
+                {event.lecturer && (
+                  <div className={css({ display: "flex", gap: 4 })}>
+                    <img
+                      src={event.lecturer.image}
+                      width="150"
+                      className={css({ borderRadius: 12 })}
+                    />
+                    <div>
+                      <Link to={event.lecturer.link}>
+                        <div className={css({ display: "flex" })}>
+                          <Typography.p
+                            className={css({ textDecoration: "underline" })}
+                          >
+                            {event.lecturer.ko}
+                          </Typography.p>
+                          <ArrowUpRight />
+                        </div>
+                      </Link>
+                      <Typography.p>{event.lecturer.en}</Typography.p>
+                      <Typography.p>{event.lecturer.description}</Typography.p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          />
+        ))}
       </div>
     </section>
   );
