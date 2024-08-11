@@ -34,9 +34,9 @@ export const events = [
     lecturer: {
       ko: "요슈아 벤지오 교수",
       en: "Yoshua Bengio",
-      image: "benzio.png",
+      image: "bengio.png",
       link: "https://yoshuabengio.org/",
-      description: "2018 튜링상 수상자 (딥러닝)"
+      description: "2018 튜링상 수상자 (딥러닝)",
     },
   },
 ];

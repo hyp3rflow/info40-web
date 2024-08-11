@@ -12,7 +12,6 @@ function DonationRoute() {
       <DonationLogo />
       <Section0 />
       <Section1 />
-      <Section2 />
     </div>
   );
 }
@@ -39,8 +38,10 @@ function DonationLogo() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <div ref={ref} className={cn()}>
-              <Typography.h2>정보대학 40주년 기념</Typography.h2>
-              <Typography.h2>발전 Seed 기금 마련 기부 Challenge</Typography.h2>
+              <Typography.h2>2024년 정보대학 창립 40주년 기념</Typography.h2>
+              <Typography.h2>
+                발전 Seed 기금 10억 마련 기부 Challenge
+              </Typography.h2>
             </div>
           )}
         />
@@ -71,8 +72,7 @@ function Section0() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              정보대학을 사랑하는 모든 여러분께 앞으로의 발전의 기틀을 마련할
-              기부 챌린지를 시작합니다
+              정보대학을 사랑하는 모든 분들께!
             </Typography.h1>
           )}
         />
@@ -80,9 +80,11 @@ function Section0() {
           delay={500}
           render={({ ref, cn, style }) => (
             <Typography.h3 ref={ref} style={style} className={cn()}>
-              목표액은 2024년 11월 40주년 행사 즈음까지 10억 원입니다. 천원도
-              좋고, 만원은 더 좋고, 100만원은 아주 좋습니다. 고려대 정보대라면
-              할 수 있다고 믿습니다!
+              정보대학은 지난 40년 동안 대한민국 IT 산업 및 연구의 선도 역할을
+              담당했습니다. 창립 40주년인 올해를 새로 도약하는 원년으로 삼아
+              급변하는 세계 속에서 인공지능학과와 뇌공학과 등 미래의 첨단 학문과
+              산업을 발전시켜 한국사회의 정보화 미래를 책임질, 새로운 기틀을
+              마련하고자 기부 챌린지를 시작합니다.
             </Typography.h3>
           )}
         />
@@ -90,9 +92,58 @@ function Section0() {
           delay={700}
           render={({ ref, cn, style }) => (
             <Typography.h3 ref={ref} style={style} className={cn()}>
-              투명한 기부를 위해 고려대학교 대외협력처의 공식 기부 사이트를 통해
-              "정보대 발전기금" 명목으로 기부 약정을 부탁드립니다.
+              고려대학교 정보대학이라면 할 수 있다고 믿습니다! 목표액은 2024년
+              11월 창립 40주년 행사 기간까지 10억 원입니다. 정보대학을 사랑하는
+              여러분의 따뜻한 마음이면 금액에 상관없이 언제든지 환영 합니다.
             </Typography.h3>
+          )}
+        />
+        <SimpleReveal
+          delay={200}
+          render={({ ref, cn, style }) => (
+            <Typography.h3 ref={ref} style={style} className={cn()}>
+              투명한 기부를 위해 정보대학 발전 기금은 고려대학교 대외협력처를
+              통해 모금되고 있습니다. 아래 '기부처 페이지'에 접속하신 후
+              기부금을 보내주시면 됩니다. 감사합니다.
+            </Typography.h3>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  fontWeight: "600",
+                  lineHeight: 1.5,
+                  fontSize: {
+                    base: 26,
+                    lgDown: 24,
+                    mdDown: 22,
+                  },
+                }),
+              )}
+            >
+              <a
+                target="_blank"
+                href="https://give.korea.ac.kr/front/give/actKupGive.do"
+                className={css({
+                  width: "fit-content",
+                  padding: "24px 24px",
+                  borderRadius: 16,
+                  fontSize: 24,
+                  fontWeight: 600,
+                  backgroundColor: "#8B0029",
+                  color: "white",
+                  display: "flex",
+                })}
+              >
+                정보대학 기부하기
+                <ArrowUpRight />
+              </a>
+            </div>
           )}
         />
       </div>
@@ -114,12 +165,11 @@ function Section1() {
           maxWidth: "1200px",
           display: "flex",
           flexDirection: "column",
-          padding: "2rem 24px",
+          padding: "2rem 24px 4rem",
           gap: 20,
         })}
       >
         <SimpleReveal
-          delay={1000}
           render={({ ref, cn, style }) => (
             <div
               ref={ref}
@@ -158,7 +208,7 @@ function Section1() {
           )}
         />
         <SimpleReveal
-          delay={1200}
+          delay={200}
           render={({ ref, cn, style }) => (
             <div
               ref={ref}
@@ -188,102 +238,6 @@ function Section1() {
                   드립니다.
                 </Typography.p>
               </div>
-            </div>
-          )}
-        />
-      </div>
-    </section>
-  );
-}
-
-function Section2() {
-  return (
-    <section
-      className={css({
-        display: "flex",
-        justifyContent: "center",
-        flex: 1,
-      })}
-    >
-      <div
-        className={css({
-          width: "100%",
-          maxWidth: "1200px",
-          display: "flex",
-          flexDirection: "column",
-          padding: "6rem 24px",
-          gap: 8,
-        })}
-      >
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <Typography.h2 ref={ref} style={style} className={cn()}>
-              고려대학교 대외협력처를 통해서 기부 약정이 가능합니다
-            </Typography.h2>
-          )}
-        />
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <Typography.p ref={ref} style={style} className={cn()}>
-              <p>
-                후원 목적에서 "기관 및 용도 지정"을 선택하신 후, 정보대학을
-                입력해주세요.
-              </p>
-              <div>
-                <p>후원 용도 지정은 아래와 같은 명목으로 가능합니다.</p>
-                <ul
-                  className={css({
-                    listStyleType: "disc",
-                    listStylePosition: "inside",
-                  })}
-                >
-                  <li>정보대 발전 기금</li>
-                  <li>교육/연구 공간 확보 및 유지 보수 기금</li>
-                  <li>우수 교수 유치 기금</li>
-                  <li>학생 생활 및 활동 지원</li>
-                  <li>40주년 행사 지원</li>
-                </ul>
-              </div>
-            </Typography.p>
-          )}
-        />
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <div
-              ref={ref}
-              style={style}
-              className={cn(
-                css({
-                  fontWeight: "600",
-                  lineHeight: 1.5,
-                  fontSize: {
-                    base: 26,
-                    lgDown: 24,
-                    mdDown: 22,
-                  },
-                }),
-              )}
-            >
-              <a
-                target="_blank"
-                href="https://give.korea.ac.kr/front/give/actKupGive.do"
-                className={css({
-                  width: "fit-content",
-                  padding: "24px 24px",
-                  borderRadius: 16,
-                  fontSize: 24,
-                  fontWeight: 600,
-                  backgroundColor: "#8B0029",
-                  color: "white",
-                  display: "flex",
-                })}
-              >
-                정보대학 기부하기
-                <ArrowUpRight />
-              </a>
             </div>
           )}
         />
