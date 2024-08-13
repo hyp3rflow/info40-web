@@ -72,7 +72,7 @@ function Section0() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              정보대학을 사랑하는 모든 분들께!
+              정보대학을 사랑하는 모든 분들께!
             </Typography.h1>
           )}
         />
