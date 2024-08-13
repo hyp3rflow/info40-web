@@ -241,6 +241,28 @@ function Section1() {
             </div>
           )}
         />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <Typography.h3 ref={ref} style={style} className={cn()}>
+              <div>
+                <p>후원해주신 발전기금은 아래와 같은 명목으로 사용됩니다.</p>
+                <ul
+                  className={css({
+                    listStyleType: "disc",
+                    listStylePosition: "inside",
+                  })}
+                >
+                  <li>정보대 발전 기금</li>
+                  <li>교육/연구 공간 확보 및 유지 보수 기금</li>
+                  <li>우수 교수 유치 기금</li>
+                  <li>학생 생활 및 활동 지원</li>
+                  <li>40주년 행사 지원</li>
+                </ul>
+              </div>
+            </Typography.h3>
+          )}
+        />
       </div>
     </section>
   );
