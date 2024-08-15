@@ -19,9 +19,9 @@ function App() {
       {false && (
         <>
           <Section2 />
-          <DonateSection />
         </>
       )}
+      <DonateSection />
       <Suspense>
         <Section4 />
       </Suspense>
@@ -399,8 +399,8 @@ function DonateSection() {
                       textAlign: "center",
                     })}
                   >
-                    <p>정보대학 발전의 기틀을 마련할 기부 챌린지에</p>
-                    <p>10억 원의 기부금을 유치해주셨습니다</p>
+                    <p>정보대학 발전의 기틀을 마련하기 위해</p>
+                    <p>10억 원의 Seed 기금이 필요합니다</p>
                   </div>
                 </div>
               )}
@@ -944,50 +944,23 @@ function Section4() {
               },
             })}
           >
-            <CommentColumn comments={comments.slice(0, 2)} delay={0} />
-            <CommentColumn comments={comments.slice(0, 2)} delay={200} />
-            <CommentColumn comments={comments.slice(0, 2)} delay={400} />
+            {comments.slice(0, 6).map((comment, idx) => (
+              <SimpleReveal
+                key={idx}
+                delay={idx * 300}
+                render={({ ref, cn, style }) => (
+                  <div ref={ref} className={cn()} style={style}>
+                    <CommentCard author={comment.writer}>
+                      {comment.head}
+                    </CommentCard>
+                  </div>
+                )}
+              />
+            ))}
           </div>
         </div>
       </section>
     </section>
-  );
-}
-
-interface Comment {
-  id: number;
-  head: string;
-  content: string;
-  writer: string;
-}
-
-interface CommentColumnProps {
-  delay: number;
-  comments: Comment[];
-}
-
-function CommentColumn({ delay, comments }: CommentColumnProps) {
-  return (
-    <div
-      className={css({
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-        width: "100%",
-      })}
-    >
-      {comments.map((comment, idx) => (
-        <SimpleReveal
-          key={idx}
-          delay={delay + idx * 300}
-          render={({ ref, cn, style }) => (
-            <div ref={ref} className={cn()} style={style}>
-              <CommentCard author={comment.writer}>{comment.head}</CommentCard>
-            </div>
-          )}
-        />
-      ))}
-    </div>
   );
 }
 

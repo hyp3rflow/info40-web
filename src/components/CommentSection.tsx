@@ -51,7 +51,10 @@ function CommentSection() {
               <div ref={ref} className={cn()} style={style}>
                 <CommentCard
                   author={comment.writer}
-                  onClick={() => navigate(`/comment/${comment.id}`)}
+                  onClick={() => {
+                    return;
+                    navigate(`/comment/${comment.id}`);
+                  }}
                 >
                   {comment.head}
                 </CommentCard>
