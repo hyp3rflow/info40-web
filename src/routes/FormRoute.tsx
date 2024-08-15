@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { css } from "@panda/css";
-import { ArrowUpRight } from "lucide-react";
 import { SimpleReveal } from "simple-reveal";
 import { useNavigate } from "react-router-dom";
 
@@ -22,62 +20,8 @@ function FormRoute() {
     >
       <RouteHeader title="교우회 등록하기" />
       <Section1 />
-      <FormSelect />
+      <DirectForm />
     </div>
-  );
-}
-
-function FormSelect() {
-  const [toggle, setToggle] = useState(true);
-  return (
-    <section
-      className={css({
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        flex: 1,
-      })}
-    >
-      <div
-        className={css({
-          width: "100%",
-          maxWidth: "1200px",
-          display: "flex",
-          flexDirection: "column",
-          padding: "4rem 24px",
-          gap: 8,
-        })}
-      >
-        <div
-          className={css({
-            display: "flex",
-            fontSize: 32,
-            fontWeight: 800,
-            gap: 8,
-            flexWrap: "wrap",
-            "& > button": {
-              opacity: 0.4,
-              marginBottom: "4px",
-              textAlign: "start",
-            },
-            "& > [data-selected=true]": {
-              opacity: 1,
-              borderBottom: "4px solid black",
-              boxSizing: "content-box",
-              marginBottom: 0,
-            },
-          })}
-        >
-          <button onClick={() => setToggle(true)} data-selected={toggle}>
-            정보대학 교우회 등록하기
-          </button>
-          <button onClick={() => setToggle(false)} data-selected={!toggle}>
-            고려대학교 교우회에서 직접 등록하기
-          </button>
-        </div>
-        {toggle ? <DirectForm /> : <IndirectForm />}
-      </div>
-    </section>
   );
 }
 
@@ -135,8 +79,7 @@ function Section1() {
               컴퓨터교육학과 및 컴퓨터과학기술대학원 (1995년 설립 / 현 SW-AI
               융합대학원), 컴퓨터통신학부 (2001년~2013년), IT 최고위 과정
               (1998년 ~ 2015년), 데이터 과학과 (2018년 설립), 일반 대학원
-              (컴퓨터학과, 인공지능학과, 뇌공학과) 등 졸업생 및 교우들을
-              소속인으로 삼습니다.
+              (컴퓨터학과, 인공지능학과, 뇌공학과) 졸업생으로 구성되어 있습니다.
             </Typography.p>
           )}
         />
@@ -144,9 +87,9 @@ function Section1() {
           delay={300}
           render={({ ref, cn, style }) => (
             <Typography.p ref={ref} style={style} className={cn()}>
-              아래의 입력 폼을 통하여 성명, 출신 학과, 입학년도, 주소/연락처등을
-              기입해 주시면 정보대 교우회 및 전체 교우회 회원으로 입적해 드리고
-              소정의 기념품을 전달 해 드립니다.
+              아래의 입력 폼을 통하여 성명, 출신 학과, 입학년도, 주소/연락처
+              등을 기입해 주시면 정보대 교우회 및 전체 교우회 회원으로
+              가입해드립니다.
             </Typography.p>
           )}
         />
@@ -164,6 +107,7 @@ function DirectForm() {
         width: "100%",
         display: "flex",
         flexDirection: "column",
+        padding: "0 24px",
         gap: 8,
       })}
     >
@@ -227,6 +171,7 @@ function DirectForm() {
         </p>
       </div>
       <button
+        disabled
         onClick={() => {
           alert("등록이 완료되었습니다.");
           navigate("/donate");
@@ -239,41 +184,13 @@ function DirectForm() {
           fontWeight: 600,
           backgroundColor: "#8B0029",
           color: "white",
+          _disabled: {
+            opacity: 0.6,
+          },
         })}
       >
         등록하기
       </button>
-    </div>
-  );
-}
-function IndirectForm() {
-  return (
-    <div
-      className={css({
-        maxWidth: "1200px",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-      })}
-    >
-      <a
-        target="_blank"
-        href="https://www.kuaa.or.kr/member/membership/joinStepStart.do"
-        className={css({
-          width: "fit-content",
-          padding: "24px 24px",
-          borderRadius: 16,
-          fontSize: 18,
-          fontWeight: 600,
-          backgroundColor: "#8B0029",
-          color: "white",
-          display: "flex",
-        })}
-      >
-        고려대학교 교우회 회원가입 바로가기
-        <ArrowUpRight />
-      </a>
     </div>
   );
 }

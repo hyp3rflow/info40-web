@@ -1,22 +1,21 @@
 export const schedule = [
   {
-    time: "5:00 ~ 6:00",
+    time: "17:00 ~ 18:00",
     title: "기념 벤치 제막식",
     place: "우정정보관",
   },
   {
-    time: "6:00 ~ 7:00",
+    time: "18:00 ~ 19:00",
     title: "기념 행사",
     detail: [
       "총장 축사",
       "정보대 연혁 보고 및 발전 방향 발표",
       "감사패/공로패 시상",
-      "여흥의 시간",
     ],
     place: "하나스퀘어",
   },
   {
-    time: "7:00 ~",
+    time: "19:00 ~",
     title: "Standing buffet",
   },
 ];
@@ -24,6 +23,8 @@ export const schedule = [
 export const events = [
   {
     title: "40주년 고연전 주점 행사",
+    time: "9월 28일",
+    place: "참살이길 주점 (예정)",
   },
   {
     title: "AI 해커톤",

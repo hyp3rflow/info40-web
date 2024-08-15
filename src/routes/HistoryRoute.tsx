@@ -68,11 +68,11 @@ const histories = [
   },
   {
     date: "2025년 3월",
-    description: "학부 인공지능학과 신설",
+    description: "학부 인공지능학과 신설 (예정)",
   },
   {
     date: "2025년 3월",
-    description: "정운오 IT 교양관 입주",
+    description: "정운오 IT 교양관 입주 (예정)",
   },
 ];
 
@@ -389,8 +389,15 @@ function Section12() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              TODO: 현재 정보대학 통계
+              정보대학 현황
             </Typography.h1>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <Typography.h2 ref={ref} className={cn()}>
+              정보대학 교수 및 행정팀
+            </Typography.h2>
           )}
         />
         <SimpleReveal
@@ -426,7 +433,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>400</Typography.h3>
+                  <Typography.h3>7</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -449,7 +456,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>400</Typography.h3>
+                  <Typography.h3>58</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -464,8 +471,7 @@ function Section12() {
                   justifyContent: "space-between",
                 })}
               >
-                <Typography.h2>컴퓨터학과</Typography.h2>
-                <Typography.h3>학부 재학생</Typography.h3>
+                <Typography.h2>직원</Typography.h2>
                 <div
                   className={css({
                     display: "flex",
@@ -473,10 +479,34 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>400</Typography.h3>
+                  <Typography.h3>11</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
+            </div>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <Typography.h2 ref={ref} className={cn()}>
+              정보대학 학부
+            </Typography.h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 8,
+                }),
+              )}
+            >
               <div
                 className={css({
                   minWidth: "300px",
@@ -489,7 +519,6 @@ function Section12() {
                 })}
               >
                 <Typography.h2>컴퓨터학과</Typography.h2>
-                <Typography.h3>대학원 재학생</Typography.h3>
                 <div
                   className={css({
                     display: "flex",
@@ -497,7 +526,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>400</Typography.h3>
+                  <Typography.h3>1,136</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -513,7 +542,6 @@ function Section12() {
                 })}
               >
                 <Typography.h2>데이터과학과</Typography.h2>
-                <Typography.h3>학부 재학생</Typography.h3>
                 <div
                   className={css({
                     display: "flex",
@@ -521,7 +549,54 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>400</Typography.h3>
+                  <Typography.h3>199</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+            </div>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <Typography.h2 ref={ref} className={cn()}>
+              정보대학 일반대학원
+            </Typography.h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 8,
+                }),
+              )}
+            >
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>컴퓨터학과</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>249</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -537,7 +612,6 @@ function Section12() {
                 })}
               >
                 <Typography.h2>인공지능학과</Typography.h2>
-                <Typography.h3>대학원 재학생</Typography.h3>
                 <div
                   className={css({
                     display: "flex",
@@ -545,7 +619,146 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>400</Typography.h3>
+                  <Typography.h3>160</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>뇌공학과</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>27</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+            </div>
+          )}
+        />
+        <SimpleReveal
+          render={({ ref, cn }) => (
+            <Typography.h2 ref={ref} className={cn()}>
+              SW·AI융합대학원
+            </Typography.h2>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <div
+              ref={ref}
+              style={style}
+              className={cn(
+                css({
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 8,
+                }),
+              )}
+            >
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>빅데이터융합학과</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>112</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>인공지능융합학과</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>87</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>소프트웨어보안학과</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>41</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>디지털금융공학과</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>68</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>

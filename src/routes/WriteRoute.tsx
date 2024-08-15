@@ -1,29 +1,15 @@
 import { css } from "@panda/css";
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Placeholder from "@tiptap/extension-placeholder";
 import RouteHeader from "~/components/RouteHeader";
 import { SimpleReveal } from "simple-reveal";
 import Input from "~/components/Input";
 import { useNavigate } from "react-router-dom";
-
-const extensions = [
-  StarterKit,
-  Placeholder.configure({
-    placeholder: "내용을 작성해주세요",
-  }),
-];
+import { useState } from "react";
 
 function WriteRoute() {
   const navigate = useNavigate();
-  const editor = useEditor({
-    extensions,
-    editorProps: {
-      attributes: {
-        class: css({ _focus: { outline: "none" }, minHeight: "30em" }),
-      },
-    },
-  });
+  const [title, setTitle] = useState("");
+  const [writer, setWriter] = useState("");
+  const [content, setContent] = useState("");
   return (
     <section
       className={css({
@@ -57,18 +43,25 @@ function WriteRoute() {
         >
           <p className={css({ fontSize: 24, fontWeight: 600 })}>제목</p>
           <Input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             placeholder="제목을 입력하세요"
             className={css({ width: "100%" })}
           />
         </div>
         <div>
-          <EditorContent
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="내용을 입력하세요"
             className={css({
               border: "1px solid #aaa",
-              padding: "24px",
-              borderRadius: "16px",
+              backgroundColor: "white",
+              width: "100%",
+              minHeight: "400px",
+              borderRadius: 12,
+              padding: 6,
             })}
-            editor={editor}
           />
         </div>
         <div
@@ -76,6 +69,8 @@ function WriteRoute() {
         >
           <p className={css({ fontSize: 24, fontWeight: 600 })}>작성자</p>
           <Input
+            value={writer}
+            onChange={(e) => setWriter(e.target.value)}
             placeholder="작성자를 입력하세요"
             className={css({ width: "20rem" })}
           />
@@ -87,10 +82,26 @@ function WriteRoute() {
         </div>
         <button
           onClick={() => {
-            alert(
-              "방명록이 작성되었습니다. 모든 방명록은 관리자의 승인 후에 게재됩니다.",
-            );
-            navigate("/comment");
+            if (!title) return alert("제목을 작성해주세요.");
+            if (!content) return alert("내용을 작성해주세요.");
+            if (!writer) return alert("작성자를 작성해주세요.");
+            (async () => {
+              const url = new URL(
+                `https://kuanniversary.xyz/api/v1/guest-book`,
+              );
+              const response = await fetch(url, {
+                method: "POST",
+                body: JSON.stringify({ head: title, content, writer }),
+              });
+              if (response.ok) {
+                alert(
+                  "방명록이 작성되었습니다. 모든 방명록은 관리자의 승인 후에 게재됩니다.",
+                );
+                navigate("/comment");
+              } else {
+                alert("방명록 작성에 실패했습니다.");
+              }
+            })();
           }}
           className={css({
             width: "fit-content",

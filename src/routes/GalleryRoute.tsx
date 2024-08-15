@@ -3,6 +3,13 @@ import RouteHeader from "~/components/RouteHeader";
 import { SimpleReveal } from "simple-reveal";
 import Typography from "~/components/Typography";
 import Pagination from "~/components/Pagination";
+import { useAtom, useAtomValue } from "jotai";
+import {
+  photoListAtom,
+  photoListPageAtom,
+  photoListTotalPageAtom,
+} from "~/atoms/photo";
+import { Suspense } from "react";
 
 function GalleryRoute() {
   return (
@@ -57,28 +64,62 @@ function GalleryRoute() {
           />
         </div>
       </section>
-      <section
+      <Suspense fallback="">
+        <GallerySection />
+      </Suspense>
+    </div>
+  );
+}
+
+function GallerySection() {
+  const photos = useAtomValue(photoListAtom);
+  const [current, setCurrent] = useAtom(photoListPageAtom);
+  const total = useAtomValue(photoListTotalPageAtom);
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        flex: 1,
+      })}
+    >
+      <div
         className={css({
+          width: "100%",
+          maxWidth: "1200px",
           display: "flex",
-          justifyContent: "center",
-          flex: 1,
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "6rem 24px",
+          gap: 8,
         })}
       >
         <div
           className={css({
-            width: "100%",
-            maxWidth: "1200px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: "6rem 24px",
-            gap: 8,
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: 4,
           })}
         >
-          <Pagination />
+          {photos.map((photo) => (
+            <img
+              className={css({
+                borderRadius: 12,
+                objectFit: "cover",
+                height: "100%",
+              })}
+              key={photo.id}
+              src={photo.imageUrl}
+            />
+          ))}
         </div>
-      </section>
-    </div>
+        <Pagination
+          current={current}
+          total={total}
+          onButtonClick={setCurrent}
+        />
+      </div>
+    </section>
   );
 }
 

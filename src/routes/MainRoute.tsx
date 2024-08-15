@@ -1,10 +1,9 @@
 import { css } from "@panda/css";
 import { ArrowUpRight } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 
 import { events, schedule } from "~/data/event";
-import EventLogo from "~/components/EventLogo";
 import Typography from "~/components/Typography";
 import CommentCard from "~/components/CommentCard";
 import { useAtomValue } from "jotai";
@@ -17,8 +16,12 @@ function App() {
       <Section1 />
       <Divider />
       <Section3 />
-      <Section2 />
-      <DonateSection />
+      {false && (
+        <>
+          <Section2 />
+          <DonateSection />
+        </>
+      )}
       <Suspense>
         <Section4 />
       </Suspense>
@@ -39,7 +42,7 @@ function Section1() {
       <section
         className={css({
           width: "100%",
-          minHeight: "calc(100vh - 120px)",
+          minHeight: "calc(70vh)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -439,22 +442,35 @@ function Section3() {
       className={css({
         display: "flex",
         justifyContent: "center",
+        backgroundColor: "#8B0029",
         flex: 1,
+        position: "relative",
       })}
     >
+      <img
+        className={css({
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          filter: "opacity(10%)",
+          objectFit: "cover",
+        })}
+        src="/informatics.jpeg"
+      />
       <section
         className={css({
           width: "100%",
           maxWidth: "1200px",
           display: "flex",
-          padding: "6rem 24px",
+          padding: "6rem 0",
           alignItems: "center",
           flexDirection: "column",
+          margin: "0 16px",
           gap: 16,
+          zIndex: 2,
         })}
       >
-        <EventLogo />
-        <div className={css({ width: "100%" })}>
+        <div className={css({ width: "100%", color: "white" })}>
           <Typography.h2>정보대학 40주년 기념 행사</Typography.h2>
           <Typography.h3>2024년 11월 22일 (금)</Typography.h3>
           <Typography.h3>우정정보관 및 하나스퀘어</Typography.h3>
@@ -465,6 +481,9 @@ function Section3() {
             width: "100%",
             flexWrap: "wrap",
             gap: 6,
+            lgDown: {
+              flexDirection: "column",
+            },
           })}
         >
           <div
@@ -473,9 +492,8 @@ function Section3() {
               display: "flex",
               flexDirection: "column",
               gap: 8,
-              backgroundColor: "#f6f7f8",
+              backgroundColor: "#f6f7f8f6",
               padding: "24px 28px",
-              minWidth: "400px",
               borderRadius: 24,
             })}
           >
@@ -555,9 +573,8 @@ function Section3() {
               display: "flex",
               flexDirection: "column",
               gap: 4,
-              backgroundColor: "#f6f7f8",
+              backgroundColor: "#f6f7f8f6",
               padding: "24px 28px",
-              minWidth: "400px",
               borderRadius: 24,
             })}
           >
@@ -584,6 +601,7 @@ function Section3() {
                     </Typography.h3>
                     {event.time && <Typography.p>{event.time}</Typography.p>}
                   </div>
+                  {event.place && <Typography.p>{event.place}</Typography.p>}
                   {event.lecturer && (
                     <div className={css({ display: "flex", gap: 4 })}>
                       <img
@@ -819,7 +837,7 @@ function Section22() {
 }
 
 function Section4() {
-  useAtomValue(mainCommentsAtom);
+  const comments = useAtomValue(mainCommentsAtom);
   return (
     <section
       className={css({
@@ -926,9 +944,9 @@ function Section4() {
               },
             })}
           >
-            <CommentColumn delay={0} />
-            <CommentColumn delay={200} />
-            <CommentColumn delay={400} />
+            <CommentColumn comments={comments.slice(0, 2)} delay={0} />
+            <CommentColumn comments={comments.slice(0, 2)} delay={200} />
+            <CommentColumn comments={comments.slice(0, 2)} delay={400} />
           </div>
         </div>
       </section>
@@ -936,12 +954,19 @@ function Section4() {
   );
 }
 
-interface CommentColumnProps {
-  delay: number;
+interface Comment {
+  id: number;
+  head: string;
+  content: string;
+  writer: string;
 }
 
-function CommentColumn({ delay }: CommentColumnProps) {
-  const navigate = useNavigate();
+interface CommentColumnProps {
+  delay: number;
+  comments: Comment[];
+}
+
+function CommentColumn({ delay, comments }: CommentColumnProps) {
   return (
     <div
       className={css({
@@ -951,19 +976,13 @@ function CommentColumn({ delay }: CommentColumnProps) {
         width: "100%",
       })}
     >
-      {[...Array(2)].map((_, idx) => (
+      {comments.map((comment, idx) => (
         <SimpleReveal
           key={idx}
           delay={delay + idx * 300}
           render={({ ref, cn, style }) => (
             <div ref={ref} className={cn()} style={style}>
-              <CommentCard
-                author="유승은"
-                onClick={() => navigate("/comment/1")}
-              >
-                정보대학 40주년 행사 너무 기대됩니다. 많은 교우분들을 뵐 수
-                있었으면 좋겠어요!
-              </CommentCard>
+              <CommentCard author={comment.writer}>{comment.head}</CommentCard>
             </div>
           )}
         />

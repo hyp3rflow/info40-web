@@ -2,9 +2,24 @@ import { css } from "@panda/css";
 import RouteHeader from "~/components/RouteHeader";
 import Typography from "~/components/Typography";
 import { ChevronLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { GuestBook } from "~/atoms/commentList";
 
 function CommentRoute() {
+  const params = useParams();
+  const id = Number(params.id);
+  const [post, setPost] = useState<GuestBook>();
+
+  useEffect(() => {
+    if (Number.isNaN(id)) return;
+    (async () => {
+      const url = new URL(`https://kuanniversary.xyz/api/v1/guest-book/${id}`);
+      const response = await fetch(url);
+      setPost((await response.json()) as GuestBook);
+    })();
+  }, [id]);
+
   return (
     <div>
       <RouteHeader title="교우 게시판" />
@@ -39,12 +54,10 @@ function CommentRoute() {
               borderRadius: 12,
             })}
           >
-            <Typography.p>정보대학 40주년 행사 너무 기대됩니다.</Typography.p>
-            <Typography.p>
-              많은 교우분들을 뵐 수 있었으면 좋겠어요!
-            </Typography.p>
+            <Typography.p>{post?.head}</Typography.p>
+            <Typography.p>{post?.content}</Typography.p>
             <div className={css({ textAlign: "right" })}>
-              <Typography.figcaption>by 유승은</Typography.figcaption>
+              <Typography.figcaption>by {post?.writer}</Typography.figcaption>
             </div>
           </div>
           <div
@@ -57,7 +70,7 @@ function CommentRoute() {
               gap: 6,
             })}
           >
-            <Typography.p>댓글 0개</Typography.p>
+            <Typography.p>댓글 {post?.comments?.length}개</Typography.p>
             <textarea
               className={css({
                 backgroundColor: "white",

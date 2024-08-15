@@ -40,7 +40,9 @@ function DonationLogo() {
             <div ref={ref} className={cn()}>
               <Typography.h2>2024년 정보대학 창립 40주년 기념</Typography.h2>
               <Typography.h2>
-                발전 Seed 기금 10억 마련 기부 Challenge
+                발전 Seed 기금{" "}
+                <span className={css({ fontSize: "1.25em" })}>10억</span> 마련
+                기부 Challenge
               </Typography.h2>
             </div>
           )}
@@ -105,6 +107,28 @@ function Section0() {
               투명한 기부를 위해 정보대학 발전 기금은 고려대학교 대외협력처를
               통해 모금되고 있습니다. 아래 '기부처 페이지'에 접속하신 후
               기부금을 보내주시면 됩니다. 감사합니다.
+            </Typography.h3>
+          )}
+        />
+        <SimpleReveal
+          delay={300}
+          render={({ ref, cn, style }) => (
+            <Typography.h3 ref={ref} style={style} className={cn()}>
+              <div>
+                <p>후원해주신 발전기금은 아래와 같은 명목으로 사용됩니다.</p>
+                <ul
+                  className={css({
+                    listStyleType: "disc",
+                    listStylePosition: "inside",
+                  })}
+                >
+                  <li>정보대 발전 기금</li>
+                  <li>교육/연구 공간 확보 및 유지 보수 기금</li>
+                  <li>우수 교수 유치 기금</li>
+                  <li>학생 생활 및 활동 지원</li>
+                  <li>40주년 행사 지원</li>
+                </ul>
+              </div>
             </Typography.h3>
           )}
         />
@@ -239,28 +263,6 @@ function Section1() {
                 </Typography.p>
               </div>
             </div>
-          )}
-        />
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <Typography.h3 ref={ref} style={style} className={cn()}>
-              <div>
-                <p>후원해주신 발전기금은 아래와 같은 명목으로 사용됩니다.</p>
-                <ul
-                  className={css({
-                    listStyleType: "disc",
-                    listStylePosition: "inside",
-                  })}
-                >
-                  <li>정보대 발전 기금</li>
-                  <li>교육/연구 공간 확보 및 유지 보수 기금</li>
-                  <li>우수 교수 유치 기금</li>
-                  <li>학생 생활 및 활동 지원</li>
-                  <li>40주년 행사 지원</li>
-                </ul>
-              </div>
-            </Typography.h3>
           )}
         />
       </div>

@@ -3,8 +3,18 @@ import CommentCard from "./CommentCard";
 import { SimpleReveal } from "simple-reveal";
 import Pagination from "./Pagination";
 import { useNavigate } from "react-router-dom";
+import { useAtom, useAtomValue } from "jotai";
+import {
+  commentListAtom,
+  commentListPageAtom,
+  commentListTotalPageAtom,
+} from "~/atoms/commentList";
 
 function CommentSection() {
+  const navigate = useNavigate();
+  const comments = useAtomValue(commentListAtom);
+  const [current, setCurrent] = useAtom(commentListPageAtom);
+  const total = useAtomValue(commentListTotalPageAtom);
   return (
     <div
       className={css({
@@ -33,47 +43,24 @@ function CommentSection() {
           },
         })}
       >
-        <CommentColumn delay={0} />
-        <CommentColumn delay={200} />
-        <CommentColumn delay={400} />
+        {comments.map((comment, idx) => (
+          <SimpleReveal
+            key={idx}
+            delay={idx * 300}
+            render={({ ref, cn, style }) => (
+              <div ref={ref} className={cn()} style={style}>
+                <CommentCard
+                  author={comment.writer}
+                  onClick={() => navigate(`/comment/${comment.id}`)}
+                >
+                  {comment.head}
+                </CommentCard>
+              </div>
+            )}
+          />
+        ))}
       </div>
-      <Pagination />
-    </div>
-  );
-}
-
-interface CommentColumnProps {
-  delay: number;
-}
-
-function CommentColumn({ delay }: CommentColumnProps) {
-  const navigate = useNavigate();
-  return (
-    <div
-      className={css({
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-        width: "100%",
-      })}
-    >
-      {[...Array(5)].map((_, idx) => (
-        <SimpleReveal
-          key={idx}
-          delay={delay + idx * 300}
-          render={({ ref, cn, style }) => (
-            <div ref={ref} className={cn()} style={style}>
-              <CommentCard
-                author="유승은"
-                onClick={() => navigate("/comment/1")}
-              >
-                정보대학 40주년 행사 너무 기대됩니다. 많은 교우분들을 뵐 수
-                있었으면 좋겠어요!
-              </CommentCard>
-            </div>
-          )}
-        />
-      ))}
+      <Pagination current={current} total={total} onButtonClick={setCurrent} />
     </div>
   );
 }

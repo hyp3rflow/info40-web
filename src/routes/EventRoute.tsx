@@ -10,7 +10,7 @@ import { events, schedule } from "~/data/event";
 function EventRoute() {
   return (
     <div>
-      <RouteHeader title="정보대학 40주년 기념 행사 소개" />
+      <RouteHeader title="" />
       <EventLogoSection />
       <Section2 />
       <Section1 />
@@ -50,9 +50,21 @@ function Section1() {
       className={css({
         display: "flex",
         justifyContent: "center",
+        backgroundColor: "#8B0029",
         flex: 1,
+        position: "relative",
       })}
     >
+      <img
+        className={css({
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          filter: "opacity(10%)",
+          objectFit: "cover",
+        })}
+        src="/informatics.jpeg"
+      />
       <div
         className={css({
           width: "100%",
@@ -61,11 +73,12 @@ function Section1() {
           flexDirection: "column",
           padding: "6rem 24px",
           gap: 8,
+          zIndex: 2,
         })}
       >
         <SimpleReveal
           render={({ ref, cn }) => (
-            <Typography.h1 ref={ref} className={cn()}>
+            <Typography.h1 ref={ref} className={cn(css({ color: "white" }))}>
               정보대학 40주년 기념 행사에 교우 여러분을 초청합니다
             </Typography.h1>
           )}
@@ -73,104 +86,103 @@ function Section1() {
         <SimpleReveal
           delay={300}
           render={({ ref, cn, style }) => (
-            <Typography.h3 ref={ref} style={style} className={cn()}>
+            <Typography.h3
+              ref={ref}
+              style={style}
+              className={cn(css({ color: "white" }))}
+            >
               행사 일시: 2024년 11월 22일 (금요일)
             </Typography.h3>
           )}
         />
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <div
-              ref={ref}
-              style={style}
-              className={cn(
-                css({
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }),
-              )}
-            >
-              <Typography.h3>초청 및 Ticketing: 준비 중</Typography.h3>
-            </div>
-          )}
-        />
-        <SimpleReveal
-          render={({ ref, cn }) => (
-            <Typography.h2 ref={ref} className={cn()}>
-              행사 식순
-            </Typography.h2>
-          )}
-        />
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <div
-              ref={ref}
-              style={style}
-              className={cn(css({ display: "flex" }))}
-            >
+        <div
+          className={css({
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+            backgroundColor: "#f6f7f8f6",
+            padding: "24px 28px",
+            minWidth: "400px",
+            borderRadius: 24,
+          })}
+        >
+          <SimpleReveal
+            render={({ ref, cn }) => (
+              <Typography.h2 ref={ref} className={cn()}>
+                행사 식순
+              </Typography.h2>
+            )}
+          />
+          <SimpleReveal
+            delay={300}
+            render={({ ref, cn, style }) => (
               <div
-                className={css({
-                  width: "10px",
-                  height: "100%",
-                  backgroundColor: "#e6e6e6",
-                  marginLeft: 4,
-                  marginRight: 8,
-                  borderRadius: "999px",
-                  flexShrink: 0,
-                })}
-              />
-              <div
-                className={css({
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 4,
-                })}
+                ref={ref}
+                style={style}
+                className={cn(css({ display: "flex" }))}
               >
-                {schedule.map(({ time, title, place, detail }, idx) => (
-                  <div
-                    key={idx}
-                    className={css({
-                      position: "relative",
-                      _before: {
-                        width: "26px",
-                        height: "26px",
-                        content: "''",
-                        backgroundColor: "#d9d9d9",
-                        borderRadius: "999px",
-                        top: 2,
-                        left: "-50px",
-                        position: "absolute",
-                      },
-                    })}
-                  >
-                    <div className={css({ display: "flex", gap: 3 })}>
-                      <Typography.p>{time}</Typography.p>
+                <div
+                  className={css({
+                    width: "10px",
+                    height: "100%",
+                    backgroundColor: "#e6e6e6",
+                    marginLeft: 4,
+                    marginRight: 8,
+                    borderRadius: "999px",
+                    flexShrink: 0,
+                  })}
+                />
+                <div
+                  className={css({
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 4,
+                  })}
+                >
+                  {schedule.map(({ time, title, place, detail }, idx) => (
+                    <div
+                      key={idx}
+                      className={css({
+                        position: "relative",
+                        _before: {
+                          width: "26px",
+                          height: "26px",
+                          content: "''",
+                          backgroundColor: "#d9d9d9",
+                          borderRadius: "999px",
+                          top: 2,
+                          left: "-50px",
+                          position: "absolute",
+                        },
+                      })}
+                    >
+                      <div className={css({ display: "flex", gap: 3 })}>
+                        <Typography.p>{time}</Typography.p>
 
-                      {place && (
-                        <>
-                          <div
-                            className={css({
-                              width: "2px",
-                              backgroundColor: "rgba(0,0,0,0.2)",
-                            })}
-                          />
-                          <Typography.p>{place}</Typography.p>
-                        </>
-                      )}
+                        {place && (
+                          <>
+                            <div
+                              className={css({
+                                width: "2px",
+                                backgroundColor: "rgba(0,0,0,0.2)",
+                              })}
+                            />
+                            <Typography.p>{place}</Typography.p>
+                          </>
+                        )}
+                      </div>
+                      <Typography.h3>{title}</Typography.h3>
+                      {detail?.map((item) => (
+                        <Typography.p key={item}>{item}</Typography.p>
+                      ))}
                     </div>
-                    <Typography.h3>{title}</Typography.h3>
-                    {detail?.map((item) => (
-                      <Typography.p key={item}>{item}</Typography.p>
-                    ))}
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        />
+            )}
+          />
+        </div>
       </div>
     </section>
   );
@@ -198,55 +210,67 @@ function Section2() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              다양한 40주년 기념 이벤트가 준비되어 있습니다
+              다양한 기념 이벤트가 준비되어 있습니다
             </Typography.h1>
           )}
         />
-        {events.map((event) => (
-          <SimpleReveal
-            render={({ ref, cn }) => (
-              <div
-                ref={ref}
-                key={event.title}
-                className={cn(
-                  css({
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 2,
-                  }),
-                )}
-              >
-                <div className={css({ display: "flex", gap: 2 })}>
-                  <Typography.h3 key={event.title}>{event.title}</Typography.h3>
-                  {event.time && <Typography.p>{event.time}</Typography.p>}
-                </div>
-                {event.lecturer && (
-                  <div className={css({ display: "flex", gap: 4 })}>
-                    <img
-                      src={event.lecturer.image}
-                      width="150"
-                      className={css({ borderRadius: 12 })}
-                    />
-                    <div>
-                      <Link to={event.lecturer.link}>
-                        <div className={css({ display: "flex" })}>
-                          <Typography.p
-                            className={css({ textDecoration: "underline" })}
-                          >
-                            {event.lecturer.ko}
-                          </Typography.p>
-                          <ArrowUpRight />
-                        </div>
-                      </Link>
-                      <Typography.p>{event.lecturer.en}</Typography.p>
-                      <Typography.p>{event.lecturer.description}</Typography.p>
+        <ul
+          className={css({
+            listStyle: "disc outside",
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          })}
+        >
+          {events.map((event) => (
+            <SimpleReveal
+              render={({ ref, cn }) => (
+                <li ref={ref} key={event.title} className={cn()}>
+                  <div
+                    className={css({
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 2,
+                    })}
+                  >
+                    <div className={css({ display: "flex", gap: 2 })}>
+                      <Typography.h3 key={event.title}>
+                        {event.title}
+                      </Typography.h3>
+                      {event.time && <Typography.p>{event.time}</Typography.p>}
                     </div>
+                    {event.place && <Typography.p>{event.place}</Typography.p>}
+                    {event.lecturer && (
+                      <div className={css({ display: "flex", gap: 4 })}>
+                        <img
+                          src={event.lecturer.image}
+                          width="150"
+                          className={css({ borderRadius: 12 })}
+                        />
+                        <div>
+                          <Link to={event.lecturer.link}>
+                            <div className={css({ display: "flex" })}>
+                              <Typography.p
+                                className={css({ textDecoration: "underline" })}
+                              >
+                                {event.lecturer.ko}
+                              </Typography.p>
+                              <ArrowUpRight />
+                            </div>
+                          </Link>
+                          <Typography.p>{event.lecturer.en}</Typography.p>
+                          <Typography.p>
+                            {event.lecturer.description}
+                          </Typography.p>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            )}
-          />
-        ))}
+                </li>
+              )}
+            />
+          ))}
+        </ul>
       </div>
     </section>
   );

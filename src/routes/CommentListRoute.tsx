@@ -3,6 +3,7 @@ import RouteHeader from "~/components/RouteHeader";
 import CommentSection from "~/components/CommentSection";
 import { SimpleReveal } from "simple-reveal";
 import { Link } from "react-router-dom";
+import { Suspense } from "react";
 
 function CommentListRoute() {
   return (
@@ -73,7 +74,9 @@ function CommentListRoute() {
               maxWidth: "1200px",
             })}
           >
-            <CommentSection />
+            <Suspense fallback="">
+              <CommentSection />
+            </Suspense>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
 import { Menu } from "lucide-react";
 
+import KuLogo from "/info.jpeg";
 import AnniLogo from "/40logo.png";
 import { menuAtom } from "~/atoms";
 
@@ -38,6 +39,12 @@ function Header() {
               gap: "8px",
             })}
           >
+            <img
+              className={css({
+                height: "40px",
+              })}
+              src={KuLogo}
+            />
             <img
               className={css({
                 height: "40px",

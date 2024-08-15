@@ -12,7 +12,8 @@ function RouteHeader({ title }: RouteHeaderProps) {
         position: "relative",
         height: "20rem",
         display: "flex",
-        alignItems: "flex-end",
+        flexDirection: "column",
+        alignItems: "center",
         justifyContent: "center",
       })}
     >
@@ -22,8 +23,6 @@ function RouteHeader({ title }: RouteHeaderProps) {
           width: "100%",
           height: "20rem",
           objectFit: "cover",
-
-          position: "absolute",
           filter: "brightness(70%)",
         })}
       />
@@ -40,13 +39,11 @@ function RouteHeader({ title }: RouteHeaderProps) {
                 display: "flex",
 
                 fontSize: {
-                  base: 42,
-                  lgDown: 38,
-                  mdDown: 32,
+                  base: 38,
+                  lgDown: 32,
+                  mdDown: 28,
                 },
                 fontWeight: 800,
-
-                color: "white",
               }),
             )}
           >

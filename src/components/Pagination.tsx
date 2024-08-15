@@ -1,7 +1,21 @@
 import { css } from "@panda/css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useMemo } from "react";
 
-function Pagination() {
+interface PaginationProps {
+  current: number;
+  total: number;
+  onButtonClick: (idx: number) => void;
+}
+
+function Pagination({ current, total, onButtonClick }: PaginationProps) {
+  const range = useMemo(() => {
+    const r = current % 5;
+    const q = current - r;
+    const arr = [];
+    for (let i = q; i < q + r || i < total; i++) arr.push(i + 1);
+    return arr;
+  }, [current, total]);
   return (
     <div
       className={css({
@@ -27,7 +41,13 @@ function Pagination() {
           display: "flex",
         })}
       >
-        <PaginationButton />
+        {range.map((idx) => (
+          <PaginationButton
+            key={idx}
+            idx={idx}
+            onClick={() => onButtonClick(idx)}
+          />
+        ))}
       </div>
       <div
         className={css({
@@ -46,9 +66,14 @@ function Pagination() {
   );
 }
 
-function PaginationButton() {
+interface PaginationButtonProps {
+  idx: number;
+  onClick(): void;
+}
+function PaginationButton({ idx, onClick }: PaginationButtonProps) {
   return (
     <div
+      onClick={onClick}
       className={css({
         display: "flex",
         alignItems: "center",
@@ -61,7 +86,7 @@ function PaginationButton() {
         fontSize: 20,
       })}
     >
-      1
+      {idx}
     </div>
   );
 }
