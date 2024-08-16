@@ -596,7 +596,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>249</Typography.h3>
+                  <Typography.h3>498</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -619,7 +619,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>160</Typography.h3>
+                  <Typography.h3>259</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -642,7 +642,53 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>27</Typography.h3>
+                  <Typography.h3>88</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>영상정보처리협동과정</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>17</Typography.h3>
+                  <Typography.p>명</Typography.p>
+                </div>
+              </div>
+              <div
+                className={css({
+                  minWidth: "300px",
+                  padding: 10,
+                  borderRadius: 24,
+                  backgroundColor: "#f2f2f2",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                })}
+              >
+                <Typography.h2>컴퓨터·전파통신공학과</Typography.h2>
+                <div
+                  className={css({
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 1,
+                  })}
+                >
+                  <Typography.h3>62</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -689,7 +735,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>112</Typography.h3>
+                  <Typography.h3>165</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -712,7 +758,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>87</Typography.h3>
+                  <Typography.h3>104</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
@@ -735,7 +781,7 @@ function Section12() {
                     gap: 1,
                   })}
                 >
-                  <Typography.h3>41</Typography.h3>
+                  <Typography.h3>47</Typography.h3>
                   <Typography.p>명</Typography.p>
                 </div>
               </div>
