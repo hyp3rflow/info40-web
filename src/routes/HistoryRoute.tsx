@@ -161,6 +161,8 @@ function Section10() {
           maxWidth: "1200px",
           padding: "6rem 24px",
           display: "flex",
+          flexWrap: "wrap",
+          gap: 4,
         })}
       >
         <div
