@@ -97,7 +97,12 @@ function GallerySection() {
         <div
           className={css({
             display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
+            gridTemplateColumns: {
+              base: "1fr 1fr 1fr",
+              lgDown: "1fr 1fr",
+              mdDown: "1fr",
+            },
+
             gap: 4,
           })}
         >
