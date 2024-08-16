@@ -159,79 +159,90 @@ function Section10() {
         className={css({
           width: "100%",
           maxWidth: "1200px",
-          display: "flex",
-          flexDirection: "column",
           padding: "6rem 24px",
-          gap: 8,
+          display: "flex",
         })}
       >
-        <SimpleReveal
-          render={({ ref, cn }) => (
-            <Typography.h1 ref={ref} className={cn()}>
-              Vision: Global Top 50 program by 2030
-            </Typography.h1>
-          )}
-        />
-        <SimpleReveal
-          render={({ ref, cn }) => (
-            <Typography.h2 ref={ref} className={cn()}>
-              Computing and AI
-            </Typography.h2>
-          )}
-        />
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <div
-              ref={ref}
-              style={style}
-              className={cn(
-                css({
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }),
-              )}
-            >
-              <Typography.h3>
-                미래에 살아남기 위한 필수 기술을 넘어
-              </Typography.h3>
-              <Typography.h3>
-                모든 영역에서의 차별적 가치 창출의 원천
-              </Typography.h3>
-            </div>
-          )}
-        />
-        <SimpleReveal
-          render={({ ref, cn }) => (
-            <Typography.h2 ref={ref} className={cn()}>
-              Empowerment
-            </Typography.h2>
-          )}
-        />
-        <SimpleReveal
-          delay={300}
-          render={({ ref, cn, style }) => (
-            <div
-              ref={ref}
-              style={style}
-              className={cn(
-                css({
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }),
-              )}
-            >
-              <Typography.h3>
-                Logical, Analytic, Info-centric한 인재
-              </Typography.h3>
-              <Typography.h3>
-                한 없는 창의력과 융합을 통한 새 분야 개척
-              </Typography.h3>
-              <Typography.h3>Global한 국가 경쟁력 제고</Typography.h3>
-            </div>
-          )}
+        <div
+          className={css({
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+            maxWidth: "600px",
+          })}
+        >
+          <SimpleReveal
+            render={({ ref, cn }) => (
+              <Typography.h1 ref={ref} className={cn()}>
+                Vision: Global Top 50 program by 2030
+              </Typography.h1>
+            )}
+          />
+          <SimpleReveal
+            render={({ ref, cn }) => (
+              <Typography.h2 ref={ref} className={cn()}>
+                Computing and AI
+              </Typography.h2>
+            )}
+          />
+          <SimpleReveal
+            delay={300}
+            render={({ ref, cn, style }) => (
+              <div
+                ref={ref}
+                style={style}
+                className={cn(
+                  css({
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 2,
+                  }),
+                )}
+              >
+                <Typography.h3>
+                  미래에 살아남기 위한 필수 기술을 넘어
+                </Typography.h3>
+                <Typography.h3>
+                  모든 영역에서의 차별적 가치 창출의 원천
+                </Typography.h3>
+              </div>
+            )}
+          />
+          <SimpleReveal
+            render={({ ref, cn }) => (
+              <Typography.h2 ref={ref} className={cn()}>
+                Empowerment
+              </Typography.h2>
+            )}
+          />
+          <SimpleReveal
+            delay={300}
+            render={({ ref, cn, style }) => (
+              <div
+                ref={ref}
+                style={style}
+                className={cn(
+                  css({
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 2,
+                  }),
+                )}
+              >
+                <Typography.h3>
+                  Logical, Analytic, Info-centric한 인재
+                </Typography.h3>
+                <Typography.h3>
+                  한 없는 창의력과 융합을 통한 새 분야 개척
+                </Typography.h3>
+                <Typography.h3>Global한 국가 경쟁력 제고</Typography.h3>
+              </div>
+            )}
+          />
+        </div>
+        <img
+          src="/image9.png"
+          className={css({ borderRadius: 12, objectFit: "cover", flex: 1 })}
         />
       </div>
     </section>

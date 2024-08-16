@@ -41,7 +41,7 @@ function DonationLogo() {
               <Typography.h2>2024년 정보대학 창립 40주년 기념</Typography.h2>
               <Typography.h2>
                 발전 Seed 기금{" "}
-                <span className={css({ fontSize: "1.25em" })}>10억</span> 마련
+                <span className={css({ fontSize: "1.5em" })}>10억</span> 마련
                 기부 Challenge
               </Typography.h2>
             </div>
