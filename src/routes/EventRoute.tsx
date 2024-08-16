@@ -103,7 +103,6 @@ function Section1() {
             gap: 8,
             backgroundColor: "#f6f7f8f6",
             padding: "24px 28px",
-            minWidth: "400px",
             borderRadius: 24,
           })}
         >
