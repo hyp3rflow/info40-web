@@ -42,7 +42,7 @@ function Section1() {
       <section
         className={css({
           width: "100%",
-          minHeight: "calc(70vh)",
+          minHeight: "calc(50vh)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
