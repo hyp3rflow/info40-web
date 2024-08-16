@@ -15,14 +15,22 @@ export default defineConfig({
     extend: {
       keyframes: {
         scroll: {
-          'from': {
+          from: {
             transform: "translateX(0)",
           },
-          'to': {
+          to: {
             transform: "translateX(-100%)",
-          }
-        }
-      }
+          },
+        },
+        blink: {
+          from: {
+            opacity: 0.5,
+          },
+          "40%": {
+            opacity: 1,
+          },
+        },
+      },
     },
   },
 
@@ -30,5 +38,5 @@ export default defineConfig({
   outdir: "styled-system",
 
   // for compiler to resolve tsconfigPaths correctly
-  importMap: "@panda"
+  importMap: "@panda",
 });

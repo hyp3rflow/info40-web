@@ -87,7 +87,11 @@ function Gnb() {
                       width: "100%",
                     },
                   }),
-                  badge && css({ textDecoration: "underline" }),
+                  badge &&
+                    css({
+                      animation: "blink 1.5s ease infinite",
+                      animationDelay: "1s",
+                    }),
                 )}
                 to={href}
                 onClick={() => setMenu(false)}
@@ -106,16 +110,6 @@ function Gnb() {
                       className={css({ alignSelf: "flex-start" })}
                     />
                   )}
-                  {badge && (
-                    <div
-                      className={css({
-                        width: "6px",
-                        height: "6px",
-                        backgroundColor: "red",
-                        borderRadius: "999px",
-                      })}
-                    />
-                  )}
                 </div>
               </Link>
             );
@@ -127,7 +121,8 @@ function Gnb() {
             alignItems: "center",
             gap: "42px",
             fontWeight: "600",
-            textDecoration: "underline",
+            animation: "blink 1.5s ease infinite",
+            animationDelay: "1s",
             lgDown: {
               fontSize: "24px",
             },
@@ -136,14 +131,6 @@ function Gnb() {
           <Link to="/form" onClick={() => setMenu(false)}>
             <div className={css({ display: "flex", gap: 1 })}>
               <p>교우회 등록하기</p>
-              <div
-                className={css({
-                  width: "6px",
-                  height: "6px",
-                  backgroundColor: "red",
-                  borderRadius: "999px",
-                })}
-              />
             </div>
           </Link>
         </div>

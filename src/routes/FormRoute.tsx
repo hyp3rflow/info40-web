@@ -46,7 +46,7 @@ function Section1() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              새롭게 결성되는 정보대학 교우회에 등록해주세요
+              새롭게 결성 되는 고려대 교우회 산하 정보대학 교우회에 등록해주세요
             </Typography.h1>
           )}
         />
