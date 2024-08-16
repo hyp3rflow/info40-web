@@ -91,6 +91,7 @@ function WriteRoute() {
               );
               const response = await fetch(url, {
                 method: "POST",
+                headers: new Headers({ "Content-Type": "application/json" }),
                 body: JSON.stringify({ head: title, content, writer }),
               });
               if (response.ok) {
