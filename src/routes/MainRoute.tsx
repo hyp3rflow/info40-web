@@ -9,6 +9,8 @@ import CommentCard from "~/components/CommentCard";
 import { useAtomValue } from "jotai";
 import { mainCommentsAtom } from "~/atoms/commentList";
 import { Suspense } from "react";
+import { alumniCountAtom } from "~/atoms/alumni";
+import ErrorBoundary from "~/components/ErrorBoundary";
 
 function App() {
   return (
@@ -16,16 +18,17 @@ function App() {
       <Section1 />
       <Divider />
       <Section3 />
-      {false && (
-        <>
+      <ErrorBoundary fallback="">
+        <Suspense>
           <Section2 />
-        </>
-      )}
+        </Suspense>
+      </ErrorBoundary>
       <DonateSection />
-      <Suspense>
-        <Section4 />
-      </Suspense>
-      <Section22 />
+      <ErrorBoundary fallback="">
+        <Suspense>
+          <Section4 />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }
@@ -68,7 +71,6 @@ function Section1() {
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
             gap: 8,
 
             fontSize: {
@@ -86,7 +88,7 @@ function Section1() {
             initialTransform="translateY(3rem)"
             render={({ ref, cn, style }) => (
               <div ref={ref} className={cn()} style={style}>
-                <img src="/main.png" />
+                <img src="/main.png" className={css({ maxWidth: "750px" })} />
               </div>
             )}
           />
@@ -149,6 +151,7 @@ function Divider() {
 }
 
 function Section2() {
+  const count = useAtomValue(alumniCountAtom);
   return (
     <section
       className={css({
@@ -255,7 +258,7 @@ function Section2() {
                     })}
                   >
                     <p>40주년 행사 기념을 위해</p>
-                    <p>40명의 교우님들께서 등록했습니다</p>
+                    <p>{count}명의 교우님들께서 등록했습니다</p>
                   </div>
                 </div>
               )}
@@ -629,205 +632,6 @@ function Section3() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-  );
-}
-
-function Section22() {
-  return (
-    <section
-      className={css({
-        display: "flex",
-        justifyContent: "center",
-        flex: 1,
-      })}
-    >
-      <section
-        className={css({
-          width: "100%",
-          maxWidth: "1200px",
-          display: "flex",
-          padding: "6rem 0",
-          alignItems: "center",
-          justifyContent: "center",
-
-          mdDown: {
-            flexDirection: "column",
-          },
-        })}
-      >
-        <div
-          className={css({
-            width: "100%",
-
-            height: "30rem",
-            position: "relative",
-            display: "flex",
-            flexDirection: "column",
-            gap: 8,
-
-            borderRadius: "24px",
-            margin: "0 16px",
-            mdDown: {
-              borderRadius: 0,
-              margin: 0,
-              height: "auto",
-              paddingBottom: "2rem",
-            },
-          })}
-        >
-          <div
-            className={css({
-              padding: "24px",
-              paddingBlock: 0,
-              height: "100%",
-
-              display: "flex",
-              gap: "2rem",
-            })}
-          >
-            <div
-              className={css({
-                display: "flex",
-                flexDirection: "column",
-                gap: "2rem",
-              })}
-            >
-              <div
-                className={css({
-                  fontSize: {
-                    base: 32,
-                    lgDown: 28,
-                    mdDown: 24,
-                  },
-                  fontWeight: 800,
-                })}
-              >
-                <p>정보대학 교우회</p> <p>소식을 확인하세요</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className={css({
-            width: "100%",
-
-            height: "30rem",
-            position: "relative",
-            display: "flex",
-            flexDirection: "column",
-            gap: 8,
-
-            borderRadius: "24px",
-            margin: "0 16px",
-            mdDown: {
-              borderRadius: 0,
-              margin: 0,
-            },
-
-            backgroundColor: "#f2f2f2",
-          })}
-        >
-          <div
-            className={css({
-              padding: "32px",
-              height: "100%",
-            })}
-          >
-            <div
-              className={css({
-                display: "flex",
-                flexDirection: "column",
-                gap: "2rem",
-              })}
-            >
-              <div
-                className={css({
-                  fontSize: 28,
-                  fontWeight: 600,
-                })}
-              >
-                <div
-                  className={css({
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                  })}
-                >
-                  <img width="30px" src="/insta-gradient.png" />
-                  <div
-                    className={css({ display: "flex", alignItems: "center" })}
-                  >
-                    <p>인스타그램</p>
-                    <ArrowUpRight
-                      className={css({ alignSelf: "flex-start" })}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className={css({
-            width: "100%",
-            height: "30rem",
-            position: "relative",
-            display: "flex",
-            flexDirection: "column",
-            gap: 8,
-
-            borderRadius: "24px",
-            margin: "0 16px",
-            mdDown: {
-              borderRadius: 0,
-              margin: 0,
-            },
-
-            backgroundColor: "#f2f2f2",
-          })}
-        >
-          <div
-            className={css({
-              padding: "32px",
-              height: "100%",
-            })}
-          >
-            <div
-              className={css({
-                display: "flex",
-                flexDirection: "column",
-                gap: "2rem",
-              })}
-            >
-              <div
-                className={css({
-                  fontSize: 28,
-                  fontWeight: 600,
-                })}
-              >
-                <div
-                  className={css({
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                  })}
-                >
-                  <img width="30px" src="/fb.png" />
-                  <div
-                    className={css({ display: "flex", alignItems: "center" })}
-                  >
-                    <p>페이스북</p>
-                    <ArrowUpRight
-                      className={css({ alignSelf: "flex-start" })}
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

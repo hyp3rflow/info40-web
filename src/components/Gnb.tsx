@@ -91,6 +91,11 @@ function Gnb() {
                     css({
                       animation: "blink 1.5s ease infinite",
                       animationDelay: "1s",
+                      fontSize: {
+                        base: "18px",
+                        lgDown: "26px",
+                      },
+                      color: "#ffdf00",
                     }),
                 )}
                 to={href}
@@ -120,11 +125,13 @@ function Gnb() {
             display: "flex",
             alignItems: "center",
             gap: "42px",
-            fontWeight: "600",
+            fontWeight: "700",
             animation: "blink 1.5s ease infinite",
             animationDelay: "1s",
+            color: "#ffdf00",
+            fontSize: "18px",
             lgDown: {
-              fontSize: "24px",
+              fontSize: "26px",
             },
           })}
         >
