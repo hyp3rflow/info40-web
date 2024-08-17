@@ -10,6 +10,7 @@ import {
   photoListTotalPageAtom,
 } from "~/atoms/photo";
 import { Suspense } from "react";
+import ErrorBoundary from "~/components/ErrorBoundary";
 
 function GalleryRoute() {
   return (
@@ -64,9 +65,11 @@ function GalleryRoute() {
           />
         </div>
       </section>
-      <Suspense fallback="">
-        <GallerySection />
-      </Suspense>
+      <ErrorBoundary fallback="">
+        <Suspense fallback="">
+          <GallerySection />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }
