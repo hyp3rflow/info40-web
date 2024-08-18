@@ -11,6 +11,7 @@ import {
 } from "~/atoms/photo";
 import { Suspense } from "react";
 import ErrorBoundary from "~/components/ErrorBoundary";
+import { useOpenImagePopup } from "~/atoms/popup";
 
 function GalleryRoute() {
   return (
@@ -75,6 +76,7 @@ function GalleryRoute() {
 }
 
 function GallerySection() {
+  const openImagePopup = useOpenImagePopup();
   const photos = useAtomValue(photoListAtom);
   const [current, setCurrent] = useAtom(photoListPageAtom);
   const total = useAtomValue(photoListTotalPageAtom);
@@ -111,10 +113,12 @@ function GallerySection() {
         >
           {photos.map((photo) => (
             <img
+              onClick={() => openImagePopup(photo.imageUrl)}
               className={css({
                 borderRadius: 12,
                 objectFit: "cover",
                 height: "100%",
+                cursor: "pointer",
               })}
               key={photo.id}
               src={photo.imageUrl}

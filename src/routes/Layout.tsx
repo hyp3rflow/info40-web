@@ -1,13 +1,14 @@
-import { css } from "@panda/css";
+import { css, cx } from "@panda/css";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 
 import Header from "~/components/Header";
 import Gnb from "~/components/Gnb";
 import Footer from "~/components/Footer";
+import GalleryPopup from "~/components/GalleryPopup";
 
 function Layout() {
   return (
-    <div>
+    <div className={cx(css({ position: "relative" }))}>
       <div
         className={css({
           width: "100%",
@@ -31,6 +32,7 @@ function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <GalleryPopup />
       <ScrollRestoration />
     </div>
   );
