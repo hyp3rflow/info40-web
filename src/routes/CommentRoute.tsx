@@ -54,7 +54,6 @@ function CommentRoute() {
               borderRadius: 12,
             })}
           >
-            <Typography.p>{post?.head}</Typography.p>
             <Typography.p>{post?.content}</Typography.p>
             <div className={css({ textAlign: "right" })}>
               <Typography.figcaption>by {post?.writer}</Typography.figcaption>

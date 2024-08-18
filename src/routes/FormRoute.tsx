@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Input from "~/components/Input";
 import Typography from "~/components/Typography";
 import RouteHeader from "~/components/RouteHeader";
+import { useState } from "react";
 
 function FormRoute() {
   return (
@@ -99,7 +100,14 @@ function Section1() {
 }
 
 function DirectForm() {
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [studentId, setStudentId] = useState("");
+  const [sex, setSex] = useState<"male" | "female">();
   const navigate = useNavigate();
+  console.log(sex);
   return (
     <div
       className={css({
@@ -116,6 +124,8 @@ function DirectForm() {
       >
         <p className={css({ fontSize: 24, fontWeight: 600 })}>이름</p>
         <Input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           placeholder="이름을 입력하세요"
           className={css({ width: "20rem" })}
         />
@@ -125,6 +135,9 @@ function DirectForm() {
       >
         <p className={css({ fontSize: 24, fontWeight: 600 })}>전화번호</p>
         <Input
+          type="tel"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
           placeholder="전화번호를 입력하세요"
           className={css({ width: "20rem" })}
         />
@@ -133,17 +146,50 @@ function DirectForm() {
         className={css({ display: "flex", flexDirection: "column", gap: 4 })}
       >
         <p className={css({ fontSize: 24, fontWeight: 600 })}>성별</p>
-        <Input
-          placeholder="성별을 입력하세요"
-          className={css({ width: "20rem" })}
-        />
+        <div className={css({ display: "flex", gap: 2 })}>
+          <input
+            name="sex"
+            className={css({
+              padding: "24px",
+              border: "1px solid #aaa",
+              borderRadius: "18px",
+              _checked: {
+                backgroundColor: "#8B0029",
+                color: "white",
+              },
+            })}
+            type="button"
+            aria-checked={sex === "male"}
+            onClick={() => setSex("male")}
+            value="남자"
+          />
+          <input
+            name="sex"
+            className={css({
+              padding: "24px",
+              border: "1px solid #aaa",
+              borderRadius: "18px",
+              _checked: {
+                backgroundColor: "#8B0029",
+                color: "white",
+              },
+            })}
+            type="button"
+            aria-checked={sex === "female"}
+            onClick={() => setSex("female")}
+            value="여자"
+          />
+        </div>
       </div>
       <div
         className={css({ display: "flex", flexDirection: "column", gap: 4 })}
       >
-        <p className={css({ fontSize: 24, fontWeight: 600 })}>학번</p>
+        <p className={css({ fontSize: 24, fontWeight: 600 })}>입학학번</p>
         <Input
-          placeholder="학번을 입력하세요"
+          type="number"
+          value={studentId}
+          onChange={(e) => setStudentId(e.target.value)}
+          placeholder="예시: 1997년도 입학인 경우 -> 97"
           className={css({ width: "20rem" })}
         />
       </div>
@@ -151,16 +197,23 @@ function DirectForm() {
         className={css({ display: "flex", flexDirection: "column", gap: 4 })}
       >
         <p className={css({ fontSize: 24, fontWeight: 600 })}>이메일</p>
-        <Input
-          placeholder="이메일을 입력하세요"
-          className={css({ width: "20rem" })}
-        />
+        <div>
+          <Input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="이메일을 입력하세요"
+            className={css({ width: "20rem" })}
+          />
+        </div>
       </div>
       <div
         className={css({ display: "flex", flexDirection: "column", gap: 4 })}
       >
         <p className={css({ fontSize: 24, fontWeight: 600 })}>직장명</p>
         <Input
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
           placeholder="직장명을 입력하세요 (선택)"
           className={css({ width: "20rem" })}
         />
@@ -172,8 +225,28 @@ function DirectForm() {
       </div>
       <button
         onClick={() => {
-          alert("등록이 완료되었습니다.");
-          navigate("/donate");
+          (async function () {
+            if (!name) return alert("이름을 입력해주세요.");
+            if (!phoneNumber) return alert("전화번호를 입력해주세요.");
+            if (!email) return alert("이메일을 입력해주세요.");
+            if (!studentId) return alert("학번을 입력해주세요.");
+            if (!sex) return alert("성별을 입력해주세요.");
+            const url = new URL("https://kuanniversary.xyz/api/v1/alumni");
+            await fetch(url, {
+              method: "POST",
+              headers: new Headers({ "Content-Type": "application/json" }),
+              body: JSON.stringify({
+                name,
+                company,
+                email,
+                phoneNumber,
+                studentId,
+                isMale: sex === "male",
+              }),
+            });
+            alert("등록이 완료되었습니다!");
+            navigate("/donate");
+          })();
         }}
         className={css({
           width: "fit-content",

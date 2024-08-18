@@ -7,7 +7,6 @@ import { useState } from "react";
 
 function WriteRoute() {
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
   const [writer, setWriter] = useState("");
   const [content, setContent] = useState("");
   return (
@@ -38,17 +37,6 @@ function WriteRoute() {
             </p>
           )}
         />
-        <div
-          className={css({ display: "flex", flexDirection: "column", gap: 4 })}
-        >
-          <p className={css({ fontSize: 24, fontWeight: 600 })}>제목</p>
-          <Input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="제목을 입력하세요"
-            className={css({ width: "100%" })}
-          />
-        </div>
         <div>
           <textarea
             value={content}
@@ -82,7 +70,6 @@ function WriteRoute() {
         </div>
         <button
           onClick={() => {
-            if (!title) return alert("제목을 작성해주세요.");
             if (!content) return alert("내용을 작성해주세요.");
             if (!writer) return alert("작성자를 작성해주세요.");
             (async () => {
@@ -92,7 +79,7 @@ function WriteRoute() {
               const response = await fetch(url, {
                 method: "POST",
                 headers: new Headers({ "Content-Type": "application/json" }),
-                body: JSON.stringify({ head: title, content, writer }),
+                body: JSON.stringify({ head: "", content, writer }),
               });
               if (response.ok) {
                 alert(

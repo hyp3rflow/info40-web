@@ -17,15 +17,20 @@ function RouteHeader({ title }: RouteHeaderProps) {
         justifyContent: "center",
       })}
     >
-      <img
-        src="/informatics.jpeg"
+      <video
+        autoPlay
+        playsInline
+        muted
+        loop
         className={css({
           width: "100%",
           height: "20rem",
           objectFit: "cover",
           filter: "brightness(70%)",
         })}
-      />
+      >
+        <source src="background.mp4" type="video/mp4" />
+      </video>
       <SimpleReveal
         render={({ ref, cn }) => (
           <p

@@ -23,7 +23,6 @@ function App() {
           <Section2 />
         </Suspense>
       </ErrorBoundary>
-      <DonateSection />
       <ErrorBoundary fallback="">
         <Suspense>
           <Section4 />
@@ -53,7 +52,11 @@ function Section1() {
           position: "relative",
         })}
       >
-        <img
+        <video
+          autoPlay
+          playsInline
+          muted
+          loop
           className={css({
             width: "100%",
             height: "100%",
@@ -61,8 +64,9 @@ function Section1() {
             filter: "brightness(80%)",
             objectFit: "cover",
           })}
-          src="/informatics.jpeg"
-        />
+        >
+          <source src="background.mp4" type="video/mp4" />
+        </video>
         <div
           className={css({
             width: "100%",
@@ -88,7 +92,10 @@ function Section1() {
             initialTransform="translateY(3rem)"
             render={({ ref, cn, style }) => (
               <div ref={ref} className={cn()} style={style}>
-                <img src="/main.png" className={css({ maxWidth: "750px" })} />
+                <img
+                  src="/main.png"
+                  className={css({ maxWidth: "750px", width: "100%" })}
+                />
               </div>
             )}
           />
@@ -284,151 +291,6 @@ function Section2() {
                   )}
                 >
                   등록하기
-                </Link>
-              )}
-            />
-          </div>
-        </div>
-      </section>
-    </section>
-  );
-}
-
-function DonateSection() {
-  return (
-    <section
-      className={css({
-        display: "flex",
-        justifyContent: "center",
-        flex: 1,
-      })}
-    >
-      <section
-        className={css({
-          width: "100%",
-          display: "flex",
-          padding: "6rem 0",
-          alignItems: "center",
-          justifyContent: "center",
-          mdDown: {
-            padding: 0,
-          },
-        })}
-      >
-        <div
-          className={css({
-            width: "100%",
-            maxWidth: "1200px",
-            height: "30rem",
-            position: "relative",
-            display: "flex",
-            flexDirection: "column",
-            gap: 8,
-
-            fontSize: 24,
-            fontWeight: 800,
-
-            borderRadius: "24px",
-            margin: "0 16px",
-            mdDown: {
-              borderRadius: 0,
-              margin: 0,
-            },
-
-            overflow: "hidden",
-          })}
-        >
-          <img
-            className={css({
-              width: "100%",
-              height: "100%",
-              position: "absolute",
-              filter: "brightness(60%)",
-              objectFit: "cover",
-            })}
-            src="/informatics.jpeg"
-          />
-          <div
-            className={css({
-              color: "white",
-              padding: "32px",
-              height: "100%",
-
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-            })}
-          >
-            <SimpleReveal
-              duration={1000}
-              initialTransform="translateY(3rem)"
-              render={({ ref, cn, style }) => (
-                <div ref={ref} className={cn()} style={style}>
-                  <div
-                    className={css({
-                      fontSize: {
-                        base: 32,
-                        lgDown: 28,
-                        mdDown: 22,
-                      },
-                      fontWeight: 700,
-                      lineHeight: 1.1,
-                      textAlign: "center",
-                    })}
-                  >
-                    <p>
-                      정보대학 발전 Seed 기금 마련 기부 챌린지에 동참해주세요
-                    </p>
-                  </div>
-                </div>
-              )}
-            />
-            <SimpleReveal
-              delay={500}
-              duration={1000}
-              initialTransform="translateY(3rem)"
-              render={({ ref, cn, style }) => (
-                <div ref={ref} className={cn()} style={style}>
-                  <div
-                    className={css({
-                      fontSize: {
-                        base: 36,
-                        lgDown: 28,
-                        mdDown: 24,
-                      },
-                      fontWeight: 700,
-                      textAlign: "center",
-                    })}
-                  >
-                    <p>정보대학 발전의 기틀을 마련하기 위해</p>
-                    <p>10억 원의 Seed 기금이 필요합니다</p>
-                  </div>
-                </div>
-              )}
-            />
-            <SimpleReveal
-              delay={500}
-              duration={1000}
-              render={({ ref, cn, style }) => (
-                <Link
-                  ref={ref}
-                  to="/donate"
-                  style={style}
-                  className={cn(
-                    css({
-                      width: "fit-content",
-                      padding: "24px 24px",
-                      borderRadius: 16,
-                      fontSize: 18,
-                      fontWeight: 600,
-                      backgroundColor: "#8B0029",
-                      color: "white",
-                    }),
-                  )}
-                >
-                  기부 챌린지 동참하기
                 </Link>
               )}
             />
@@ -635,6 +497,125 @@ function Section3() {
             </div>
           </div>
         </div>
+        <div
+          className={css({
+            width: "100%",
+            maxWidth: "1200px",
+            height: "30rem",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+
+            fontSize: 24,
+            fontWeight: 800,
+
+            borderRadius: "24px",
+            margin: "0 16px",
+            mdDown: {
+              borderRadius: 0,
+              margin: 0,
+            },
+
+            overflow: "hidden",
+          })}
+        >
+          <img
+            className={css({
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              filter: "brightness(60%)",
+              objectFit: "cover",
+            })}
+            src="/informatics.jpeg"
+          />
+          <div
+            className={css({
+              color: "white",
+              padding: "32px",
+              height: "100%",
+
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
+            })}
+          >
+            <SimpleReveal
+              duration={1000}
+              initialTransform="translateY(3rem)"
+              render={({ ref, cn, style }) => (
+                <div ref={ref} className={cn()} style={style}>
+                  <div
+                    className={css({
+                      fontSize: {
+                        base: 32,
+                        lgDown: 28,
+                        mdDown: 22,
+                      },
+                      fontWeight: 700,
+                      lineHeight: 1.1,
+                      textAlign: "center",
+                    })}
+                  >
+                    <p>
+                      정보대학 발전 Seed 기금 마련 기부 챌린지에 동참해주세요
+                    </p>
+                  </div>
+                </div>
+              )}
+            />
+            <SimpleReveal
+              delay={500}
+              duration={1000}
+              initialTransform="translateY(3rem)"
+              render={({ ref, cn, style }) => (
+                <div ref={ref} className={cn()} style={style}>
+                  <div
+                    className={css({
+                      fontSize: {
+                        base: 36,
+                        lgDown: 28,
+                        mdDown: 24,
+                      },
+                      fontWeight: 700,
+                      textAlign: "center",
+                    })}
+                  >
+                    <p>정보대학 발전의 기틀을 마련하기 위해</p>
+                    <p>10억 원의 Seed 기금이 필요합니다</p>
+                  </div>
+                </div>
+              )}
+            />
+            <SimpleReveal
+              delay={500}
+              duration={1000}
+              render={({ ref, cn, style }) => (
+                <Link
+                  ref={ref}
+                  to="/donate"
+                  style={style}
+                  className={cn(
+                    css({
+                      width: "fit-content",
+                      padding: "24px 24px",
+                      borderRadius: 16,
+                      fontSize: 18,
+                      fontWeight: 600,
+                      backgroundColor: "#8B0029",
+                      color: "white",
+                    }),
+                  )}
+                >
+                  기부 챌린지 동참하기
+                </Link>
+              )}
+            />
+          </div>
+        </div>
       </section>
     </section>
   );
@@ -755,7 +736,7 @@ function Section4() {
                 render={({ ref, cn, style }) => (
                   <div ref={ref} className={cn()} style={style}>
                     <CommentCard author={comment.writer}>
-                      {comment.head}
+                      {comment.content}
                     </CommentCard>
                   </div>
                 )}
