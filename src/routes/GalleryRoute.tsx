@@ -12,6 +12,7 @@ import {
 import { Suspense } from "react";
 import ErrorBoundary from "~/components/ErrorBoundary";
 import { useOpenImagePopup } from "~/atoms/popup";
+import { Mail } from "lucide-react";
 
 function GalleryRoute() {
   return (
@@ -50,7 +51,8 @@ function GalleryRoute() {
                 className={cn(
                   css({
                     display: "flex",
-                    justifyContent: "center",
+                    flexDirection: "column",
+                    alignItems: "center",
                     padding: "24px 24px",
                     borderRadius: 16,
                     backgroundColor: "#f2f2f2",
@@ -60,6 +62,17 @@ function GalleryRoute() {
                 <Typography.p>
                   이메일로 추억이 담긴 사진을 보내주시면 갤러리에
                   추가해드립니다.
+                </Typography.p>
+                <Typography.p
+                  className={css({
+                    textDecoration: "underline",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                  })}
+                >
+                  <Mail />
+                  <a href="mailto:cscoi@korea.ac.kr">cscoi@korea.ac.kr</a>
                 </Typography.p>
               </div>
             )}
@@ -117,7 +130,6 @@ function GallerySection() {
               className={css({
                 borderRadius: 12,
                 objectFit: "cover",
-                height: "100%",
                 cursor: "pointer",
               })}
               key={photo.id}
