@@ -125,16 +125,18 @@ function GallerySection() {
           })}
         >
           {photos.map((photo) => (
-            <img
-              onClick={() => openImagePopup(photo.imageUrl)}
-              className={css({
-                borderRadius: 12,
-                objectFit: "cover",
-                cursor: "pointer",
-              })}
-              key={photo.id}
-              src={photo.imageUrl}
-            />
+            <div key={photo.id} className={css({ height: "100%" })}>
+              <img
+                onClick={() => openImagePopup(photo.imageUrl)}
+                className={css({
+                  borderRadius: 12,
+                  objectFit: "cover",
+                  height: "100%",
+                  cursor: "pointer",
+                })}
+                src={photo.imageUrl}
+              />
+            </div>
           ))}
         </div>
         <Pagination

@@ -34,7 +34,7 @@ const histories = [
     description: "대학원 뇌공학과 신설",
   },
   {
-    date: "2011년 11월",
+    date: "2011년 12월",
     description: "우정정보관 완공 및 입주",
   },
   {
