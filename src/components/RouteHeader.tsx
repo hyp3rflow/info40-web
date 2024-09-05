@@ -29,7 +29,10 @@ function RouteHeader({ title }: RouteHeaderProps) {
           filter: "brightness(70%)",
         })}
       >
-        <source src="background.mp4" type="video/mp4" />
+        <source
+          src="https://bucket-dw9769.s3.ap-northeast-2.amazonaws.com/background.mp4"
+          type="video/mp4"
+        />
       </video>
       <SimpleReveal
         render={({ ref, cn }) => (

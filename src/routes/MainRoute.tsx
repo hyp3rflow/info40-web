@@ -65,7 +65,10 @@ function Section1() {
             objectFit: "cover",
           })}
         >
-          <source src="background.mp4" type="video/mp4" />
+          <source
+            src="https://bucket-dw9769.s3.ap-northeast-2.amazonaws.com/background.mp4"
+            type="video/mp4"
+          />
         </video>
         <div
           className={css({
