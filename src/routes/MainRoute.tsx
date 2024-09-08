@@ -117,9 +117,18 @@ function Section1() {
               })}
             >
               <Typography.p className={css({ fontWeight: 700 })}>
-                고연전 주점 행사 장소 확정
+                40주년 기념 고연전 주점 행사
               </Typography.p>
-              <p>두꺼비로멘스 고대안암점</p>
+              <a
+                href="https://naver.me/FAQfsEBZ"
+                className={css({
+                  textDecoration: "underline",
+                  display: "flex",
+                })}
+              >
+                <p>두꺼비로멘스 고대안암점</p>
+                <ArrowUpRight />
+              </a>
               <p>9월 28일 토요일 오후 6시</p>
             </div>
           </div>
