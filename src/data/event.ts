@@ -22,9 +22,11 @@ export const schedule = [
 
 export const events = [
   {
-    title: "40주년 고연전 주점 행사",
-    time: "9월 28일",
-    place: "참살이길 주점 (예정)",
+    title: "고연전 주점 행사",
+    time: "9월 28일 (토) 오후 6시~",
+    place: "두꺼비로멘스 고대안암점",
+    placeHref: "https://naver.me/FAQfsEBZ",
+    upcoming: true,
   },
   {
     title: "AI 해커톤",

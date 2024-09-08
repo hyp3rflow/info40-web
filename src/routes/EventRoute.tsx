@@ -238,7 +238,21 @@ function Section2() {
                       </Typography.h3>
                       {event.time && <Typography.p>{event.time}</Typography.p>}
                     </div>
-                    {event.place && <Typography.p>{event.place}</Typography.p>}
+                    {event.place &&
+                      (event.placeHref ? (
+                        <a
+                          href={event.placeHref}
+                          className={css({
+                            display: "flex",
+                            textDecoration: "underline",
+                          })}
+                        >
+                          <Typography.p>{event.place}</Typography.p>
+                          <ArrowUpRight />
+                        </a>
+                      ) : (
+                        <Typography.p>{event.place}</Typography.p>
+                      ))}
                     {event.lecturer && (
                       <div className={css({ display: "flex", gap: 4 })}>
                         <img

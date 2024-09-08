@@ -1,4 +1,4 @@
-import { css } from "@panda/css";
+import { css, cx } from "@panda/css";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
@@ -77,15 +77,8 @@ function Section1() {
             padding: "48px 24px",
             position: "relative",
             display: "flex",
-            flexDirection: "column",
             gap: 8,
-
-            fontSize: {
-              base: 42,
-              lgDown: 32,
-              mdDown: 24,
-            },
-            fontWeight: 800,
+            flexWrap: "wrap",
 
             color: "white",
           })}
@@ -102,6 +95,34 @@ function Section1() {
               </div>
             )}
           />
+          <div
+            className={css({
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: 3,
+              fontSize: { base: 22, lgDown: 18, mdDown: 16 },
+              fontWeight: 600,
+              minWidth: "fit-content",
+            })}
+          >
+            <Typography.figcaption>다가오는 행사</Typography.figcaption>
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "18px",
+                backgroundColor: "rgba(139, 0, 41, 0.9)",
+                padding: 5,
+              })}
+            >
+              <Typography.p className={css({ fontWeight: 700 })}>
+                고연전 주점 행사 장소 확정
+              </Typography.p>
+              <p>두꺼비로멘스 고대안암점</p>
+              <p>9월 28일 토요일 오후 6시</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -457,11 +478,30 @@ function Section3() {
               {events.map((event) => (
                 <div
                   key={event.title}
-                  className={css({
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 2,
-                  })}
+                  className={cx(
+                    css({
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 2,
+                      position: "relative",
+                    }),
+                    event.upcoming &&
+                      css({
+                        borderRight: "4px solid rgb(139, 0, 41)",
+                        _before: {
+                          content: '"Upcoming"',
+                          padding: "4px 10px",
+                          borderRadius: 999,
+                          backgroundColor: "rgb(139, 0, 41)",
+                          color: "white",
+                          position: "absolute",
+                          transform: "translate(16px, -100%)",
+                          fontWeight: 700,
+
+                          right: 0,
+                        },
+                      }),
+                  )}
                 >
                   <div className={css({ display: "flex", gap: 2 })}>
                     <Typography.h3 key={event.title}>
@@ -469,7 +509,21 @@ function Section3() {
                     </Typography.h3>
                     {event.time && <Typography.p>{event.time}</Typography.p>}
                   </div>
-                  {event.place && <Typography.p>{event.place}</Typography.p>}
+                  {event.place &&
+                    (event.placeHref ? (
+                      <a
+                        href={event.placeHref}
+                        className={css({
+                          display: "flex",
+                          textDecoration: "underline",
+                        })}
+                      >
+                        <Typography.p>{event.place}</Typography.p>
+                        <ArrowUpRight />
+                      </a>
+                    ) : (
+                      <Typography.p>{event.place}</Typography.p>
+                    ))}
                   {event.lecturer && (
                     <div className={css({ display: "flex", gap: 4 })}>
                       <img
