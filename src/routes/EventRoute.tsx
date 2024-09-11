@@ -253,6 +253,16 @@ function Section2() {
                       ) : (
                         <Typography.p>{event.place}</Typography.p>
                       ))}
+                    {event.description && (
+                      <Typography.p
+                        className={css({
+                          "& > a": {
+                            textDecoration: "underline",
+                          },
+                        })}
+                        dangerouslySetInnerHTML={{ __html: event.description }}
+                      />
+                    )}
                     {event.lecturer && (
                       <div className={css({ display: "flex", gap: 4 })}>
                         <img

@@ -26,6 +26,8 @@ export const events = [
     time: "9월 28일 (토) 오후 6시~",
     place: "두꺼비로멘스 고대안암점",
     placeHref: "https://naver.me/FAQfsEBZ",
+    description:
+      '<a href="https://www.haegin.kr/">해긴</a> / <a href="https://www.miridih.com/">미리디</a>(졸업생 설립 회사)에서 쏩니다!',
     upcoming: true,
   },
   {

@@ -130,6 +130,17 @@ function Section1() {
                 <ArrowUpRight />
               </a>
               <p>9월 28일 토요일 오후 6시</p>
+              <p
+                className={css({
+                  "& > a": {
+                    textDecoration: "underline",
+                  },
+                })}
+              >
+                <a href="https://www.haegin.kr/">해긴</a> /{" "}
+                <a href="https://www.miridih.com/">미리디</a>(졸업생 설립 회사)
+                후원
+              </p>
             </div>
           </div>
         </div>
@@ -533,6 +544,16 @@ function Section3() {
                     ) : (
                       <Typography.p>{event.place}</Typography.p>
                     ))}
+                  {event.description && (
+                    <Typography.p
+                      className={css({
+                        "& > a": {
+                          textDecoration: "underline",
+                        },
+                      })}
+                      dangerouslySetInnerHTML={{ __html: event.description }}
+                    />
+                  )}
                   {event.lecturer && (
                     <div className={css({ display: "flex", gap: 4 })}>
                       <img
