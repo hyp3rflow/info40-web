@@ -11,6 +11,7 @@ import { mainCommentsAtom } from "~/atoms/commentList";
 import { Suspense } from "react";
 import { alumniCountAtom } from "~/atoms/alumni";
 import ErrorBoundary from "~/components/ErrorBoundary";
+import { donates } from "~/data/donate";
 
 function App() {
   return (
@@ -76,25 +77,81 @@ function Section1() {
             maxWidth: "1200px",
             padding: "48px 24px",
             position: "relative",
-            display: "flex",
-            gap: 8,
-            flexWrap: "wrap",
-
             color: "white",
+
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
           })}
         >
-          <SimpleReveal
-            duration={1000}
-            initialTransform="translateY(3rem)"
-            render={({ ref, cn, style }) => (
-              <div ref={ref} className={cn()} style={style}>
-                <img
-                  src="/main.png"
-                  className={css({ maxWidth: "750px", width: "100%" })}
-                />
+          <div
+            className={css({
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 8,
+            })}
+          >
+            <SimpleReveal
+              duration={1000}
+              initialTransform="translateY(3rem)"
+              render={({ ref, cn, style }) => (
+                <div ref={ref} className={cn()} style={style}>
+                  <img
+                    src="/main.png"
+                    className={css({ maxWidth: "750px", width: "100%" })}
+                  />
+                </div>
+              )}
+            />
+            <div
+              className={css({
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                gap: 3,
+                fontSize: { base: 22, lgDown: 18, mdDown: 16 },
+                fontWeight: 600,
+                minWidth: "fit-content",
+              })}
+            >
+              <Typography.figcaption>다가오는 행사</Typography.figcaption>
+              <div
+                className={css({
+                  display: "flex",
+                  flexDirection: "column",
+                  borderRadius: "18px",
+                  backgroundColor: "rgba(139, 0, 41, 0.9)",
+                  padding: 5,
+                })}
+              >
+                <Typography.p className={css({ fontWeight: 700 })}>
+                  40주년 기념 고연전 주점 행사
+                </Typography.p>
+                <a
+                  href="https://naver.me/FAQfsEBZ"
+                  className={css({
+                    textDecoration: "underline",
+                    display: "flex",
+                  })}
+                >
+                  <p>두꺼비로멘스 고대안암점</p>
+                  <ArrowUpRight />
+                </a>
+                <p>9월 28일 토요일 오후 6시</p>
+                <p
+                  className={css({
+                    "& > a": {
+                      textDecoration: "underline",
+                    },
+                  })}
+                >
+                  <a href="https://www.haegin.kr/">해긴</a> /{" "}
+                  <a href="https://www.miridih.com/">미리디</a>(졸업생 설립
+                  회사) 후원
+                </p>
               </div>
-            )}
-          />
+            </div>
+          </div>
           <div
             className={css({
               flex: 1,
@@ -106,41 +163,30 @@ function Section1() {
               minWidth: "fit-content",
             })}
           >
-            <Typography.figcaption>다가오는 행사</Typography.figcaption>
+            <Typography.figcaption>기부 약정 목록</Typography.figcaption>
             <div
               className={css({
-                display: "flex",
-                flexDirection: "column",
+                display: "grid",
+                gridTemplateColumns: "repeat(3, auto)",
+                gap: 2,
                 borderRadius: "18px",
                 backgroundColor: "rgba(139, 0, 41, 0.9)",
                 padding: 5,
               })}
             >
-              <Typography.p className={css({ fontWeight: 700 })}>
-                40주년 기념 고연전 주점 행사
-              </Typography.p>
-              <a
-                href="https://naver.me/FAQfsEBZ"
-                className={css({
-                  textDecoration: "underline",
-                  display: "flex",
-                })}
-              >
-                <p>두꺼비로멘스 고대안암점</p>
-                <ArrowUpRight />
-              </a>
-              <p>9월 28일 토요일 오후 6시</p>
-              <p
-                className={css({
-                  "& > a": {
-                    textDecoration: "underline",
-                  },
-                })}
-              >
-                <a href="https://www.haegin.kr/">해긴</a> /{" "}
-                <a href="https://www.miridih.com/">미리디</a>(졸업생 설립 회사)
-                후원
-              </p>
+              {donates.map((donate) => {
+                return (
+                  <>
+                    <Typography.figcaption
+                      className={css({ textAlign: "right" })}
+                    >
+                      {donate.title}
+                    </Typography.figcaption>
+                    <Typography.figcaption>{donate.name}</Typography.figcaption>
+                    <Typography.figcaption>{donate.date}</Typography.figcaption>
+                  </>
+                );
+              })}
             </div>
           </div>
         </div>
