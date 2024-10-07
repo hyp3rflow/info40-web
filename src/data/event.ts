@@ -28,10 +28,10 @@ export const events = [
     placeHref: "https://naver.me/FAQfsEBZ",
     description:
       '<a href="https://www.haegin.kr/">해긴</a> / <a href="https://www.miridih.com/">미리디</a>(졸업생 설립 회사)에서 쏩니다!',
-    upcoming: true,
   },
   {
     title: "AI 해커톤",
+    upcoming: true,
   },
   {
     title: "특별 초청 세미나",

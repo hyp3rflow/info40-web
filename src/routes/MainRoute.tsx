@@ -104,6 +104,7 @@ function Section1() {
               )}
             />
             <div
+              hidden
               className={css({
                 flex: 1,
                 display: "flex",
@@ -182,7 +183,14 @@ function Section1() {
                     >
                       {donate.title}
                     </Typography.figcaption>
-                    <Typography.figcaption>{donate.name}</Typography.figcaption>
+                    <div>
+                      <Typography.figcaption>
+                        {donate.name}
+                      </Typography.figcaption>
+                      <Typography.figcaption>
+                        {donate.detail}
+                      </Typography.figcaption>
+                    </div>
                     <Typography.figcaption>{donate.date}</Typography.figcaption>
                   </>
                 );
