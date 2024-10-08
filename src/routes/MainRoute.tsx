@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SimpleReveal } from "simple-reveal";
 
-import { events, schedule } from "~/data/event";
+import { events, images, schedule } from "~/data/event";
 import Typography from "~/components/Typography";
 import CommentCard from "~/components/CommentCard";
 import { useAtomValue } from "jotai";
@@ -104,7 +104,6 @@ function Section1() {
               )}
             />
             <div
-              hidden
               className={css({
                 flex: 1,
                 display: "flex",
@@ -126,7 +125,7 @@ function Section1() {
                 })}
               >
                 <Typography.p className={css({ fontWeight: 700 })}>
-                  40주년 기념 고연전 주점 행사
+                  특별 초청 세미나
                 </Typography.p>
                 <a
                   href="https://naver.me/FAQfsEBZ"
@@ -135,10 +134,10 @@ function Section1() {
                     display: "flex",
                   })}
                 >
-                  <p>두꺼비로멘스 고대안암점</p>
+                  <p>요슈아 벤지오 교수</p>
                   <ArrowUpRight />
                 </a>
-                <p>9월 28일 토요일 오후 6시</p>
+                <p>2024년 11월 5일</p>
                 <p
                   className={css({
                     "& > a": {
@@ -146,9 +145,7 @@ function Section1() {
                     },
                   })}
                 >
-                  <a href="https://www.haegin.kr/">해긴</a> /{" "}
-                  <a href="https://www.miridih.com/">미리디</a>(졸업생 설립
-                  회사) 후원
+                  2018 튜링상 수상자 (딥러닝)
                 </p>
               </div>
             </div>
@@ -636,6 +633,40 @@ function Section3() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+        <div
+          className={css({
+            width: "100%",
+            maxWidth: "1200px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+            color: "white",
+          })}
+        >
+          <div className={css({ width: "100%" })}>
+            <Typography.h2>고연전 주점 행사 기념사진</Typography.h2>
+          </div>
+          <div
+            className={css({
+              display: "flex",
+              gap: 8,
+              overflowX: "scroll",
+            })}
+          >
+            {images.map((src) => (
+              <img
+                key={src}
+                src={src}
+                className={css({
+                  objectFit: "cover",
+                  aspectRatio: "auto",
+                  maxHeight: "500px",
+                  borderRadius: 8,
+                })}
+              />
+            ))}
           </div>
         </div>
         <div

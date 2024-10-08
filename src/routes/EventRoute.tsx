@@ -5,7 +5,7 @@ import { SimpleReveal } from "simple-reveal";
 import EventLogo from "~/components/EventLogo";
 import RouteHeader from "~/components/RouteHeader";
 import Typography from "~/components/Typography";
-import { events, schedule } from "~/data/event";
+import { events, images, schedule } from "~/data/event";
 
 function EventRoute() {
   return (
@@ -13,6 +13,7 @@ function EventRoute() {
       <RouteHeader title="" />
       <EventLogoSection />
       <Section2 />
+      <EventSection />
       <Section1 />
     </div>
   );
@@ -181,6 +182,57 @@ function Section1() {
               </div>
             )}
           />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EventSection() {
+  return (
+    <section
+      className={css({
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "#8B0029",
+        flex: 1,
+        position: "relative",
+      })}
+    >
+      <div
+        className={css({
+          width: "100%",
+          maxWidth: "1200px",
+          display: "flex",
+          flexDirection: "column",
+          padding: "6rem 24px",
+          gap: 8,
+          color: "white",
+        })}
+      >
+        <div className={css({ width: "100%" })}>
+          <Typography.h1>고연전 주점 행사 기념사진</Typography.h1>
+        </div>
+        <div
+          className={css({
+            display: "flex",
+            gap: 8,
+            overflowX: "scroll",
+            marginX: "-20px",
+          })}
+        >
+          {images.map((src) => (
+            <img
+              key={src}
+              src={src}
+              className={css({
+                objectFit: "cover",
+                aspectRatio: "auto",
+                maxHeight: "500px",
+                borderRadius: 8,
+              })}
+            />
+          ))}
         </div>
       </div>
     </section>
