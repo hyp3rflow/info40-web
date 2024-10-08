@@ -125,7 +125,7 @@ function Section1() {
                 })}
               >
                 <Typography.p className={css({ fontWeight: 700 })}>
-                  특별 초청 세미나
+                  특별 초청 세미나
                 </Typography.p>
                 <a
                   href="https://naver.me/FAQfsEBZ"
