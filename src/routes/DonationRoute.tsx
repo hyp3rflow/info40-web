@@ -158,7 +158,7 @@ function Section0() {
             >
               <a
                 target="_blank"
-                href="https://give.korea.ac.kr/front/give/actKupGive.do"
+                href="https://secure.donus.org/koreauniversity/pay/step1"
                 className={css({
                   width: "fit-content",
                   padding: "24px 24px",
