@@ -19,4 +19,5 @@ export const donates = [
   { name: "민병경, Min Lab", title: "교수", date: "9월 11일" },
   { name: "정원주, 통계지능연구실", title: "교수", date: "9월 19일" },
   { name: "이성환, 패턴인식및머신러닝연구실", title: "교수", date: "10월 2일" },
+  { name: "김현학", title: "졸업생 (교우)", date: "10월 10일" },
 ];
