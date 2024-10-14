@@ -128,7 +128,7 @@ function Section1() {
                   특별 초청 세미나
                 </Typography.p>
                 <a
-                  href="https://naver.me/FAQfsEBZ"
+                  href="https://yoshuabengio.org/"
                   className={css({
                     textDecoration: "underline",
                     display: "flex",
