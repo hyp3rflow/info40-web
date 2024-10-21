@@ -161,7 +161,52 @@ function Section1() {
               minWidth: "fit-content",
             })}
           >
+            <div
+              className={css({
+                display: "grid",
+                gridTemplateColumns: "repeat(3, auto)",
+                gap: 2,
+                borderRadius: "18px",
+                backgroundColor: "rgba(139, 0, 41, 0.9)",
+                padding: 5,
+              })}
+            >
+              <Typography.figcaption className={css({ textAlign: "right" })}>
+                총 기부액 21,490,500원
+              </Typography.figcaption>
+              <Typography.figcaption className={css({ textAlign: "right" })}>
+                교우회 등록자 수 167명
+              </Typography.figcaption>
+            </div>
+          </div>
+          <div
+            className={css({
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: 3,
+              fontSize: { base: 22, lgDown: 18, mdDown: 16 },
+              fontWeight: 600,
+              minWidth: "fit-content",
+            })}
+          >
             <Typography.figcaption>기부 약정 목록</Typography.figcaption>
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                borderRadius: "18px",
+                backgroundColor: "rgba(139, 0, 41, 0.9)",
+                padding: 5,
+                alignItems: "center",
+              })}
+            >
+              <Typography.figcaption>
+                향후 개관되는 IT 교양관의 디스플레이를 통해 기부자분들의 성함을
+                영구적으로 새겨 넣을 계획입니다.
+              </Typography.figcaption>
+            </div>
             <div
               className={css({
                 display: "grid",
