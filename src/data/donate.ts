@@ -27,5 +27,5 @@ export const donates = [
     detail:
       "김유승, 배정한, 송경섭, 안혁, 한제헌(아이렌소프트), 권종훈, 최현상, 김건호, 강정인, 이건우",
   },
-  { name: "이희조, CSSA 연구소", title: "교수", date: "10월 17일" },
+  { name: "이희조, CSSA 연구소", title: "교수", date: "10월 17일" },
 ];
