@@ -1,6 +1,6 @@
 export const schedule = [
   {
-    time: "17:00 ~ 18:00",
+    time: "17:30 ~ 18:00",
     title: "기념 벤치 제막식",
     place: "우정정보관",
   },
