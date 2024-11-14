@@ -20,8 +20,7 @@ export const donates = [
   { name: "정원주, 통계지능연구실", title: "교수", date: "9월 19일" },
   { name: "이성환, 패턴인식및머신러닝연구실", title: "교수", date: "10월 2일" },
   { name: "김현학", title: "졸업생 (교우)", date: "10월 10일" },
-  { name: "송경섭", title: "졸업생 (교우)", date: "10월 14일" },
-  { name: "김유승", title: "졸업생 (교우)", date: "10월 15일" },
+  { name: "차성덕", title: "교수", date: "10월 15일" },
   {
     name: "이희조, CCS 연구실",
     title: "교수",
@@ -34,4 +33,9 @@ export const donates = [
   { name: "우승훈, SSP 연구실", title: "교수", date: "10월 22일", detail: "양희동, 최영재, 조서경" },
   { name: "박세익", title: "졸업생 (교우)", date: "10월 28일" },
   { name: "김현철", title: "교수", date: "10월 31일" },
+  { name: "이성환, 패턴인식및머신러닝연구실", title: "교수", date: "11월 4일" },
+  { name: "정원기", title: "교수", date: "11월 7일" },
+  { name: "박성빈, 하이퍼미디어연구실", title: "교수", date: "11월 7일" },
+  { name: "한정현, 미디어연구실", title: "교수", date: "11월 8일" },
+  { name: "감태의, 의료인공지능연구실", title: "교수", date: "11월 12일" },
 ];

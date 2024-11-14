@@ -125,28 +125,10 @@ function Section1() {
                 })}
               >
                 <Typography.p className={css({ fontWeight: 700 })}>
-                  특별 초청 세미나
+                  정보대학 40주년 기념 행사
                 </Typography.p>
-                <a
-                  href="https://yoshuabengio.org/"
-                  className={css({
-                    textDecoration: "underline",
-                    display: "flex",
-                  })}
-                >
-                  <p>요슈아 벤지오 교수</p>
-                  <ArrowUpRight />
-                </a>
-                <p>2024년 11월 5일</p>
-                <p
-                  className={css({
-                    "& > a": {
-                      textDecoration: "underline",
-                    },
-                  })}
-                >
-                  2018 튜링상 수상자 (딥러닝)
-                </p>
+                <p>우정정보관, 하나스퀘어</p>
+                <p>2024년 11월 22일</p>
               </div>
             </div>
           </div>
@@ -172,7 +154,7 @@ function Section1() {
               })}
             >
               <Typography.figcaption className={css({ textAlign: "right" })}>
-                총 기부액 21,490,500원
+                총 기부액 36,100,500원
               </Typography.figcaption>
               <Typography.figcaption className={css({ textAlign: "right" })}>
                 교우회 등록자 수 167명

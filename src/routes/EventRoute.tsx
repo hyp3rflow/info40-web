@@ -12,9 +12,9 @@ function EventRoute() {
     <div>
       <RouteHeader title="" />
       <EventLogoSection />
+      <Section1 />
       <Section2 />
       <EventSection />
-      <Section1 />
     </div>
   );
 }
@@ -35,7 +35,7 @@ function EventLogoSection() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "6rem 24px 0px",
+          padding: "6rem 24px",
           flexWrap: "wrap",
         })}
       >
@@ -261,7 +261,7 @@ function Section2() {
         <SimpleReveal
           render={({ ref, cn }) => (
             <Typography.h1 ref={ref} className={cn()}>
-              다양한 기념 이벤트가 준비되어 있습니다
+              다양한 기념 이벤트가 진행되었습니다
             </Typography.h1>
           )}
         />
