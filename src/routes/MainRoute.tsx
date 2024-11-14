@@ -583,22 +583,22 @@ function Section3() {
                       gap: 2,
                       position: "relative",
                     }),
-                    event.upcoming &&
-                      css({
-                        borderRight: "4px solid rgb(139, 0, 41)",
-                        _before: {
-                          content: '"Upcoming"',
-                          padding: "4px 10px",
-                          borderRadius: 999,
-                          backgroundColor: "rgb(139, 0, 41)",
-                          color: "white",
-                          position: "absolute",
-                          transform: "translate(16px, -100%)",
-                          fontWeight: 700,
+                    // event.upcoming &&
+                    //   css({
+                    //     borderRight: "4px solid rgb(139, 0, 41)",
+                    //     _before: {
+                    //       content: '"Upcoming"',
+                    //       padding: "4px 10px",
+                    //       borderRadius: 999,
+                    //       backgroundColor: "rgb(139, 0, 41)",
+                    //       color: "white",
+                    //       position: "absolute",
+                    //       transform: "translate(16px, -100%)",
+                    //       fontWeight: 700,
 
-                          right: 0,
-                        },
-                      }),
+                    //       right: 0,
+                    //     },
+                    //   }),
                   )}
                 >
                   <div className={css({ display: "flex", gap: 2 })}>
