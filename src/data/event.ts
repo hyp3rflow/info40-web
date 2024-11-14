@@ -24,7 +24,6 @@ export const events = [
   {
     title: "특별 초청 세미나",
     time: "11월 5일",
-    upcoming: true,
     lecturer: {
       ko: "요슈아 벤지오 교수",
       en: "Yoshua Bengio",
@@ -37,7 +36,6 @@ export const events = [
     title: "해커톤/데이터톤",
     time: "11월 9일 (토) ~ 10일 (일)",
     place: "고려대학교 우정정보관",
-    upcoming: true,
   },
   {
     title: "고연전 주점 행사",
