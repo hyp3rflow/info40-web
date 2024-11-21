@@ -202,9 +202,7 @@ function Section1() {
               {donates.map((donate) => {
                 return (
                   <>
-                    <Typography.figcaption
-                      className={css({ textAlign: "right" })}
-                    >
+                    <Typography.figcaption>
                       {donate.title}
                     </Typography.figcaption>
                     <div>
