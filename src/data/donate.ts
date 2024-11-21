@@ -34,7 +34,7 @@ export const donates = [
   { name: "박세익", title: "졸업생 (교우)", date: "10월 28일" },
   { name: "김현철", title: "교수", date: "10월 31일" },
   { name: "이성환, 패턴인식및머신러닝연구실", title: "교수", date: "11월 4일" },
-  { name: "정원기", title: "교수", date: "11월 7일" },
+  { name: "정원기, 고성능비주얼컴퓨팅연구실", title: "교수", date: "11월 7일" },
   { name: "박성빈, 하이퍼미디어연구실", title: "교수", date: "11월 7일" },
   { name: "한정현, 미디어연구실", title: "교수", date: "11월 8일" },
   { name: "감태의, 의료인공지능연구실", title: "교수", date: "11월 12일" },
