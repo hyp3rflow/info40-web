@@ -38,4 +38,5 @@ export const donates = [
   { name: "박성빈, 하이퍼미디어연구실", title: "교수", date: "11월 7일" },
   { name: "한정현, 미디어연구실", title: "교수", date: "11월 8일" },
   { name: "감태의, 의료인공지능연구실", title: "교수", date: "11월 12일" },
+  { name: "유헌창, 분산클라우드컴퓨팅연구실", title: "교수", date: "11월 15일" },
 ];
